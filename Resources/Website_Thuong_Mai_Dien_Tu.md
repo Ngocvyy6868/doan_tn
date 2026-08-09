@@ -1,3 +1,19 @@
+---
+type: SRS
+feature: ecommerce website  and chatbot builc PC
+status: draft
+summary: build website thương mại điện tử có sử dụng AI để tư vấn độ tương thích các linh kiện
+---
+**ĐẶC TẢ YÊU CẦU PHẦN MỀM**
+- Không được giả định các yêu cầu
+- Mỗi tính năng mới phải hỏi tôi trước, không được giả định
+| **Tầng** | **Công nghệ lựa chọn** | **Mục đích sử dụng** | |
+|---|---|---|---|
+| Frontend | ReactJS| Xây storefront, trang quản trị, PC Builder và cửa sổ chat responsive. |
+| BE | Python, Django|  |
+| Database | Posrgres| Quản lý database |
+| Developer | Docker|  Chạy local|
+
 **ĐẶC TẢ YÊU CẦU PHẦN MỀM**
 
 **WEBSITE THƯƠNG MẠI ĐIỆN TỬ  
@@ -9,7 +25,7 @@ Software Requirements Specification (SRS) – định hướng IEEE/ISO/IEC 2914
 |-------------------|---------------------------------------------------------------------|
 | Phiên bản         | 1.0 – Baseline phục vụ thiết kế, lập trình và kiểm thử              |
 | Ngày ban hành     | 08/08/2026                                                          |
-| Kênh sử dụng      | Website responsive cho desktop và mobile                            |
+| Kênh sử dụng      | Website responsive cho desktop                       |
 | Quy mô thử nghiệm | Khoảng 500 sản phẩm; 10–20 người dùng; 200 câu hỏi đánh giá chatbot |
 | Phạm vi AI        | RAG, RAG–HyDE và rule engine kiểm tra tương thích                   |
 | Trạng thái        | Draft for Development                                               |
@@ -107,10 +123,8 @@ Tài liệu mô tả đầy đủ yêu cầu nghiệp vụ và kỹ thuật cho 
 | **Tác nhân**          | **Nhu cầu chính**                                                                        |
 |-----------------------|------------------------------------------------------------------------------------------|
 | Khách vãng lai        | Xem/tìm/lọc sản phẩm, xem build mẫu; đăng nhập khi lưu hoặc mua.                         |
-| Khách hàng            | Quản lý tài khoản, yêu thích, build, giỏ hàng, đặt và theo dõi đơn.                      |
-| Nhân viên tư vấn/CSKH | Tiếp nhận yêu cầu build, hỗ trợ đơn, hủy/trả hàng và phản hồi khách.                     |
-| Nhân viên kho         | Cập nhật tồn kho, xác nhận đóng gói và bàn giao vận chuyển.                              |
-| Quản trị viên         | Quản lý catalog, giá, tồn kho, tài khoản, quyền, nội dung, voucher, tài liệu AI và luật. |
+| Khách hàng            | Quản lý tài khoản, yêu thích, build, giỏ hàng, đặt và theo dõi đơn.    |                    
+| Quản trị viên        |- Tiếp nhận yêu cầu build, hỗ trợ đơn, hủy/trả hàng và phản hồi khách.  <br> - Cập nhật tồn kho, xác nhận đóng gói và bàn giao vận chuyển. <br> - Quản lý catalog, giá, tồn kho, tài khoản, quyền, nội dung, tài liệu AI và luật.                              |
 | Nhóm đồ án            | Chạy đánh giá offline RAG/RAG–HyDE và xuất báo cáo.                                      |
 
 ## 2.3 Giả định vận hành
