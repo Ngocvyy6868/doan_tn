@@ -7,9 +7,10 @@ summary: build website thương mại điện tử có sử dụng AI để tư 
 **ĐẶC TẢ YÊU CẦU PHẦN MỀM**
 - Không được giả định các yêu cầu
 - Mỗi tính năng mới phải hỏi tôi trước, không được giả định
+
 | **Tầng** | **Công nghệ lựa chọn** | **Mục đích sử dụng** | |
 |---|---|---|---|
-| Frontend | ReactJS| Xây storefront, trang quản trị, PC Builder và cửa sổ chat responsive. |
+| Frontend | ReactJS, AntDesign| - Xây storefront, trang quản trị, PC Builder và cửa sổ chat responsive. <br> - Màn hình admin sử dụng Antdesign |
 | BE | Python, Django|  |
 | Database | Posrgres| Quản lý database |
 | Developer | Docker|  Chạy local|

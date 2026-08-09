@@ -2,9 +2,10 @@ import React,{useMemo,useState} from 'react';
 import{createRoot}from'react-dom/client';
 import{Search,ShoppingCart,Heart,User,ChevronRight,ChevronDown,Sparkles,ShieldCheck,Truck,Headphones,Plus,Minus,X,Check,Star,SlidersHorizontal,ArrowRight,MessageCircle,Send,Menu,Microchip,Cpu,MemoryStick,HardDrive,Box,Zap}from'lucide-react';
 import'./style.css';
+const AdminApp=React.lazy(()=>import('./admin.jsx'));
 
 const cats=[['CPU',Cpu],['VGA',Microchip],['Mainboard',MemoryStick],['RAM',MemoryStick],['SSD',HardDrive],['Nguồn',Zap],['Case',Box]];
-const products=[
+export const products=[
  {id:1,name:'AMD Ryzen 7 7800X3D',cat:'CPU',brand:'AMD',price:9890000,old:10990000,rate:4.9,reviews:128,badge:'-10%',img:'https://images.unsplash.com/photo-1591799264318-7e6ef8ddb7ea?auto=format&fit=crop&w=700&q=80'},
  {id:2,name:'GeForce RTX 4070 SUPER',cat:'VGA',brand:'GIGABYTE',price:17890000,old:19590000,rate:4.8,reviews:86,badge:'BÁN CHẠY',img:'https://images.unsplash.com/photo-1591488320449-011701bb6704?auto=format&fit=crop&w=700&q=80'},
  {id:3,name:'ROG STRIX B650E-F Gaming WiFi',cat:'Mainboard',brand:'ASUS',price:6590000,old:7290000,rate:4.7,reviews:54,badge:'-9%',img:'https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=700&q=80'},
@@ -15,8 +16,9 @@ const products=[
 const money=n=>n.toLocaleString('vi-VN')+'₫';
 
 function App(){
+ const[catalog]=useState(()=>{try{return JSON.parse(localStorage.getItem('techzone_products'))||products}catch{return products}});
  const[query,setQuery]=useState(''),[active,setActive]=useState('Tất cả'),[cart,setCart]=useState([]),[wish,setWish]=useState([]),[drawer,setDrawer]=useState(false),[chat,setChat]=useState(false),[builder,setBuilder]=useState(false),[msg,setMsg]=useState('');
- const filtered=useMemo(()=>products.filter(p=>(active==='Tất cả'||p.cat===active)&&p.name.toLowerCase().includes(query.toLowerCase())),[query,active]);
+ const filtered=useMemo(()=>catalog.filter(p=>p.active!==false&&(active==='Tất cả'||p.cat===active)&&p.name.toLowerCase().includes(query.toLowerCase())),[query,active,catalog]);
  const add=p=>{setCart(c=>{const f=c.find(x=>x.id===p.id);return f?c.map(x=>x.id===p.id?{...x,q:x.q+1}:x):[...c,{...p,q:1}]});setDrawer(true)};
  const count=cart.reduce((s,x)=>s+x.q,0),total=cart.reduce((s,x)=>s+x.price*x.q,0);
  const quantity=(id,d)=>setCart(c=>c.map(x=>x.id===id?{...x,q:x.q+d}:x).filter(x=>x.q>0));
@@ -42,8 +44,8 @@ function App(){
   <button className="chat-fab" onClick={()=>setChat(!chat)}><MessageCircle/><span>Hỏi AI</span></button>
   {chat&&<div className="chat"><div className="chat-head"><span><Sparkles/> TechZone AI <small>Trực tuyến</small></span><button onClick={()=>setChat(false)}><X/></button></div><div className="chat-body"><div className="bot">Chào bạn! Mình có thể tư vấn cấu hình, kiểm tra tương thích và tìm linh kiện theo ngân sách. Bạn đang cần build PC để làm gì?</div><div className="suggest"><button>Gaming 2K</button><button>Đồ họa 3D</button><button>Ngân sách 25 triệu</button></div></div><div className="chat-input"><input value={msg} onChange={e=>setMsg(e.target.value)} placeholder="Nhập câu hỏi..."/><button onClick={()=>setMsg('')}><Send/></button></div></div>}
   {drawer&&<><div className="shade" onClick={()=>setDrawer(false)}/><aside className="drawer"><div className="drawer-head"><h2>Giỏ hàng <span>({count})</span></h2><button onClick={()=>setDrawer(false)}><X/></button></div><div className="cart-list">{cart.length?cart.map(x=><div className="cart-item"><img src={x.img}/><div><b>{x.name}</b><strong>{money(x.price)}</strong><div className="qty"><button onClick={()=>quantity(x.id,-1)}><Minus/></button><span>{x.q}</span><button onClick={()=>quantity(x.id,1)}><Plus/></button></div></div></div>):<div className="cart-empty"><ShoppingCart/><h3>Giỏ hàng đang trống</h3><p>Khám phá linh kiện phù hợp cho bộ PC của bạn.</p></div>}</div>{cart.length>0&&<div className="checkout"><div><span>Tạm tính</span><b>{money(total)}</b></div><button>TIẾN HÀNH THANH TOÁN <ArrowRight/></button><small><ShieldCheck/> Thanh toán an toàn & bảo mật</small></div>}</aside></>}
-  {builder&&<Builder close={()=>setBuilder(false)} add={add}/>} 
+  {builder&&<Builder close={()=>setBuilder(false)} add={add} products={catalog}/>} 
  </>
 }
 function Builder({close,add}){const[selected,setSelected]=useState([products[0],products[2],products[3]]);const total=selected.reduce((s,x)=>s+x.price,0);return <div className="modal-wrap"><div className="builder"><div className="builder-top"><div><span><Sparkles/> PC BUILDER AI</span><h2>Xây dựng cấu hình của bạn</h2><p>Chọn linh kiện, chúng tôi sẽ kiểm tra tương thích tự động.</p></div><button onClick={close}><X/></button></div><div className="builder-content"><div className="slots">{['CPU','Mainboard','RAM','VGA','SSD','Nguồn','Case'].map((cat,i)=>{const p=selected.find(x=>x.cat===cat);return <div className={p?'filled':''}><span>{i+1}</span><b>{cat}</b>{p?<><strong>{p.name}</strong><em>{money(p.price)}</em><button onClick={()=>setSelected(s=>s.filter(x=>x.id!==p.id))}><X/></button></>:<button onClick={()=>{const found=products.find(x=>x.cat===cat);if(found)setSelected(s=>[...s,found])}}><Plus/> Chọn linh kiện</button>}</div>})}</div><aside><div className="compat"><Check/><b>Tương thích tốt</b><p>Các linh kiện đã chọn hoạt động ổn định cùng nhau.</p></div><h3>Tóm tắt cấu hình</h3><div className="sum"><span>{selected.length}/7 linh kiện</span><b>{money(total)}</b></div><div className="meter"><i style={{width:selected.length/7*100+'%'}}/></div><button className="primary" disabled={!selected.length} onClick={()=>selected.forEach(add)}>THÊM CẤU HÌNH VÀO GIỎ</button><small>Giá đã bao gồm VAT</small></aside></div></div></div>}
-createRoot(document.getElementById('root')).render(<App/>);
+createRoot(document.getElementById('root')).render(location.pathname.startsWith('/admin')?<React.Suspense fallback={<div style={{padding:40,fontFamily:'sans-serif'}}>Đang tải trang quản trị...</div>}><AdminApp seed={products}/></React.Suspense>:<App/>);
