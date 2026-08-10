@@ -10,9 +10,9 @@ summary: build website thương mại điện tử có sử dụng AI để tư 
 
 | **Tầng** | **Công nghệ lựa chọn** | **Mục đích sử dụng** | |
 |---|---|---|---|
-| Frontend | ReactJS, AntDesign| - Xây storefront, trang quản trị, PC Builder và cửa sổ chat responsive. <br> - Màn hình admin sử dụng Antdesign |
+| Frontend | ReactJS, Ant Design| - Xây storefront, trang quản trị, PC Builder và cửa sổ chat responsive. <br> - Màn hình admin sử dụng Ant Design System|
 | BE | Python, Django|  |
-| Database | Posrgres| Quản lý database |
+| Database | Postgres| Quản lý database |
 | Developer | Docker|  Chạy local|
 
 **ĐẶC TẢ YÊU CẦU PHẦN MỀM**
@@ -195,7 +195,7 @@ Tài liệu mô tả đầy đủ yêu cầu nghiệp vụ và kỹ thuật cho 
 | FR-CAT-01     | Danh mục sản phẩm                 | P0          | Duyệt phân cấp ngành hàng theo menu ngang/dọc.                                            | Breadcrumb và phân trang đúng; danh mục vô hiệu hóa không hiển thị.                |
 | FR-SEARCH-01  | Tìm kiếm                          | P0          | Tìm theo tên, SKU, thương hiệu và từ khóa mô tả.                                          | Không có kết quả hiển thị gợi ý; truy vấn được chuẩn hóa và an toàn.               |
 | FR-FILTER-01  | Lọc/sắp xếp                       | P0          | Lọc giá, thương hiệu, tình trạng, thuộc tính; sắp xếp giá, bán chạy, giảm giá, mới nhất.  | Nhiều bộ lọc kết hợp đúng; URL lưu được trạng thái lọc.                            |
-| FR-PDP-01     | Chi tiết sản phẩm                 | P0          | Hiển thị ảnh, tên, giá, biến thể, tồn, mô tả, thuộc tính, chính sách, sản phẩm liên quan. | SKU/biến thể đổi đúng giá-tồn; hết hàng không cho mua.                             |
+| FR-PDP-01     | Chi tiết sản phẩm                 | P0          | - Hiển thị ảnh, tên, giá, biến thể, tồn, mô tả, thuộc tính, chính sách, sản phẩm liên quan. <br> - Cho phép thêm các thuộc tính để rằng buộc tương thích linh kiện| SKU/biến thể đổi đúng giá-tồn; hết hàng không cho mua.                             |
 | FR-FAV-01     | Yêu thích                         | P1          | Thêm/xóa sản phẩm và xem danh sách yêu thích.                                             | Không tạo bản ghi trùng; trạng thái đồng bộ sau đăng nhập.                         |
 | FR-COMPARE-01 | So sánh sản phẩm                  | P1          | So sánh tối đa 4 sản phẩm cùng/nhóm tương đương theo thuộc tính.                          | Bảng làm nổi khác biệt; xử lý thuộc tính thiếu bằng “Chưa có dữ liệu”.             |
 | FR-CART-01    | Thêm giỏ/Mua ngay                 | P0          | Thêm SKU với số lượng; Mua ngay mở checkout cho SKU đã chọn.                              | Số lượng không vượt tồn/giới hạn; giỏ khách đăng nhập được lưu.                    |
