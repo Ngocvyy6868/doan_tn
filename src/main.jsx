@@ -2,6 +2,7 @@ import React,{useEffect,useMemo,useState} from 'react';
 import{createRoot}from'react-dom/client';
 import{Search,ShoppingCart,Heart,User,ChevronRight,ChevronDown,Sparkles,ShieldCheck,Truck,Headphones,Plus,Minus,X,Check,Star,SlidersHorizontal,ArrowRight,MessageCircle,Send,Menu,Microchip,Cpu,MemoryStick,HardDrive,Box,Zap}from'lucide-react';
 import'./style.css';
+import RegisterPage from './views/RegisterPage.jsx';
 const AdminApp=React.lazy(()=>import('./admin.jsx'));
 
 const cats=[['CPU',Cpu],['VGA',Microchip],['Mainboard',MemoryStick],['RAM',MemoryStick],['SSD',HardDrive],['Nguồn',Zap],['Case',Box]];
@@ -21,6 +22,7 @@ const addToStoredCart=product=>{const cart=readStore('techzone_cart',[]),found=c
 
 function App(){
  const[catalog]=useState(()=>{try{return JSON.parse(localStorage.getItem('techzone_products'))||products}catch{return products}});
+ const[account]=useState(()=>{try{return JSON.parse(localStorage.getItem('techzone_user'))}catch{return null}});
  const[query,setQuery]=useState(''),[active,setActive]=useState('Tất cả'),[cart,setCart]=useState(()=>readStore('techzone_cart',[])),[wish,setWish]=useState([]),[drawer,setDrawer]=useState(false),[chat,setChat]=useState(false),[builder,setBuilder]=useState(false),[msg,setMsg]=useState('');
  useEffect(()=>writeStore('techzone_cart',cart),[cart]);
  const filtered=useMemo(()=>catalog.filter(p=>p.active!==false&&(active==='Tất cả'||p.cat===active)&&p.name.toLowerCase().includes(query.toLowerCase())),[query,active,catalog]);
@@ -32,7 +34,7 @@ function App(){
   <div className="topbar"><span>TechZone • Giá tốt mỗi ngày</span><div>Hotline: <b>1900 6868</b><i/> Tra cứu đơn hàng <i/> Hệ thống cửa hàng</div></div>
   <header><a className="logo" href="#"><span>TZ</span><b>TECHZONE<small>BUILD YOUR POWER</small></b></a>
    <div className="search"><Search size={20}/><input value={query} onChange={e=>setQuery(e.target.value)} placeholder="Bạn cần tìm linh kiện gì?"/><button>Tìm kiếm</button></div>
-   <div className="actions"><button><User/><span>Tài khoản<small>Đăng nhập</small></span></button><button onClick={()=>setDrawer(true)}><ShoppingCart/><span>Giỏ hàng<small>{count} sản phẩm</small></span>{count>0&&<em>{count}</em>}</button><button className="hamb"><Menu/></button></div>
+   <div className="actions"><button onClick={()=>location.href='/register'}><User/><span>{account?.full_name||'Tài khoản'}<small>{account?'Đã đăng nhập':'Đăng nhập'}</small></span></button><button onClick={()=>setDrawer(true)}><ShoppingCart/><span>Giỏ hàng<small>{count} sản phẩm</small></span>{count>0&&<em>{count}</em>}</button><button className="hamb"><Menu/></button></div>
   </header>
   <nav><button><Menu size={18}/> DANH MỤC SẢN PHẨM</button>{['PC BUILDER','PC GAMING','LAPTOP','MÀN HÌNH','PHỤ KIỆN','TIN CÔNG NGHỆ'].map(x=><a key={x} onClick={()=>x==='PC BUILDER'&&setBuilder(true)}>{x}{x==='PC BUILDER'&&<b>AI</b>}</a>)}</nav>
   <main>
@@ -85,4 +87,4 @@ function OrderDetailPage(){const code=decodeURIComponent(location.pathname.split
 function WarningIcon(){return <span className="warning-icon">!</span>}
 function ConsumerHeader(){const count=readStore('techzone_cart',[]).reduce((s,x)=>s+x.q,0);return <><div className="topbar"><span>TechZone • Giá tốt mỗi ngày</span><div>Hotline: <b>1900 6868</b></div></div><header><a className="logo" href="/"><span>TZ</span><b>TECHZONE<small>BUILD YOUR POWER</small></b></a><div className="search"><Search size={20}/><input placeholder="Bạn cần tìm linh kiện gì?"/><button onClick={()=>location.href='/'}>Tìm kiếm</button></div><div className="actions"><a href="/orders" className="back-store">Đơn hàng</a><a href="/checkout" className="header-cart"><ShoppingCart/><span>Giỏ hàng<small>{count} sản phẩm</small></span>{count>0&&<em>{count}</em>}</a></div></header></>}
 const path=location.pathname;
-createRoot(document.getElementById('root')).render(path.startsWith('/admin')?<React.Suspense fallback={<div style={{padding:40,fontFamily:'sans-serif'}}>Đang tải trang quản trị...</div>}><AdminApp seed={products}/></React.Suspense>:path==='/checkout'?<CheckoutPage/>:path==='/orders'?<OrdersPage/>:path.startsWith('/orders/')?<OrderDetailPage/>:path.startsWith('/collections/')?<CollectionPage/>:path.startsWith('/product/')?<ProductDetailsPage/>:<App/>);
+createRoot(document.getElementById('root')).render(path.startsWith('/admin')?<React.Suspense fallback={<div style={{padding:40,fontFamily:'sans-serif'}}>Đang tải trang quản trị...</div>}><AdminApp seed={products}/></React.Suspense>:path==='/register'?<RegisterPage/>:path==='/checkout'?<CheckoutPage/>:path==='/orders'?<OrdersPage/>:path.startsWith('/orders/')?<OrderDetailPage/>:path.startsWith('/collections/')?<CollectionPage/>:path.startsWith('/product/')?<ProductDetailsPage/>:<App/>);
