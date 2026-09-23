@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Customer
+from .models import Category, Customer, Product, ProductAttribute
 
 
 @admin.register(Customer)
@@ -11,3 +11,8 @@ class CustomerAdmin(admin.ModelAdmin):
     @admin.display(ordering='user__email')
     def email(self, customer):
         return customer.user.email
+
+
+admin.site.register(Category)
+admin.site.register(ProductAttribute)
+admin.site.register(Product)

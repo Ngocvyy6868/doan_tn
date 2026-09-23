@@ -31,3 +31,8 @@
 /* Four-column product listing with square media */
 .product-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.product-grid .visual{height:auto;aspect-ratio:1/1}.product-grid .visual img{aspect-ratio:1/1}
 @media(max-width:900px){.product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+
+/* Account menu and common consumer typography. */
+#root,#root *{font-size:13px!important}.account-menu-wrap{position:relative}.account-dropdown{position:absolute;top:calc(100% + 12px);right:0;width:215px;background:#fff;border:1px solid #e4e8ef;border-radius:8px;padding:7px;box-shadow:0 12px 30px #0b1b3630;z-index:20}.account-dropdown button,.account-dropdown a{width:100%;min-height:40px;padding:0 12px;display:flex;align-items:center;gap:9px;color:#26354b;background:transparent;text-decoration:none;border-radius:5px;text-align:left}.account-dropdown button:hover,.account-dropdown a:hover{background:#f1f6ff;color:#1768f2}.account-dropdown svg{width:16px}.account-dropdown .logout{border-top:1px solid #edf0f4;border-radius:0;color:#d5424e}
+
+.consumer-order-steps{margin:22px 0}.consumer-order-steps .ant-steps-item-title{font-weight:700}.consumer-order-steps .ant-steps-item-description{color:#7b8798!important;max-width:none!important}

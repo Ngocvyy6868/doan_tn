@@ -1,7 +1,7 @@
 # Kiến trúc phát triển
 
 - Frontend: ReactJS, Vite và Ant Design (`src/`).
-- Backend: Django REST-ready API (`backend/`). Endpoint kiểm tra: `/api/health/`.
+- Backend: Django REST-ready API (`src/backend/`). Endpoint kiểm tra: `/api/health/`.
 - Database: PostgreSQL 17.
 
 ## Chạy môi trường phát triển

@@ -15,12 +15,12 @@ services:
         condition: service_healthy
 
   backend:
-    build: ./backend
+    build: ./src/backend
     command: python manage.py runserver 0.0.0.0:8000
     ports:
       - "8000:8000"
     volumes:
-      - ./backend:/app
+      - ./src/backend:/app
     environment:
       DJANGO_DEBUG: "true"
       DJANGO_SECRET_KEY: development-only-change-me
