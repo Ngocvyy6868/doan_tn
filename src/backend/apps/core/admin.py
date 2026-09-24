@@ -1,6 +1,6 @@
 from django.contrib import admin
 
-from .models import Category, Customer, Product, ProductAttribute
+from .models import Address, Category, Customer, Product, ProductAttribute
 
 
 @admin.register(Customer)
@@ -13,6 +13,7 @@ class CustomerAdmin(admin.ModelAdmin):
         return customer.user.email
 
 
+admin.site.register(Address)
 admin.site.register(Category)
 admin.site.register(ProductAttribute)
 admin.site.register(Product)

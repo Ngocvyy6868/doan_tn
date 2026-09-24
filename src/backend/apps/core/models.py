@@ -8,11 +8,34 @@ class Customer(models.Model):
     user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='customer')
     full_name = models.CharField(max_length=150)
     phone = models.CharField(max_length=15, unique=True)
+    avatar_url = models.URLField(max_length=500, blank=True, default='')
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
     def __str__(self):
         return f'{self.full_name} ({self.user.email})'
+
+
+class Address(models.Model):
+    """FR-ADDR-01: delivery address owned by a single customer account."""
+
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name='addresses')
+    full_name = models.CharField(max_length=150)
+    phone = models.CharField(max_length=15)
+    province_code = models.CharField(max_length=20)
+    province_name = models.CharField(max_length=150)
+    ward_code = models.CharField(max_length=20)
+    ward_name = models.CharField(max_length=150)
+    detail = models.CharField(max_length=255)
+    is_default = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['-is_default', '-created_at']
+
+    def __str__(self):
+        return f'{self.full_name} - {self.detail}'
 
 
 class Category(models.Model):

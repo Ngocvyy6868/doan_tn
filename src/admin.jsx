@@ -2,6 +2,7 @@ import React,{useEffect,useMemo,useState}from'react';
 import{App as AntApp,Avatar,Badge,Breadcrumb,Button,Card,Col,ConfigProvider,Drawer,Dropdown,Form,Image,Input,InputNumber,Layout,List,Menu,Modal,Row,Select,Space,Statistic,Switch,Table,Tag,Tooltip,Typography,message}from'antd';
 import{AppstoreOutlined,BellOutlined,DeleteOutlined,EditOutlined,EyeInvisibleOutlined,EyeOutlined,InboxOutlined,MenuFoldOutlined,MenuUnfoldOutlined,MoreOutlined,PlusOutlined,SaveOutlined,SearchOutlined,SettingOutlined,ShoppingCartOutlined,ShopOutlined,TagsOutlined,TeamOutlined,WarningOutlined}from'@ant-design/icons';
 import'antd/dist/reset.css';
+import viVN from'antd/locale/vi_VN';
 import'./admin.css';
 
 const{Header,Sider,Content}=Layout,{Title,Text}=Typography;
@@ -10,7 +11,7 @@ const blank={name:'',sku:'',cat:'CPU',brand:'',price:null,old:null,stock:0,badge
 const money=n=>Number(n||0).toLocaleString('vi-VN')+'₫';
 const apiBaseUrl=import.meta.env.VITE_API_BASE_URL||'http://localhost:8000/api';
 
-export default function AdminApp(props){return <ConfigProvider theme={{token:{colorPrimary:'#1768f2',borderRadius:6,fontFamily:"Roboto, Arial, sans-serif",colorBgLayout:'#f4f6f9'},components:{Layout:{headerBg:'#fff',siderBg:'#0b1525'},Table:{headerBg:'#fafbfc',headerColor:'#768196',rowHoverBg:'#f6f9ff'}}}}><AntApp><Admin seed={props.seed}/></AntApp></ConfigProvider>}
+export default function AdminApp(props){return <ConfigProvider locale={viVN} theme={{token:{colorPrimary:'#1768f2',borderRadius:6,fontFamily:"Roboto, Arial, sans-serif",colorBgLayout:'#f4f6f9'},components:{Layout:{headerBg:'#fff',siderBg:'#0b1525'},Table:{headerBg:'#fafbfc',headerColor:'#768196',rowHoverBg:'#f6f9ff'}}}}><AntApp><Admin seed={props.seed}/></AntApp></ConfigProvider>}
 
 function Admin({seed}){
  const[collapsed,setCollapsed]=useState(false),[formOpen,setFormOpen]=useState(false),[editing,setEditing]=useState(null),[query,setQuery]=useState(''),[category,setCategory]=useState('all');

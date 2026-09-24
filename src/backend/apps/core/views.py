@@ -3,14 +3,34 @@ import re
 
 from django.contrib.auth.models import User
 from django.contrib.auth.password_validation import validate_password
-from django.contrib.auth import login
+from django.contrib.auth import authenticate, login as auth_login, logout as auth_logout
+from django.core.cache import cache
 from django.core.exceptions import ValidationError
 from django.db import transaction
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_GET, require_POST
 
-from .models import Category, Customer, Order, OrderItem, Product, ProductAttribute
+from .models import Address, Category, Customer, Order, OrderItem, Product, ProductAttribute
+
+LOGIN_RATE_LIMIT_ATTEMPTS = 5
+LOGIN_RATE_LIMIT_WINDOW_SECONDS = 15 * 60
+
+
+def _client_ip(request):
+    forwarded = request.META.get('HTTP_X_FORWARDED_FOR')
+    return forwarded.split(',')[0].strip() if forwarded else request.META.get('REMOTE_ADDR', 'unknown')
+
+
+def _serialize_account(user):
+    customer = Customer.objects.filter(user=user).first()
+    return {
+        'id': user.id,
+        'full_name': customer.full_name if customer else (user.get_full_name() or user.username),
+        'email': user.email,
+        'phone': customer.phone if customer else '',
+        'avatar_url': customer.avatar_url if customer else '',
+    }
 
 
 def health(request):
@@ -36,7 +56,7 @@ def customers(request):
 def _payload(request):
     try:
         return json.loads(request.body)
-    except (TypeError, json.JSONDecodeError):
+    except (TypeError, ValueError):
         return None
 
 
@@ -213,8 +233,215 @@ def register(request):
     with transaction.atomic():
         user = User.objects.create_user(username=email, email=email, password=password,
                                         first_name=first_name, last_name=' '.join(remaining_name))
-        customer = Customer.objects.create(user=user, full_name=full_name, phone=phone)
-    login(request, user)
+        Customer.objects.create(user=user, full_name=full_name, phone=phone)
+    auth_login(request, user)
     return JsonResponse({'message': 'Đăng ký tài khoản thành công.',
-                         'user': {'id': user.id, 'full_name': customer.full_name,
-                                  'email': user.email, 'phone': customer.phone}}, status=201)
+                         'user': _serialize_account(user)}, status=201)
+
+
+@csrf_exempt
+@require_POST
+def login(request):
+    """FR-AUTH-02: authenticate by password with a generic error and rate limiting."""
+    payload = _payload(request)
+    if not isinstance(payload, dict):
+        return JsonResponse({'message': 'Dữ liệu gửi lên không hợp lệ.'}, status=400)
+
+    email = str(payload.get('email', '')).strip().lower()
+    password = str(payload.get('password', ''))
+    generic_error = {'message': 'Email hoặc mật khẩu không đúng.'}
+
+    rate_key = f'login-attempts:{_client_ip(request)}:{email}'
+    if cache.get(rate_key, 0) >= LOGIN_RATE_LIMIT_ATTEMPTS:
+        return JsonResponse({'message': 'Bạn đã nhập sai quá nhiều lần. Vui lòng thử lại sau ít phút.'}, status=429)
+
+    if not email or not password:
+        return JsonResponse(generic_error, status=400)
+
+    user = authenticate(request, username=email, password=password)
+    if user is None or not user.is_active:
+        cache.set(rate_key, cache.get(rate_key, 0) + 1, LOGIN_RATE_LIMIT_WINDOW_SECONDS)
+        return JsonResponse(generic_error, status=400)
+
+    cache.delete(rate_key)
+    auth_login(request, user)
+    return JsonResponse({'message': 'Đăng nhập thành công.', 'user': _serialize_account(user)})
+
+
+@csrf_exempt
+@require_POST
+def logout(request):
+    """FR-AUTH-02: invalidate the current session."""
+    auth_logout(request)
+    return JsonResponse({'message': 'Đã đăng xuất.'})
+
+
+def _serialize_address(address):
+    return {
+        'id': address.id,
+        'fullName': address.full_name,
+        'phone': address.phone,
+        'provinceCode': address.province_code,
+        'provinceName': address.province_name,
+        'wardCode': address.ward_code,
+        'wardName': address.ward_name,
+        'detail': address.detail,
+        'isDefault': address.is_default,
+    }
+
+
+def _owned_customer(request):
+    if not request.user.is_authenticated:
+        return None
+    return Customer.objects.filter(user=request.user).first()
+
+
+@csrf_exempt
+def profile(request):
+    """FR-ACC-01: view and edit the account's basic profile information."""
+    customer = _owned_customer(request)
+    if customer is None:
+        return JsonResponse({'message': 'Vui lòng đăng nhập để xem thông tin tài khoản.'}, status=401)
+    user = customer.user
+
+    if request.method == 'GET':
+        return JsonResponse({'user': _serialize_account(user)})
+    if request.method != 'PATCH':
+        return JsonResponse({'message': 'Method not allowed.'}, status=405)
+
+    data = _payload(request)
+    if not isinstance(data, dict):
+        return JsonResponse({'message': 'Dữ liệu gửi lên không hợp lệ.'}, status=400)
+
+    full_name = str(data.get('full_name', customer.full_name)).strip()
+    email = str(data.get('email', user.email)).strip().lower()
+    phone = str(data.get('phone', customer.phone)).strip()
+    avatar_url = str(data.get('avatar_url', customer.avatar_url)).strip()
+
+    errors = {}
+    if not full_name:
+        errors['full_name'] = 'Vui lòng nhập họ và tên.'
+    if not email or '@' not in email:
+        errors['email'] = 'Vui lòng nhập email hợp lệ.'
+    elif User.objects.exclude(pk=user.pk).filter(email__iexact=email).exists():
+        errors['email'] = 'Email này đã được sử dụng.'
+    if not re.fullmatch(r'(?:0|\+84)\d{9}', phone):
+        errors['phone'] = 'Vui lòng nhập số điện thoại Việt Nam hợp lệ.'
+    elif Customer.objects.exclude(pk=customer.pk).filter(phone=phone).exists():
+        errors['phone'] = 'Số điện thoại này đã được sử dụng.'
+    if errors:
+        return JsonResponse({'message': 'Thông tin chưa hợp lệ.', 'errors': errors}, status=400)
+
+    identity_changed = email != user.email.lower() or phone != customer.phone
+    if identity_changed:
+        current_password = str(data.get('current_password', ''))
+        if not current_password or not user.check_password(current_password):
+            return JsonResponse({'message': 'Mật khẩu hiện tại không đúng. Vui lòng xác nhận lại để đổi email/số điện thoại.'}, status=400)
+
+    with transaction.atomic():
+        user.email = email
+        user.username = email
+        first_name, *remaining_name = full_name.split()
+        user.first_name = first_name
+        user.last_name = ' '.join(remaining_name)
+        user.save()
+        customer.full_name = full_name
+        customer.phone = phone
+        customer.avatar_url = avatar_url
+        customer.save()
+
+    return JsonResponse({'message': 'Đã cập nhật thông tin tài khoản.', 'user': _serialize_account(user)})
+
+
+def _validate_address_fields(full_name, phone, province_code, ward_code, detail):
+    return bool(full_name) and bool(re.fullmatch(r'0\d{9}', phone)) and bool(province_code) and bool(ward_code) and bool(detail)
+
+
+@csrf_exempt
+def addresses(request):
+    """FR-ADDR-01: address book scoped to the authenticated account only."""
+    customer = _owned_customer(request)
+    if customer is None:
+        return JsonResponse({'message': 'Vui lòng đăng nhập để quản lý sổ địa chỉ.'}, status=401)
+
+    if request.method == 'GET':
+        return JsonResponse({'results': [_serialize_address(a) for a in customer.addresses.all()]})
+    if request.method != 'POST':
+        return JsonResponse({'message': 'Method not allowed.'}, status=405)
+
+    data = _payload(request)
+    if not isinstance(data, dict):
+        return JsonResponse({'message': 'Dữ liệu địa chỉ không hợp lệ.'}, status=400)
+
+    full_name = str(data.get('fullName', '')).strip()
+    phone = str(data.get('phone', '')).strip()
+    province_code = str(data.get('provinceCode', '')).strip()
+    province_name = str(data.get('provinceName', '')).strip()
+    ward_code = str(data.get('wardCode', '')).strip()
+    ward_name = str(data.get('wardName', '')).strip()
+    detail = str(data.get('detail', '')).strip()
+    if not _validate_address_fields(full_name, phone, province_code, ward_code, detail):
+        return JsonResponse({'message': 'Vui lòng nhập đầy đủ thông tin và số điện thoại hợp lệ.'}, status=400)
+
+    make_default = bool(data.get('isDefault')) or not customer.addresses.exists()
+    with transaction.atomic():
+        if make_default:
+            customer.addresses.update(is_default=False)
+        address = customer.addresses.create(
+            full_name=full_name, phone=phone, province_code=province_code, province_name=province_name,
+            ward_code=ward_code, ward_name=ward_name, detail=detail, is_default=make_default,
+        )
+    return JsonResponse({'result': _serialize_address(address)}, status=201)
+
+
+@csrf_exempt
+def address_detail(request, address_id):
+    """FR-ADDR-01: only the owning account may edit or delete its own address."""
+    customer = _owned_customer(request)
+    if customer is None:
+        return JsonResponse({'message': 'Vui lòng đăng nhập để quản lý sổ địa chỉ.'}, status=401)
+    address = customer.addresses.filter(pk=address_id).first()
+    if address is None:
+        return JsonResponse({'message': 'Không tìm thấy địa chỉ.'}, status=404)
+
+    if request.method == 'PATCH':
+        data = _payload(request)
+        if not isinstance(data, dict):
+            return JsonResponse({'message': 'Dữ liệu địa chỉ không hợp lệ.'}, status=400)
+        field_map = (
+            ('full_name', 'fullName'), ('phone', 'phone'), ('province_code', 'provinceCode'),
+            ('province_name', 'provinceName'), ('ward_code', 'wardCode'), ('ward_name', 'wardName'),
+            ('detail', 'detail'),
+        )
+        for model_field, payload_key in field_map:
+            if payload_key in data:
+                setattr(address, model_field, str(data[payload_key]).strip())
+        if not _validate_address_fields(address.full_name, address.phone, address.province_code, address.ward_code, address.detail):
+            return JsonResponse({'message': 'Vui lòng nhập đầy đủ thông tin và số điện thoại hợp lệ.'}, status=400)
+
+        make_default = bool(data.get('isDefault', address.is_default))
+        with transaction.atomic():
+            if make_default:
+                customer.addresses.exclude(pk=address.pk).update(is_default=False)
+            address.is_default = make_default
+            address.save()
+            if not customer.addresses.filter(is_default=True).exists():
+                fallback = customer.addresses.order_by('created_at').first()
+                if fallback:
+                    fallback.is_default = True
+                    fallback.save(update_fields=['is_default'])
+        return JsonResponse({'result': _serialize_address(customer.addresses.get(pk=address.pk))})
+
+    if request.method == 'DELETE':
+        if customer.addresses.count() <= 1:
+            return JsonResponse({'message': 'Cần giữ lại ít nhất một địa chỉ để sử dụng khi thanh toán.'}, status=400)
+        was_default = address.is_default
+        address.delete()
+        if was_default:
+            fallback = customer.addresses.order_by('-created_at').first()
+            if fallback:
+                fallback.is_default = True
+                fallback.save(update_fields=['is_default'])
+        return JsonResponse({'message': 'Đã xóa địa chỉ.'})
+
+    return JsonResponse({'message': 'Method not allowed.'}, status=405)
