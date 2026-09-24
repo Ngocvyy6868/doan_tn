@@ -1,5 +1,5 @@
 import React,{useEffect,useState} from 'react';
-import {checkCompatibility, estimatePsuRequirement} from './compatibility.mjs';
+import {checkCompatibility, estimatePsuRequirement} from '../lib/compatibility.mjs';
 const categories=['CPU','Mainboard','RAM','VGA','SSD','Nguồn','Case'];
 const money=value=>Number(value).toLocaleString('vi-VN')+'₫';
 export default function PcBuilder({close,add,products}){

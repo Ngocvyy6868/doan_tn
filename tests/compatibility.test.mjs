@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {checkCompatibility} from '../src/compatibility.mjs';
+import {checkCompatibility} from '../src/lib/compatibility.mjs';
 const rule={name:'Socket',source_category:'CPU',source_attribute:'Socket',target_category:'Mainboard',target_attribute:'Socket',operator:'equal',active:true};
 const products=(left,right)=>[{cat:'CPU',name:'CPU',attributes:[{name:'Socket',value:left}]},{cat:'Mainboard',name:'Board',attributes:[{name:'Socket',value:right}]}];
 test('matching and mismatching sockets',()=>{

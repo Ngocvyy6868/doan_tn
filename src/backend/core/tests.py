@@ -171,12 +171,13 @@ class OverviewTests(TestCase):
 class CompatibilityRuleTests(TestCase):
     def test_crud_and_validation(self):
         url = reverse('compatibility-rules')
+        initial_rules = self.client.get(url).json()['results']
         values = {'name': 'Socket', 'source_category': 'CPU', 'source_attribute': 'Socket',
                   'target_category': 'Mainboard', 'target_attribute': 'Socket', 'operator': 'equal', 'active': True}
         response = self.client.post(url, values, content_type='application/json')
         self.assertEqual(response.status_code, 201)
         detail = reverse('compatibility-rule-detail', args=[response.json()['rule']['id']])
-        self.assertEqual(len(self.client.get(url).json()['results']), 1)
+        self.assertEqual(len(self.client.get(url).json()['results']), len(initial_rules) + 1)
         response = self.client.patch(detail, {'active': False}, content_type='application/json')
         self.assertFalse(response.json()['rule']['active'])
         response = self.client.patch(detail, {'operator': 'invalid'}, content_type='application/json')
@@ -184,7 +185,7 @@ class CompatibilityRuleTests(TestCase):
         response = self.client.post(url, {**values, 'target_category': 'CPU'}, content_type='application/json')
         self.assertEqual(response.status_code, 400)
         self.assertEqual(self.client.delete(detail).status_code, 200)
-        self.assertEqual(self.client.get(url).json()['results'], [])
+        self.assertEqual(self.client.get(url).json()['results'], initial_rules)
 
 
 class AdminManagementTests(TestCase):

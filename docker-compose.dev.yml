@@ -23,6 +23,8 @@ services:
       - ./src/backend:/app
     environment:
       DJANGO_DEBUG: "true"
+      GEMINI_API_KEY: ${GEMINI_API_KEY:-}
+      GEMINI_MODEL: ${GEMINI_MODEL:-gemini-2.5-flash}
       DJANGO_SECRET_KEY: development-only-change-me
       POSTGRES_DB: techzone
       POSTGRES_USER: techzone

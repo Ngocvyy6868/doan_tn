@@ -1,6 +1,6 @@
 # TechZone — Website thương mại điện tử linh kiện máy tính
 
-Frontend React/Vite được xây dựng theo đặc tả `Resources/Website_Thuong_Mai_Dien_Tu.md`.
+Frontend React/Vite trong `src/`, backend Django trong `src/backend/`. Xem [cấu trúc dự án](docs/architecture.md) và [đặc tả](docs/Website_Thuong_Mai_Dien_Tu.md).
 
 ## Chạy dự án
 
@@ -37,5 +37,5 @@ docker compose down
 - Tìm kiếm, lọc theo danh mục, yêu thích sản phẩm
 - Giỏ hàng, thay đổi số lượng và tính tổng tiền
 - PC Builder với kiểm tra tương thích mô phỏng
-- Chatbot AI dạng cửa sổ hội thoại
+- Chatbot Gemini + Django, tư vấn từ database và kiểm tra quy tắc tương thích ([cấu hình](docs/Chatbot.md))
 - Giao diện tối ưu cho desktop, tablet và điện thoại

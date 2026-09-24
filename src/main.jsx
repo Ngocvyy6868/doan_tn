@@ -1,5 +1,6 @@
-import HomePromotions from './HomePromotions.jsx';
-import Builder from './PcBuilder.jsx';
+import Chatbot from './components/Chatbot.jsx';
+import HomePromotions from './components/HomePromotions.jsx';
+import Builder from './components/PcBuilder.jsx';
 import React,{useEffect,useMemo,useState} from 'react';
 import{createRoot}from'react-dom/client';
 import{Search,ShoppingCart,Heart,User,ChevronRight,ChevronDown,Sparkles,ShieldCheck,Truck,Headphones,Plus,Minus,X,Check,Star,SlidersHorizontal,ArrowRight,MessageCircle,Send,Menu,Microchip,Cpu,MemoryStick,HardDrive,Box,Zap,MapPin,Pencil,Trash2}from'lucide-react';
@@ -7,10 +8,10 @@ import { ConfigProvider, Steps } from 'antd';
 import 'antd/dist/reset.css';
 import './style.css';
 import viVN from 'antd/locale/vi_VN';
-import RegisterPage from './views/RegisterPage.jsx';
-import LoginPage from './views/LoginPage.jsx';
+import RegisterPage from './pages/RegisterPage.jsx';
+import LoginPage from './pages/LoginPage.jsx';
 import locations from './assets/vn-locations.json';
-const AdminApp=React.lazy(()=>import('./admin.jsx'));
+const AdminApp=React.lazy(()=>import('./admin/admin.jsx'));
 const apiBaseUrl=import.meta.env.VITE_API_BASE_URL||'http://localhost:8000/api';
 
 const cats=[['CPU',Cpu],['VGA',Microchip],['Mainboard',MemoryStick],['RAM',MemoryStick],['SSD',HardDrive],['Nguồn',Zap],['Case',Box]];
@@ -34,7 +35,7 @@ function App(){
  const[catalog]=useState(()=>{try{return JSON.parse(localStorage.getItem('techzone_products'))||products}catch{return products}});
  const[account]=useState(()=>{try{return JSON.parse(localStorage.getItem('techzone_user'))}catch{return null}});
  const[accountMenu,setAccountMenu]=useState(false);
- const[query,setQuery]=useState(''),[active,setActive]=useState('Tất cả'),[cart,setCart]=useState(()=>readStore('techzone_cart',[])),[wish,setWish]=useState([]),[drawer,setDrawer]=useState(false),[chat,setChat]=useState(false),[builder,setBuilder]=useState(false),[msg,setMsg]=useState('');
+ const[query,setQuery]=useState(''),[active,setActive]=useState('Tất cả'),[cart,setCart]=useState(()=>readStore('techzone_cart',[])),[wish,setWish]=useState([]),[drawer,setDrawer]=useState(false),[builder,setBuilder]=useState(false);
  useEffect(()=>writeStore('techzone_cart',cart),[cart]);
  const filtered=useMemo(()=>catalog.filter(p=>p.active!==false&&(active==='Tất cả'||p.cat===active)&&p.name.toLowerCase().includes(query.toLowerCase())),[query,active,catalog]);
  const add=p=>{setCart(c=>{const f=c.find(x=>x.id===p.id),limit=Number.isFinite(p.stock)?p.stock:99;return f?c.map(x=>x.id===p.id?{...x,q:Math.min(x.q+1,limit)}:x):[...c,{...p,q:1}]});setDrawer(true)};
@@ -59,8 +60,6 @@ function App(){
    <section className="build-cta"><div><span>PC BUILDER THÔNG MINH</span><h2>Cấu hình chuẩn. Hiệu năng đỉnh.</h2><p>Chọn linh kiện theo nhu cầu và ngân sách. Hệ thống tự động cảnh báo xung đột phần cứng.</p><button className="primary" onClick={()=>setBuilder(true)}>BẮT ĐẦU BUILD PC <ArrowRight/></button></div><div className="build-stat"><div><Check/><b>100%</b><span>Kiểm tra tương thích</span></div><div><Sparkles/><b>AI</b><span>Tư vấn theo nhu cầu</span></div></div></section>
   </main>
   <footer><a className="logo"><span>TZ</span><b>TECHZONE<small>BUILD YOUR POWER</small></b></a><p>Hệ sinh thái linh kiện và giải pháp PC toàn diện.</p><div>© 2026 TechZone. All rights reserved.</div></footer>
-  <button className="chat-fab" onClick={()=>setChat(!chat)}><MessageCircle/><span>Hỏi AI</span></button>
-  {chat&&<div className="chat"><div className="chat-head"><span><Sparkles/> TechZone AI <small>Trực tuyến</small></span><button onClick={()=>setChat(false)}><X/></button></div><div className="chat-body"><div className="bot">Chào bạn! Mình có thể tư vấn cấu hình, kiểm tra tương thích và tìm linh kiện theo ngân sách. Bạn đang cần build PC để làm gì?</div><div className="suggest"><button>Gaming 2K</button><button>Đồ họa 3D</button><button>Ngân sách 25 triệu</button></div></div><div className="chat-input"><input value={msg} onChange={e=>setMsg(e.target.value)} placeholder="Nhập câu hỏi..."/><button onClick={()=>setMsg('')}><Send/></button></div></div>}
   {drawer&&<><div className="shade" onClick={()=>setDrawer(false)}/><aside className="drawer"><div className="drawer-head"><h2>Giỏ hàng <span>({count})</span></h2><button onClick={()=>setDrawer(false)}><X/></button></div><div className="cart-list">{cart.length?cart.map(x=><div className="cart-item" key={x.id}><img src={x.img}/><div><b>{x.name}</b><strong>{money(x.price)}</strong><div className="qty"><button onClick={()=>quantity(x.id,-1)}><Minus/></button><span>{x.q}</span><button onClick={()=>quantity(x.id,1)}><Plus/></button></div></div></div>):<div className="cart-empty"><ShoppingCart/><h3>Giỏ hàng đang trống</h3><p>Khám phá linh kiện phù hợp cho bộ PC của bạn.</p></div>}</div>{cart.length>0&&<div className="checkout"><div><span>Tạm tính</span><b>{money(total)}</b></div><button onClick={()=>location.href='/checkout'}>TIẾN HÀNH THANH TOÁN <ArrowRight/></button><small><ShieldCheck/> Thanh toán an toàn & bảo mật</small></div>}</aside></>}
   {builder&&<Builder close={()=>setBuilder(false)} add={add} products={catalog}/>} 
  </>
@@ -237,4 +236,4 @@ function AddressBookPage(){
 }
 function ConsumerHeader(){const count=readStore('techzone_cart',[]).reduce((s,x)=>s+x.q,0);return <><div className="topbar"><span>TechZone • Giá tốt mỗi ngày</span><div>Hotline: <b>1900 6868</b></div></div><header><a className="logo" href="/"><span>TZ</span><b>TECHZONE<small>BUILD YOUR POWER</small></b></a><div className="search"><Search size={20}/><input placeholder="Bạn cần tìm linh kiện gì?"/><button onClick={()=>location.href='/'}>Tìm kiếm</button></div><div className="actions"><a href="/orders" className="back-store">Đơn hàng</a><a href="/checkout" className="header-cart"><ShoppingCart/><span>Giỏ hàng<small>{count} sản phẩm</small></span>{count>0&&<em>{count}</em>}</a></div></header></>}
 const path=location.pathname;
-createRoot(document.getElementById('root')).render(<ConfigProvider locale={viVN} theme={{token:{fontFamily:"Arial, sans-serif"}}}>{path.startsWith('/admin')?<React.Suspense fallback={<div style={{padding:40,fontFamily:'sans-serif'}}>Đang tải trang quản trị...</div>}><AdminApp seed={products}/></React.Suspense>:path==='/register'?<RegisterPage/>:path==='/login'?<LoginPage/>:path==='/checkout'?<CheckoutPage/>:path==='/orders'?<OrdersPage/>:path==='/addresses'?<AddressBookPage/>:path==='/profile'?<ProfilePage/>:path.startsWith('/orders/')?<OrderDetailPage/>:path.startsWith('/collections/')?<CollectionPage/>:path.startsWith('/product/')?<ProductDetailsPage/>:<App/>}</ConfigProvider>);
+createRoot(document.getElementById('root')).render(<ConfigProvider locale={viVN} theme={{token:{fontFamily:"Arial, sans-serif"}}}>{path.startsWith('/admin')?<React.Suspense fallback={<div style={{padding:40,fontFamily:'sans-serif'}}>Đang tải trang quản trị...</div>}><AdminApp seed={products}/></React.Suspense>:path==='/register'?<RegisterPage/>:path==='/login'?<LoginPage/>:path==='/checkout'?<CheckoutPage/>:path==='/orders'?<OrdersPage/>:path==='/addresses'?<AddressBookPage/>:path==='/profile'?<ProfilePage/>:path.startsWith('/orders/')?<OrderDetailPage/>:path.startsWith('/collections/')?<CollectionPage/>:path.startsWith('/product/')?<ProductDetailsPage/>:<App/>}{!path.startsWith('/admin') && !['/login','/register'].includes(path) && <Chatbot/>}</ConfigProvider>);
