@@ -19,3 +19,16 @@ export function checkCompatibility(products,rules){
   return [{...result,status:valid?'pass':'fail',message:`${rule.source_attribute}: ${left.value} ${left.unit||''} / ${rule.target_attribute}: ${right.value} ${right.unit||''}`}];
  });
 }
+
+const POWER_ATTRIBUTE='Công suất',POWER_MARGIN=1.2;
+const wattageOf=product=>{const value=Number(attribute(product,POWER_ATTRIBUTE)?.value);return Number.isFinite(value)?value:0};
+
+export function estimatePsuRequirement(products){
+ const psu=products.find(p=>p.cat==='Nguồn'),others=products.filter(p=>p.cat!=='Nguồn');
+ const sum=others.reduce((total,p)=>total+wattageOf(p),0),required=Math.ceil(sum*POWER_MARGIN);
+ if(!sum)return{sum,required:0,psuWattage:psu?wattageOf(psu):null,status:'empty'};
+ if(!psu)return{sum,required,psuWattage:null,status:'suggest'};
+ const psuWattage=wattageOf(psu);
+ if(!psuWattage)return{sum,required,psuWattage:null,status:'unknown'};
+ return{sum,required,psuWattage,status:psuWattage>=required?'pass':'fail'};
+}
