@@ -4,6 +4,7 @@ from .compatibility_views import compatibility_rules
 from .report_views import overview
 from .flash_views import flash_sales
 from .chat_views import chat
+from .catalog_views import edit_category, edit_product_attribute, product_image, upload_product_image
 
 from .views import (
     address_detail, addresses, admin_orders, categories, create_order, customers, health, login, logout,
@@ -11,6 +12,10 @@ from .views import (
 )
 
 urlpatterns = [
+    path('admin/categories/rename/', edit_category, name='edit-category'),
+    path('admin/product-images/', upload_product_image, name='upload-product-image'),
+    path('product-images/<int:image_id>/', product_image, name='product-image'),
+    path('admin/product-attributes/<int:attribute_id>/', edit_product_attribute, name='edit-product-attribute'),
     path('chat/', chat, name='chat'),
     path('admin/flash-sales/', flash_sales, name='admin-flash-sales'),
     path('admin/flash-sales/<int:sale_id>/', flash_sales, name='admin-flash-sale-detail'),

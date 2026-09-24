@@ -25,10 +25,42 @@ const wattageOf=product=>{const value=Number(attribute(product,POWER_ATTRIBUTE)?
 
 export function estimatePsuRequirement(products){
  const psu=products.find(p=>p.cat==='Nguồn'),others=products.filter(p=>p.cat!=='Nguồn');
- const sum=others.reduce((total,p)=>total+wattageOf(p),0),required=Math.ceil(sum*POWER_MARGIN);
+ const sum=others.reduce((total,p)=>total+wattageOf(p)*(p.quantity??1),0),required=Math.ceil(sum*POWER_MARGIN);
  if(!sum)return{sum,required:0,psuWattage:psu?wattageOf(psu):null,status:'empty'};
  if(!psu)return{sum,required,psuWattage:null,status:'suggest'};
  const psuWattage=wattageOf(psu);
  if(!psuWattage)return{sum,required,psuWattage:null,status:'unknown'};
  return{sum,required,psuWattage,status:psuWattage>=required?'pass':'fail'};
+}
+
+export function checkRamSlots(products){
+ const board=products.find(p=>p.cat==='Mainboard'),ram=products.filter(p=>p.cat==='RAM');
+ if(!board||!ram.length)return [];
+ const integer=value=>/^\d+$/.test(String(value??'').trim())&&Number.isSafeInteger(Number(value))&&Number(value)>0?Number(value):null;
+ const slots=integer(attribute(board,'Số khe RAM')?.value);
+ const counts=ram.map(p=>integer(p.quantity??1));
+ const result={rule:'Số khe RAM',pair:`${board.name} / RAM`};
+ if(!slots||counts.includes(null))return [{...result,status:'unknown',message:'Cần nhập Số khe RAM của mainboard và số lượng RAM bằng số nguyên dương để kiểm tra.'}];
+ const total=counts.reduce((sum,count)=>sum+count,0);
+ return [{...result,status:total>slots?'fail':'pass',message:total>slots?`Đã chọn ${total} thanh RAM nhưng mainboard chỉ hỗ trợ ${slots} khe RAM. Hãy giảm số lượng RAM hoặc đổi mainboard.`:`Đã sử dụng ${total}/${slots} khe RAM.`}];
+}
+
+export function productWattage(product){
+ const raw=attribute(product,'Công suất')?.value;
+ const value=Number(raw);
+ return normalize(raw)!==''&&Number.isFinite(value)&&value>=0?value:null;
+}
+
+export function isCompatibleCandidate(candidate,selected,rules){
+ const previous=selected.find(product=>product.cat===candidate.cat);
+ const next=[...selected.filter(product=>product.cat!==candidate.cat),{...candidate,quantity:previous?.quantity??1}];
+ const related=rules.filter(rule=>rule.source_category===candidate.cat||rule.target_category===candidate.cat);
+ const checks=checkCompatibility(next,related);
+ if(['RAM','Mainboard'].includes(candidate.cat))checks.push(...checkRamSlots(next));
+ if(!checks.every(check=>check.status==='pass'))return false;
+ if(next.some(product=>product.cat==='Nguồn')&&next.some(product=>product.cat!=='Nguồn')){
+  if(next.some(product=>productWattage(product)===null))return false;
+  if(estimatePsuRequirement(next).status!=='pass')return false;
+ }
+ return true;
 }

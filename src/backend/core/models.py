@@ -95,6 +95,12 @@ class CompatibilityRule(models.Model):
     active = models.BooleanField(default=True)
 
 
+class ProductImage(models.Model):
+    content = models.BinaryField()
+    content_type = models.CharField(max_length=32)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+
 class Product(models.Model):
     external_id = models.CharField(max_length=64, unique=True)
     category = models.ForeignKey(Category, null=True, blank=True, on_delete=models.SET_NULL, related_name='products')
