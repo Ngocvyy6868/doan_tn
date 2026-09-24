@@ -76,6 +76,15 @@ class ProductAttribute(models.Model):
         return self.name
 
 
+class FlashSale(models.Model):
+    product_external_id = models.CharField(max_length=64)
+    quantity = models.PositiveIntegerField()
+    sold = models.PositiveIntegerField(default=0)
+    starts_at = models.DateTimeField()
+    ends_at = models.DateTimeField()
+    active = models.BooleanField(default=True)
+
+
 class CompatibilityRule(models.Model):
     name = models.CharField(max_length=150)
     source_category = models.CharField(max_length=100)

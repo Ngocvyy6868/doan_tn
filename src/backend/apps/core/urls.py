@@ -2,6 +2,7 @@ from django.urls import path
 from .management_views import employees, documents
 from .compatibility_views import compatibility_rules
 from .report_views import overview
+from .flash_views import flash_sales
 
 from .views import (
     address_detail, addresses, admin_orders, categories, create_order, customers, health, login, logout,
@@ -9,6 +10,9 @@ from .views import (
 )
 
 urlpatterns = [
+    path('admin/flash-sales/', flash_sales, name='admin-flash-sales'),
+    path('admin/flash-sales/<int:sale_id>/', flash_sales, name='admin-flash-sale-detail'),
+    path('flash-sales/', flash_sales, {'public': True}, name='flash-sales'),
     path('admin/overview/', overview, name='admin-overview'),
     path('compatibility-rules/', compatibility_rules, name='compatibility-rules'),
     path('compatibility-rules/<int:rule_id>/', compatibility_rules, name='compatibility-rule-detail'),

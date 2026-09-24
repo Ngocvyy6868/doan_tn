@@ -7,11 +7,12 @@ from django.contrib.auth import authenticate, login as auth_login, logout as aut
 from django.core.cache import cache
 from django.core.exceptions import ValidationError
 from django.db import transaction
+from django.utils import timezone
 from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_GET, require_POST
 
-from .models import Employee, Address, Category, Customer, Order, OrderItem, Product, ProductAttribute
+from .models import FlashSale, Employee, Address, Category, Customer, Order, OrderItem, Product, ProductAttribute
 
 LOGIN_RATE_LIMIT_ATTEMPTS = 5
 LOGIN_RATE_LIMIT_WINDOW_SECONDS = 15 * 60
@@ -115,6 +116,12 @@ def products(request):
     data = _payload(request)
     if not isinstance(data, list):
         return JsonResponse({'message': 'Sản phẩm không hợp lệ.'}, status=400)
+    for item in data:
+        if not isinstance(item, dict) or not item.get('id') or not str(item.get('name', '')).strip():
+            return JsonResponse({'message': 'Sản phẩm không hợp lệ.'}, status=400)
+        cost = item.get('cost')
+        if cost is not None and (isinstance(cost, bool) or not isinstance(cost, int) or cost < 0):
+            return JsonResponse({'message': 'Giá vốn phải là số nguyên không âm hoặc để trống.'}, status=400)
     with transaction.atomic():
         Product.objects.all().delete()
         for item in data:
@@ -157,12 +164,27 @@ def create_order(request):
         return JsonResponse({'message': 'Mã đơn hàng không hợp lệ hoặc đã tồn tại.'}, status=400)
     customer = Customer.objects.filter(user=request.user).first() if request.user.is_authenticated else None
     with transaction.atomic():
+        amounts = {}
+        for item in items:
+            if not isinstance(item, dict) or not isinstance(item.get('quantity'), int) or isinstance(item.get('quantity'), bool) or item['quantity'] <= 0:
+                return JsonResponse({'message': 'Invalid item quantity.'}, status=400)
+            key = str(item.get('productId', ''))
+            amounts[key] = amounts.get(key, 0) + item['quantity']
+        now = timezone.now()
+        sales = list(FlashSale.objects.select_for_update().filter(product_external_id__in=amounts, active=True, starts_at__lte=now, ends_at__gt=now).order_by('id'))
+        for sale in sales:
+            if amounts[sale.product_external_id] > sale.quantity - sale.sold:
+                return JsonResponse({'message': 'Flash sale quantity exceeded.'}, status=400)
+        for sale in sales:
+            sale.sold += amounts[sale.product_external_id]
+            sale.save(update_fields=['sold'])
         order = Order.objects.create(
             code=code, customer=customer, status=data.get('status', Order.Status.CONFIRMED),
             payment_status=data.get('payment_status', 'UNPAID'), payment_method=data.get('payment_method', 'COD'),
             shipping_method=data.get('shipping_method', 'standard'), recipient_name=recipient['name'].strip(),
             recipient_phone=recipient['phone'].strip(), province=recipient['province'].strip(), address=recipient['address'].strip(),
-            subtotal=int(totals.get('subtotal', 0)), shipping_fee=int(totals.get('shipping', 0)), grand_total=int(totals.get('grand_total', 0)),
+            subtotal=int(totals.get('subtotal', 0)), shipping_fee=int(totals.get('shipping', 0)),
+            grand_total=int(totals.get('grand_total', totals.get('grandTotal', 0))),
         )
         OrderItem.objects.bulk_create([OrderItem(order=order, product_external_id=str(item.get('productId', '')),
             sku=str(item.get('sku', '')), name=str(item.get('name', '')), image=str(item.get('img', '')),

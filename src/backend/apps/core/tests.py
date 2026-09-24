@@ -8,6 +8,21 @@ from io import BytesIO
 
 
 class OrderStatusSyncTests(TestCase):
+    def test_checkout_total_and_shipping_details(self):
+        for field in ['grandTotal', 'grand_total']:
+            response = self.client.post(reverse('create-order'), {
+                'code': f'TOTAL-{field}',
+                'address': {'name': 'Recipient', 'phone': '0901234567', 'province': 'City', 'address': '123 Street'},
+                'totals': {'subtotal': 100000, 'shipping': 30000, field: 130000},
+                'shipping_method': 'express',
+                'items': [{'productId': '1', 'name': 'Product', 'price': 100000, 'quantity': 1, 'total': 100000}],
+            }, content_type='application/json')
+            self.assertEqual(response.status_code, 201)
+            order = response.json()['order']
+            self.assertEqual(order['totals']['grand_total'], 130000)
+            self.assertEqual(order['recipient']['address'], '123 Street')
+            self.assertEqual(order['shipping_method'], 'express')
+
     def setUp(self):
         self.order = Order.objects.create(
             code='TZ-STATUS-TEST', recipient_name='Test customer',
@@ -78,6 +93,52 @@ class OrderStatusSyncTests(TestCase):
     def test_invalid_payload(self):
         response = self.client.post(reverse('order-status'), [], content_type='application/json')
         self.assertEqual(response.status_code, 400)
+
+
+class FlashSaleTests(TestCase):
+    def test_schedule_public_listing_and_overlap(self):
+        from .models import Product, FlashSale
+        from django.utils import timezone
+        from datetime import timedelta
+        Product.objects.create(external_id='1', payload={'id': 1, 'name': 'CPU', 'price': 100, 'cost': 50})
+        now = timezone.now()
+        values = {'product_id': '1', 'quantity': 3, 'starts_at': (now-timedelta(hours=1)).isoformat(), 'ends_at': (now+timedelta(hours=1)).isoformat()}
+        response = self.client.post(reverse('admin-flash-sales'), values, content_type='application/json')
+        self.assertEqual(response.status_code, 201)
+        self.assertEqual(self.client.post(reverse('admin-flash-sales'), values, content_type='application/json').status_code, 400)
+        public = self.client.get(reverse('flash-sales')).json()['results']
+        self.assertEqual(len(public), 1)
+        self.assertNotIn('cost', public[0]['product'])
+        sale = FlashSale.objects.get()
+        sale.ends_at = now-timedelta(minutes=1)
+        sale.save()
+        self.assertEqual(self.client.get(reverse('flash-sales')).json()['results'], [])
+
+    def test_sale_quantity_is_consumed_and_cannot_be_exceeded(self):
+        from .models import FlashSale
+        from django.utils import timezone
+        from datetime import timedelta
+        now = timezone.now()
+        sale = FlashSale.objects.create(product_external_id='1', quantity=2, starts_at=now-timedelta(hours=1), ends_at=now+timedelta(hours=1))
+        values = {'code': 'SALE-1', 'address': {'name': 'Buyer', 'phone': '0901234567', 'province': 'City', 'address': 'Street'}, 'items': [{'productId': '1', 'name': 'CPU', 'quantity': 2, 'price': 100, 'total': 200}], 'totals': {'subtotal': 200, 'grandTotal': 200}}
+        self.assertEqual(self.client.post(reverse('create-order'), values, content_type='application/json').status_code, 201)
+        sale.refresh_from_db()
+        self.assertEqual(sale.sold, 2)
+        values['code'] = 'SALE-2'
+        self.assertEqual(self.client.post(reverse('create-order'), values, content_type='application/json').status_code, 400)
+
+
+class ProductCostTests(TestCase):
+    def test_cost_persistence_and_validation(self):
+        url = reverse('admin-products')
+        for cost in [None, 0, 1250000]:
+            response = self.client.put(url, [{'id': 'cost-test', 'name': 'Product', 'cost': cost}], content_type='application/json')
+            self.assertEqual(response.status_code, 200)
+            self.assertEqual(self.client.get(url).json()['results'][0]['cost'], cost)
+        for cost in [-1, 'invalid', True, 1.5]:
+            response = self.client.put(url, [{'id': 'cost-test', 'name': 'Product', 'cost': cost}], content_type='application/json')
+            self.assertEqual(response.status_code, 400)
+            self.assertEqual(self.client.get(url).json()['results'][0]['cost'], 1250000)
 
 
 class OverviewTests(TestCase):
