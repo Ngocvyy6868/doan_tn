@@ -11,7 +11,7 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_GET, require_POST
 
-from .models import Address, Category, Customer, Order, OrderItem, Product, ProductAttribute
+from .models import Employee, Address, Category, Customer, Order, OrderItem, Product, ProductAttribute
 
 LOGIN_RATE_LIMIT_ATTEMPTS = 5
 LOGIN_RATE_LIMIT_WINDOW_SECONDS = 15 * 60
@@ -171,24 +171,55 @@ def create_order(request):
 
 
 @csrf_exempt
+@require_POST
+def order_status(request):
+    data = _payload(request)
+    if not isinstance(data, dict):
+        return JsonResponse({'message': 'Dữ liệu không hợp lệ.'}, status=400)
+    order = Order.objects.filter(code=data.get('code'), recipient_phone=data.get('phone')).first()
+    if not order:
+        return JsonResponse({'message': 'Không tìm thấy đơn hàng.'}, status=404)
+    response = JsonResponse({'code': order.code, 'status': order.status, 'paymentStatus': order.payment_status})
+    response['Cache-Control'] = 'no-store'
+    return response
+
+
+@csrf_exempt
+@transaction.atomic
 def admin_orders(request, order_id=None):
     if request.method == 'GET' and order_id is None:
         records = Order.objects.select_related('handler').prefetch_related('items').order_by('-created_at')
         return JsonResponse({'results': [_serialize_order(order) for order in records]})
     if request.method == 'PATCH' and order_id is not None:
-        data = _payload(request) or {}
-        order = Order.objects.select_related('handler').prefetch_related('items').filter(pk=order_id).first()
+        data = _payload(request)
+        if not isinstance(data, dict):
+            return JsonResponse({'message': 'Dữ liệu không hợp lệ.'}, status=400)
+        order = Order.objects.select_for_update().filter(pk=order_id).first()
         if not order:
             return JsonResponse({'message': 'Không tìm thấy đơn hàng.'}, status=404)
         status = data.get('status')
-        if status in Order.Status.values:
+        if 'status' in data:
+            sequence = [Order.Status.PENDING_PAYMENT, Order.Status.CONFIRMED,
+                        Order.Status.PACKING, Order.Status.DELIVERING,
+                        Order.Status.DELIVERED, Order.Status.CANCELLED]
+            position = sequence.index(order.status) if order.status in sequence else -1
+            next_status = sequence[position + 1] if 0 <= position < len(sequence) - 1 else None
+            if status not in sequence or (status != order.status and status != next_status):
+                return JsonResponse({'message': 'Chỉ được chuyển sang trạng thái kế tiếp theo thứ tự quy định.'}, status=400)
             order.status = status
-        handler_name = str(data.get('handler_name', '')).strip()
-        if handler_name:
-            if request.user.is_authenticated:
-                order.handler = request.user
+        if 'handler_name' in data:
+            return JsonResponse({'message': 'Choose an existing employee.'}, status=400)
+        if 'handler_id' in data:
+            handler_id = data['handler_id']
+            if handler_id is None:
+                order.handler = None
             else:
-                order.handler, _ = User.objects.get_or_create(username=handler_name, defaults={'first_name': handler_name})
+                if not isinstance(handler_id, int) or isinstance(handler_id, bool):
+                    return JsonResponse({'message': 'Invalid employee.'}, status=400)
+                employee = Employee.objects.select_for_update().select_related('user').filter(user_id=handler_id, active=True, user__is_active=True).first()
+                if not employee:
+                    return JsonResponse({'message': 'Employee is unavailable.'}, status=400)
+                order.handler = employee.user
         order.save()
         return JsonResponse({'order': _serialize_order(order)})
     return JsonResponse({'message': 'Method not allowed.'}, status=405)

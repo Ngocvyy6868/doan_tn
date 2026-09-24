@@ -2,6 +2,27 @@ from django.conf import settings
 from django.db import models
 
 
+class Employee(models.Model):
+    class Role(models.TextChoices):
+        WAREHOUSE = 'WAREHOUSE', 'Nhân viên kho'
+        ORDER_PROCESSOR = 'ORDER_PROCESSOR', 'Nhân viên xử lý'
+
+    role = models.CharField(max_length=24, choices=Role.choices, default=Role.ORDER_PROCESSOR)
+    user = models.OneToOneField(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='employee')
+    full_name = models.CharField(max_length=150)
+    phone = models.CharField(max_length=15, unique=True)
+    active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+
+class KnowledgeDocument(models.Model):
+    name = models.CharField(max_length=255)
+    content = models.BinaryField()
+    text = models.TextField()
+    size = models.PositiveIntegerField()
+    created_at = models.DateTimeField(auto_now_add=True)
+
+
 class Customer(models.Model):
     """Customer profile kept separately from Django's authentication user."""
 
@@ -53,6 +74,16 @@ class ProductAttribute(models.Model):
 
     def __str__(self):
         return self.name
+
+
+class CompatibilityRule(models.Model):
+    name = models.CharField(max_length=150)
+    source_category = models.CharField(max_length=100)
+    source_attribute = models.CharField(max_length=100)
+    target_category = models.CharField(max_length=100)
+    target_attribute = models.CharField(max_length=100)
+    operator = models.CharField(max_length=12)
+    active = models.BooleanField(default=True)
 
 
 class Product(models.Model):
