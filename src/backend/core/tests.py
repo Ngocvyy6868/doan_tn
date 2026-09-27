@@ -125,7 +125,37 @@ class FlashSaleTests(TestCase):
         sale.refresh_from_db()
         self.assertEqual(sale.sold, 2)
         values['code'] = 'SALE-2'
-        self.assertEqual(self.client.post(reverse('create-order'), values, content_type='application/json').status_code, 400)
+        response = self.client.post(reverse('create-order'), values, content_type='application/json')
+        self.assertEqual(response.status_code, 400)
+        self.assertEqual(response.json()['code'], 'FLASH_SALE_QUANTITY_EXCEEDED')
+        self.assertEqual(response.json()['productId'], '1')
+        self.assertEqual(response.json()['remaining'], 0)
+        self.assertIn('CPU', response.json()['message'])
+        self.assertFalse(Order.objects.filter(code='SALE-2').exists())
+        sale.refresh_from_db()
+        self.assertEqual(sale.sold, 2)
+
+    def test_order_can_be_retried_after_reducing_flash_sale_quantity(self):
+        from .models import FlashSale
+        from django.utils import timezone
+        from datetime import timedelta
+        now = timezone.now()
+        sale = FlashSale.objects.create(product_external_id='1', quantity=1,
+                                       starts_at=now-timedelta(hours=1), ends_at=now+timedelta(hours=1))
+        values = {'code': 'SALE-RETRY', 'address': {'name': 'Buyer', 'phone': '0901234567', 'province': 'City', 'address': 'Street'},
+                  'items': [{'productId': '1', 'name': 'CPU', 'quantity': 2, 'price': 100, 'total': 200}],
+                  'totals': {'subtotal': 200, 'grandTotal': 200}}
+        response = self.client.post(reverse('create-order'), values, content_type='application/json')
+        self.assertEqual(response.status_code, 400)
+        self.assertEqual(response.json()['remaining'], 1)
+        self.assertFalse(Order.objects.filter(code='SALE-RETRY').exists())
+        sale.refresh_from_db()
+        self.assertEqual(sale.sold, 0)
+        values['items'][0].update(quantity=1, total=100)
+        values['totals'].update(subtotal=100, grandTotal=100)
+        self.assertEqual(self.client.post(reverse('create-order'), values, content_type='application/json').status_code, 201)
+        sale.refresh_from_db()
+        self.assertEqual(sale.sold, 1)
 
 
 class ProductCostTests(TestCase):

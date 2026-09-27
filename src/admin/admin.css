@@ -22,3 +22,17 @@
 .flash-admin-table .ant-table-thead>tr>th:first-child,.flash-admin-table .ant-table-tbody>tr>td:first-child{width:280px;min-width:280px}
 
 .catalog-card .product-old-price{font-size:13px}
+
+.report-pie-layout{display:flex;align-items:center;gap:24px;flex-wrap:wrap;min-height:270px}
+.report-pie{width:220px;max-width:100%;flex:0 1 220px;margin:auto}
+.report-pie path,.report-pie circle{transition:opacity .15s}
+.report-pie path:hover,.report-pie path:focus,.report-pie circle:hover,.report-pie circle:focus{opacity:.8;outline:none;stroke:#253858;stroke-width:3}
+.report-pie-details{flex:1 1 180px;min-width:0}
+.report-pie-total{font-size:13px;color:#667085;margin:0 0 18px}
+.report-pie-total strong{display:block;font-size:20px;color:#172b4d;margin-top:4px}
+.report-pie-legend{list-style:none;padding:0;margin:0;display:grid;gap:12px}
+.report-pie-legend li{display:flex;align-items:flex-start;gap:9px;font-size:13px}
+.report-pie-legend i{width:10px;height:10px;flex:0 0 10px;border-radius:3px;margin-top:4px}
+.report-pie-legend span{flex:1;min-width:0;overflow-wrap:anywhere}
+.report-pie-legend small{display:block;color:#667085;font-size:12px;margin-top:3px}
+.report-pie-legend b{white-space:nowrap;font-variant-numeric:tabular-nums}

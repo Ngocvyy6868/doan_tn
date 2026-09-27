@@ -162,3 +162,30 @@ nav{height:56px;position:sticky;top:78px;z-index:90;box-shadow:0 2px 8px rgba(0,
 .checkout-page .checkout-items>div>strong{white-space:nowrap}
 .checkout-page .field-float label{top:-10px}
 .checkout-page .checkout-qty button{display:inline-flex;align-items:center;justify-content:center;min-width:28px;height:28px}
+
+.orders-list-page,
+.orders-list-page .checkout-heading > a,
+.orders-list-page .checkout-heading p,
+.orders-list-page .checkout-error,
+.orders-list-page .checkout-empty a,
+.orders-list-page .order-list b,
+.orders-list-page .order-list small,
+.orders-list-page .order-list span,
+.orders-list-page .order-list strong,
+.orders-list-page .order-list em {
+  font-size: 13px;
+}
+/* Consumer order details: readable product, recipient and payment text. */
+.orders-page .order-detail-grid,
+.orders-page .ordered-products b,
+.orders-page .ordered-products small,
+.orders-page .ordered-products strong,
+.orders-page .order-meta p,
+.orders-page .order-meta b,
+.orders-page .order-meta section > span,
+.orders-page .order-meta section > strong,
+.orders-page .order-status > p,
+.orders-page .order-timeline b,
+.orders-page .order-timeline small {
+  font-size: 13px;
+}

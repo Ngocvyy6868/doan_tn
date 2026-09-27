@@ -175,7 +175,15 @@ def create_order(request):
         sales = list(FlashSale.objects.select_for_update().filter(product_external_id__in=amounts, active=True, starts_at__lte=now, ends_at__gt=now).order_by('id'))
         for sale in sales:
             if amounts[sale.product_external_id] > sale.quantity - sale.sold:
-                return JsonResponse({'message': 'Flash sale quantity exceeded.'}, status=400)
+                remaining = max(0, sale.quantity - sale.sold)
+                name = next((str(item.get('name') or sale.product_external_id) for item in items
+                             if str(item.get('productId', '')) == sale.product_external_id), sale.product_external_id)
+                return JsonResponse({
+                    'message': f'{name}: Flash Sale chỉ còn {remaining} sản phẩm. Vui lòng giảm số lượng hoặc xóa sản phẩm khỏi giỏ hàng.',
+                    'code': 'FLASH_SALE_QUANTITY_EXCEEDED',
+                    'productId': sale.product_external_id,
+                    'remaining': remaining,
+                }, status=400)
         for sale in sales:
             sale.sold += amounts[sale.product_external_id]
             sale.save(update_fields=['sold'])
