@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {checkRamSlots,estimatePsuRequirement} from '../src/lib/compatibility.mjs';
 const board=value=>({cat:'Mainboard',name:'Board',attributes:[{name:'Số khe RAM',value}]});
-const ram=(quantity,value='')=>({cat:'RAM',name:'RAM',quantity,attributes:[{name:'Số thanh RAM',value},{name:'Công suất',value:'10'}]});
+const ram=(quantity,value='')=>({cat:'RAM',name:'RAM',quantity,attributes:[{name:'Số thanh RAM',value},{name:'TDP',value:'10'}]});
 test('RAM quantity at capacity passes; above capacity warns',()=>{
  assert.equal(checkRamSlots([board('2'),ram(2)])[0].status,'pass');
  assert.equal(checkRamSlots([board('2'),ram(3)])[0].status,'fail');

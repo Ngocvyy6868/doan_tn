@@ -20,8 +20,8 @@ export function checkCompatibility(products,rules){
  });
 }
 
-const POWER_ATTRIBUTE='Công suất',POWER_MARGIN=1.2;
-const wattageOf=product=>{const value=Number(attribute(product,POWER_ATTRIBUTE)?.value);return Number.isFinite(value)?value:0};
+const POWER_MARGIN=1.2;
+const wattageOf=product=>productWattage(product)??0;
 
 export function estimatePsuRequirement(products){
  const psu=products.find(p=>p.cat==='Nguồn'),others=products.filter(p=>p.cat!=='Nguồn');
@@ -46,9 +46,12 @@ export function checkRamSlots(products){
 }
 
 export function productWattage(product){
- const raw=attribute(product,'Công suất')?.value;
- const value=Number(raw);
- return normalize(raw)!==''&&Number.isFinite(value)&&value>=0?value:null;
+ const spec=attribute(product,product.cat==='Nguồn'?'Công suất':'TDP');
+ if(spec?.unit&&normalize(spec.unit)!=='w')return null;
+ const raw=String(spec?.value??'').trim();
+ if(!/^\d+(?:[.,]\d+)?\s*(?:w)?$/i.test(raw))return null;
+ const value=Number(raw.replace(/\s*w$/i,'').replace(',','.'));
+ return Number.isFinite(value)?value:null;
 }
 
 export function isCompatibleCandidate(candidate,selected,rules){

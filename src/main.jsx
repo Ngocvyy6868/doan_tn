@@ -1,9 +1,9 @@
 import Chatbot from './components/Chatbot.jsx';
 import HomePromotions from './components/HomePromotions.jsx';
 import SiteLayout,{cats,money,categorySlug,readStore,writeStore,addToStoredCart} from './components/SiteLayout.jsx';
-import React,{useEffect,useMemo,useRef,useState} from 'react';
+import React,{useEffect,useMemo,useState} from 'react';
 import{createRoot}from'react-dom/client';
-import{ShoppingCart,Heart,User,ChevronLeft,ChevronRight,ChevronDown,Sparkles,ShieldCheck,Truck,Headphones,Plus,Minus,X,Check,Star,ArrowRight,Menu,Box,Zap,MapPin,Pencil,Trash2,Gamepad,Monitor,Laptop,Wrench,Newspaper,Search}from'lucide-react';
+import{ShoppingCart,Heart,User,ChevronRight,ChevronDown,Sparkles,ShieldCheck,Truck,Headphones,Plus,Minus,X,Check,Star,ArrowRight,Menu,Box,Zap,MapPin,Pencil,Trash2,Gamepad,Monitor,Laptop,Wrench,Newspaper,Search}from'lucide-react';
 import { ConfigProvider, Steps } from 'antd';
 import 'antd/dist/reset.css';
 import './style.css';
@@ -26,8 +26,6 @@ function App(){
  const[catalog]=useState(()=>{try{return JSON.parse(localStorage.getItem('techzone_products'))||products}catch{return products}});
  const[active,setActive]=useState('Tất cả');
  const[wish,setWish]=useState([]);
- const feedbackRail=useRef(null);
- const scrollFeedback=dir=>feedbackRail.current?.scrollBy({left:dir*(feedbackRail.current.clientWidth*.75),behavior:'smooth'});
  const filtered=useMemo(()=>catalog.filter(p=>p.active!==false&&(active==='Tất cả'||p.cat===active)),[active,catalog]);
  const toggleWish=id=>setWish(w=>w.includes(id)?w.filter(x=>x!==id):[...w,id]);
  const feedbacks=[
@@ -48,13 +46,9 @@ function App(){
    <section className="testimonials">
     <div className="testimonials-head">
      <div className="section-title"><div><span>KHÁCH HÀNG NÓI GÌ</span><h2>Feedback từ cộng đồng TechZone</h2></div></div>
-     <div className="testimonial-nav">
-      <button type="button" className="testimonial-arrow" aria-label="Xem feedback trước" onClick={()=>scrollFeedback(-1)}><ChevronLeft/></button>
-      <button type="button" className="testimonial-arrow" aria-label="Xem feedback tiếp" onClick={()=>scrollFeedback(1)}><ChevronRight/></button>
-     </div>
     </div>
     <div className="testimonial-rail-wrap">
-     <div className="testimonial-rail" ref={feedbackRail}>
+     <div className="testimonial-rail">
       {feedbacks.map(f=><article className="testimonial-card" key={f.name}>
        <div className="testimonial-quote">“</div>
        <div className="testimonial-stars">{[1,2,3,4,5].map(i=><Star key={i} size={13} fill="currentColor"/>)}</div>

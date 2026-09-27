@@ -110,7 +110,7 @@ def product_attributes(request):
 @csrf_exempt
 def products(request):
     if request.method == 'GET':
-        return JsonResponse({'results': [product.payload for product in Product.objects.order_by('-updated_at')]})
+        return JsonResponse({'results': [{**product.payload, 'created_at': product.created_at.isoformat()} for product in Product.objects.order_by('-created_at', '-pk')]})
     if request.method != 'PUT':
         return JsonResponse({'message': 'Method not allowed.'}, status=405)
     data = _payload(request)
@@ -123,14 +123,15 @@ def products(request):
         if cost is not None and (isinstance(cost, bool) or not isinstance(cost, int) or cost < 0):
             return JsonResponse({'message': 'Giá vốn phải là số nguyên không âm hoặc để trống.'}, status=400)
     with transaction.atomic():
-        Product.objects.all().delete()
+        Product.objects.exclude(external_id__in=[str(item['id']) for item in data]).delete()
         for item in data:
             if not isinstance(item, dict) or not item.get('id') or not str(item.get('name', '')).strip():
                 return JsonResponse({'message': 'Sản phẩm không hợp lệ.'}, status=400)
             category_name = str(item.get('cat', '')).strip()
             category = Category.objects.filter(name=category_name).first() if category_name else None
-            Product.objects.create(external_id=str(item['id']), category=category, payload=item)
-    return JsonResponse({'results': [product.payload for product in Product.objects.order_by('-updated_at')]})
+            payload = {key: value for key, value in item.items() if key != 'created_at'}
+            Product.objects.update_or_create(external_id=str(item['id']), defaults={'category': category, 'payload': payload})
+    return JsonResponse({'results': [{**product.payload, 'created_at': product.created_at.isoformat()} for product in Product.objects.order_by('-created_at', '-pk')]})
 
 
 def _serialize_order(order):

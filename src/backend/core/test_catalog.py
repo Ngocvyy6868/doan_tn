@@ -96,3 +96,29 @@ class CatalogEditingTests(TestCase):
             })
             self.assertEqual(response.status_code, 400)
         self.assertFalse(ProductImage.objects.exists())
+
+
+class ProductCreationOrderTests(TestCase):
+    def test_save_preserves_identity_and_creation_order(self):
+        old = Product.objects.create(external_id='old', payload={'id': 'old', 'name': 'Old'})
+        original_pk, created_at = old.pk, old.created_at
+        response = self.client.put('/api/admin/products/', [
+            {'id': 'new', 'name': 'New'},
+            {'id': 'old', 'name': 'Edited', 'created_at': '2099-01-01T00:00:00Z'},
+        ], content_type='application/json')
+        self.assertEqual(response.status_code, 200)
+        old.refresh_from_db()
+        self.assertEqual((old.pk, old.created_at), (original_pk, created_at))
+        self.assertEqual(old.payload['name'], 'Edited')
+        self.assertEqual([p['id'] for p in response.json()['results']], ['new', 'old'])
+        self.assertEqual(response.json()['results'][1]['created_at'], created_at.isoformat())
+        response = self.client.put('/api/admin/products/', list(reversed(response.json()['results'])), content_type='application/json')
+        self.assertEqual([p['id'] for p in response.json()['results']], ['new', 'old'])
+        self.assertEqual(self.client.get('/api/admin/products/').json(), response.json())
+
+    def test_removing_product_keeps_remaining_record(self):
+        keep = Product.objects.create(external_id='keep', payload={'id': 'keep', 'name': 'Keep'})
+        Product.objects.create(external_id='remove', payload={'id': 'remove', 'name': 'Remove'})
+        response = self.client.put('/api/admin/products/', [keep.payload], content_type='application/json')
+        self.assertEqual(response.status_code, 200)
+        self.assertEqual(list(Product.objects.values_list('pk', flat=True)), [keep.pk])

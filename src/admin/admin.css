@@ -20,3 +20,5 @@
 .admin-order-details{padding:12px}.admin-order-info{display:grid;grid-template-columns:1.2fr 1fr;gap:16px;margin-bottom:16px}.admin-order-info .ant-descriptions-item-content{overflow-wrap:anywhere}.admin-order-total{color:#1768f2;font-size:18px}.admin-order-info .ant-descriptions th,.admin-order-info .ant-descriptions td{width:auto;padding-left:0}.admin-order-info .ant-descriptions table{min-width:0}@media(max-width:850px){.admin-order-info{grid-template-columns:1fr}}
 
 .flash-admin-table .ant-table-thead>tr>th:first-child,.flash-admin-table .ant-table-tbody>tr>td:first-child{width:280px;min-width:280px}
+
+.catalog-card .product-old-price{font-size:13px}
