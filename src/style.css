@@ -143,3 +143,22 @@ nav{height:56px;position:sticky;top:78px;z-index:90;box-shadow:0 2px 8px rgba(0,
 .builder-tools .ant-checkbox-wrapper .ant-checkbox{align-self:center;top:0;line-height:1}
 .builder-tools .ant-checkbox-wrapper .ant-checkbox-inner{line-height:1}
 #root .builder .primary{font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:700;line-height:1.5;letter-spacing:normal;text-transform:none}
+
+/* Pin the storefront header and navigation together; dialogs stay above them. */
+.storefront-header-group{position:sticky;top:0;z-index:10;background:#fff;box-shadow:0 3px 8px #07111f0b}
+.storefront-header-group>header{position:relative;top:auto;z-index:2}
+.storefront-header-group>nav{position:relative;top:auto;z-index:1;box-shadow:none}
+@media(max-width:900px){.storefront-header-group>nav{display:none}}
+
+/* Readable Vietnamese labels above the homepage section headings. */
+.categories .section-title>div>span,.shop .section-title>div>span{display:block;font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:600;line-height:1.5;letter-spacing:normal}
+
+/* Consistent, readable Vietnamese typography throughout checkout. */
+#root .checkout-page,#root .checkout-page :is(h1,h2,h3,p,a,label,input,textarea,select,button,span,small,b,strong,em,div){font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:1.5;letter-spacing:normal}
+#root .checkout-page :is(input,textarea,select){font-weight:400}
+#root .checkout-page :is(h1,h2,h3,b,strong,.place-order){font-weight:700}
+#root .checkout-page input::placeholder,#root .checkout-page textarea::placeholder{font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:400;letter-spacing:normal}
+.checkout-page .checkout-items>div>span{min-width:0;overflow-wrap:anywhere}
+.checkout-page .checkout-items>div>strong{white-space:nowrap}
+.checkout-page .field-float label{top:-10px}
+.checkout-page .checkout-qty button{display:inline-flex;align-items:center;justify-content:center;min-width:28px;height:28px}

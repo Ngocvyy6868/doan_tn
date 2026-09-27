@@ -11,3 +11,9 @@
 .ai-checks p{margin-top:8px}.ai-check-pass{color:#166534}.ai-check-fail{color:#b91c1c}.ai-check-unknown{color:#854d0e}
 .ai-error{padding:12px;color:#b91c1c;background:#fef2f2;font-size:13px}
 .ai-chat button:disabled{opacity:.5;cursor:not-allowed}.ai-chat .chat-input input{min-width:0}
+
+/* Keep Vietnamese text readable across the AI chat interface. */
+#root .ai-chat,#root .ai-chat :is(div,p,span,small,a,b,strong,label,input,button),#root .chat-fab,#root .chat-fab span{font-family:Arial,Helvetica,sans-serif;font-size:13px;line-height:1.5;letter-spacing:normal}
+#root .ai-chat :is(input,button){font-weight:400}
+#root .ai-chat :is(b,strong),#root .ai-chat .chat-head span,#root .chat-fab{font-weight:600}
+#root .ai-chat input::placeholder{font-family:Arial,Helvetica,sans-serif;font-size:13px;font-weight:400;letter-spacing:normal}

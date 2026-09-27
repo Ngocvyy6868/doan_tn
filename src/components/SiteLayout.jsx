@@ -201,6 +201,7 @@ export default function SiteLayout({ children, products = [], showFooter = true 
 
   return (
     <>
+      <div className="storefront-header-group">
       <div className="topbar">
         <span>TechZone • Giá tốt mỗi ngày</span>
         <div>
@@ -316,6 +317,7 @@ export default function SiteLayout({ children, products = [], showFooter = true 
         </div>
         {renderNavLinks(16)}
       </nav>
+      </div>
 
       {mobileMenu && <div className="mobile-nav-overlay" onClick={() => setMobileMenu(false)} />}
       {mobileMenu && (
