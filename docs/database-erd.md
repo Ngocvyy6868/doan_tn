@@ -1,8 +1,8 @@
 # Sơ đồ cơ sở dữ liệu TechZone
 
-Bản vẽ theo skill `diagram-skills-package`: [TechZone ERD](techzone/srs/techzone-erd.md).
+Sơ đồ được cập nhật theo migration `0015_advisor_architecture` và đề cương chatbot ver2.
 
-Sơ đồ dựa trên `src/backend/core/models.py` và cấu hình Django hiện tại, không phải kết quả kiểm tra database đang chạy. Bao gồm 12 bảng nghiệp vụ và bảng tài khoản `auth_user`. Các bảng hệ thống khác của Django (session, quyền, nhóm, migration, admin log) được lược bỏ; `auth_user` chỉ hiển thị các trường chính.
+Sơ đồ dựa trên `src/backend/core/models.py` và cấu hình Django hiện tại, không phải kết quả kiểm tra database đang chạy. Bao gồm 14 bảng nghiệp vụ và bảng tài khoản `auth_user`. Các bảng hệ thống khác của Django (session, quyền, nhóm, migration, admin log) được lược bỏ; `auth_user` chỉ hiển thị các trường chính.
 
 PK: khóa chính; FK: khóa ngoại; UK: duy nhất. Tất cả bảng nghiệp vụ có khóa chính `id` kiểu bigint do Django tự tạo. Kiểu dữ liệu dưới đây tương ứng PostgreSQL.
 
@@ -17,6 +17,26 @@ erDiagram
     core_customer |o..o{ core_order : "đặt hàng"
     core_category |o..o{ core_product : "phân loại"
     core_order ||..o{ core_orderitem : "chi tiết đơn"
+    auth_user ||..o{ core_chatsession : "hội thoại tư vấn"
+    core_chatsession ||..o{ core_chatmessage : "tin nhắn và kết quả"
+
+    core_chatsession {
+        bigint id PK
+        integer user_id FK
+        jsonb state "phiếu nhu cầu, số lần hỏi, giả định"
+        boolean active
+        timestamptz created_at
+        timestamptz updated_at
+    }
+    core_chatmessage {
+        bigint id PK
+        bigint session_id FK
+        varchar role
+        text text
+        jsonb data "cấu hình, checks, trace truy xuất"
+        integer latency_ms
+        timestamptz created_at
+    }
 
     auth_user {
         integer id PK
@@ -68,7 +88,12 @@ erDiagram
         bigint id PK
         varchar external_id UK
         bigint category_id FK "nullable"
-        jsonb payload
+        jsonb payload "giá, tồn, specs, mô tả; nguồn dữ liệu duy nhất"
+        vector embedding "1024 chiều BGE-M3, nullable"
+        varchar embedding_hash "fingerprint nội dung và model"
+        tsvector search_tsv "generated PostgreSQL"
+        numeric advisor_price "generated từ payload.price"
+        numeric advisor_stock "generated từ payload.stock"
         timestamptz created_at
         timestamptz updated_at
     }
@@ -160,3 +185,14 @@ erDiagram
 - Thông tin chi tiết sản phẩm được lưu trong `payload` kiểu JSONB. `ProductAttribute`, `ProductImage` và `CompatibilityRule` chưa có FK đến sản phẩm/danh mục.
 - Địa chỉ giao hàng trong đơn được lưu bằng các trường riêng; đơn không có FK đến `core_address`.
 - Xóa tài khoản kéo theo xóa hồ sơ khách hàng/nhân viên; xóa khách hàng kéo theo xóa địa chỉ. Django đặt tham chiếu khách hàng/người xử lý trong đơn thành NULL khi đối tượng tương ứng bị xóa. Xóa danh mục đặt danh mục của sản phẩm thành NULL; xóa đơn kéo theo xóa chi tiết đơn. Đây là hành vi `on_delete` của Django ORM.
+
+
+## Kiến trúc dữ liệu chatbot ver2
+
+- `ChatSession.state` chứa phiếu nhu cầu, bộ đếm câu hỏi và giả định. Redis cache state theo ID phiên; PostgreSQL giữ bản bền vững.
+- `ChatMessage.data` lưu kết quả backend, danh sách sản phẩm tại thời điểm tư vấn và trace; các snapshot này không thay thế giá/tồn hiện tại. Khi thêm cả bộ vào giỏ, backend đọc Product lại.
+- Hội thoại mới đặt phiên cũ inactive, không xóa tin nhắn. Chỉ chủ tài khoản được đọc/khôi phục phiên. Xóa auth_user kéo theo xóa các phiên và tin nhắn.
+- Vector nằm trong chính Product, không tạo bảng vector độc lập. HNSW dùng cosine; GIN cho search_tsv và payload.specs; B-tree theo category_id, advisor_stock, advisor_price.
+- search_tsv/giá/tồn là cột PostgreSQL generated được quản lý bằng migration SQL. Model Django không khai báo các cột phụ này; SQLite test chỉ kiểm thử logic, không tạo chúng.
+- Sản phẩm cũ giữ nguyên payload. Khóa chuẩn nằm trong payload.specs; xem bảng khóa trong [Chatbot.md](Chatbot.md). Khi cập nhật mô tả/thông số/tên/hãng/danh mục, chạy index_advisor_catalog.
+- Catalog chưa chuẩn hóa has_igpu, stock_cooler, modules hoặc kích thước vật lý sẽ cho kết quả unknown. Đây không phải chứng nhận tương thích.

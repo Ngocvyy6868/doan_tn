@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.db import models
+from .advisor.fields import ProductVectorField
 
 
 class Employee(models.Model):
@@ -105,6 +106,8 @@ class Product(models.Model):
     external_id = models.CharField(max_length=64, unique=True)
     category = models.ForeignKey(Category, null=True, blank=True, on_delete=models.SET_NULL, related_name='products')
     payload = models.JSONField(default=dict)
+    embedding = ProductVectorField(null=True, editable=False)
+    embedding_hash = models.CharField(max_length=64, blank=True, default='', editable=False)
     created_at = models.DateTimeField(auto_now_add=True)
     updated_at = models.DateTimeField(auto_now=True)
 
@@ -151,3 +154,49 @@ class OrderItem(models.Model):
     unit_price = models.BigIntegerField()
     quantity = models.PositiveIntegerField()
     total = models.BigIntegerField()
+    # Kho đã trừ tồn khi đặt hàng: [{"warehouse_id": id|None, "quantity": n}]; None = tồn kho nhập tay.
+    allocations = models.JSONField(default=list, blank=True)
+
+
+class ChatSession(models.Model):
+    user = models.ForeignKey(settings.AUTH_USER_MODEL, on_delete=models.CASCADE, related_name='advisor_sessions')
+    state = models.JSONField(default=dict)
+    active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+
+class ChatMessage(models.Model):
+    session = models.ForeignKey(ChatSession, on_delete=models.CASCADE, related_name='messages')
+    role = models.CharField(max_length=12)
+    text = models.TextField()
+    data = models.JSONField(default=dict)
+    latency_ms = models.PositiveIntegerField(default=0)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['id']
+
+
+class Warehouse(models.Model):
+    """Kho/cửa hàng giữ hàng; tồn kho tổng của sản phẩm = tổng các kho đang hoạt động."""
+    code = models.CharField(max_length=20, unique=True)
+    address = models.CharField(max_length=255)
+    active = models.BooleanField(default=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+
+    class Meta:
+        ordering = ['code']
+
+    def __str__(self):
+        return self.code
+
+
+class WarehouseStock(models.Model):
+    warehouse = models.ForeignKey(Warehouse, on_delete=models.CASCADE, related_name='stocks')
+    product = models.ForeignKey(Product, on_delete=models.CASCADE, related_name='warehouse_stocks')
+    quantity = models.PositiveIntegerField(default=0)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        constraints = [models.UniqueConstraint(fields=['warehouse', 'product'], name='unique_warehouse_product_stock')]

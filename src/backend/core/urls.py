@@ -1,8 +1,11 @@
 from django.urls import path
+from .advisor_views import sessions, validate_build
+from .customer_views import customer_orders, admin_session
 from .management_views import employees, documents
 from .compatibility_views import compatibility_rules
 from .report_views import overview
 from .flash_views import flash_sales
+from .inventory_views import inventory, product_availability, warehouses
 from .chat_views import chat
 from .catalog_views import edit_category, edit_product_attribute, product_image, upload_product_image
 
@@ -12,11 +15,15 @@ from .views import (
 )
 
 urlpatterns = [
+    path('admin/session/', admin_session, name='admin-session'),
     path('admin/categories/rename/', edit_category, name='edit-category'),
     path('admin/product-images/', upload_product_image, name='upload-product-image'),
     path('product-images/<int:image_id>/', product_image, name='product-image'),
     path('admin/product-attributes/<int:attribute_id>/', edit_product_attribute, name='edit-product-attribute'),
     path('chat/', chat, name='chat'),
+    path('chat/sessions/', sessions, name='chat-sessions'),
+    path('chat/sessions/<int:session_id>/', sessions, name='chat-session-detail'),
+    path('advisor/validate/', validate_build, name='advisor-validate'),
     path('admin/flash-sales/', flash_sales, name='admin-flash-sales'),
     path('admin/flash-sales/<int:sale_id>/', flash_sales, name='admin-flash-sale-detail'),
     path('flash-sales/', flash_sales, {'public': True}, name='flash-sales'),
@@ -28,6 +35,10 @@ urlpatterns = [
     path('admin/documents/', documents, name='admin-documents'),
     path('admin/documents/<int:document_id>/', documents, name='admin-document-detail'),
     path('health/', health, name='health'),
+    path('admin/warehouses/', warehouses, name='admin-warehouses'),
+    path('admin/warehouses/<int:warehouse_id>/', warehouses, name='admin-warehouse-detail'),
+    path('admin/inventory/', inventory, name='admin-inventory'),
+    path('products/<str:product_id>/availability/', product_availability, name='product-availability'),
     path('auth/register/', register, name='register'),
     path('auth/login/', login, name='login'),
     path('auth/logout/', logout, name='logout'),
@@ -35,6 +46,9 @@ urlpatterns = [
     path('addresses/', addresses, name='addresses'),
     path('addresses/<int:address_id>/', address_detail, name='address-detail'),
     path('admin/customers/', customers, name='admin-customers'),
+    path('admin/customers/<int:customer_id>/addresses/', addresses, name='admin-customer-addresses'),
+    path('admin/customers/<int:customer_id>/addresses/<int:address_id>/', address_detail, name='admin-customer-address-detail'),
+    path('admin/customers/<int:customer_id>/orders/', customer_orders, name='admin-customer-orders'),
     path('admin/categories/', categories, name='admin-categories'),
     path('admin/product-attributes/', product_attributes, name='admin-product-attributes'),
     path('admin/products/', products, name='admin-products'),

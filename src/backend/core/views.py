@@ -1,3 +1,4 @@
+from urllib.parse import urlsplit
 import json
 import re
 
@@ -12,7 +13,7 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_GET, require_POST
 
-from .models import FlashSale, Employee, Address, Category, Customer, Order, OrderItem, Product, ProductAttribute
+from .models import FlashSale, Employee, Address, Category, Customer, Order, OrderItem, Product, ProductAttribute, Warehouse
 
 LOGIN_RATE_LIMIT_ATTEMPTS = 5
 LOGIN_RATE_LIMIT_WINDOW_SECONDS = 15 * 60
@@ -107,10 +108,26 @@ def product_attributes(request):
     ]})
 
 
+def _normalize_product_image(request, url):
+    if not isinstance(url, str):
+        return url
+    try:
+        parsed = urlsplit(url)
+    except ValueError:
+        return url
+    if parsed.hostname in ('localhost', '127.0.0.1', '::1', 'backend') and re.fullmatch(r'/api/product-images/\d+/', parsed.path):
+        return request.build_absolute_uri(parsed.path)
+    return url
+
+
+def _product_data(request, product):
+    return {**product.payload, 'img': _normalize_product_image(request, product.payload.get('img', '')),
+            'created_at': product.created_at.isoformat()}
+
 @csrf_exempt
 def products(request):
     if request.method == 'GET':
-        return JsonResponse({'results': [{**product.payload, 'created_at': product.created_at.isoformat()} for product in Product.objects.order_by('-created_at', '-pk')]})
+        return JsonResponse({'results': [_product_data(request, product) for product in Product.objects.order_by('-created_at', '-pk')]})
     if request.method != 'PUT':
         return JsonResponse({'message': 'Method not allowed.'}, status=405)
     data = _payload(request)
@@ -130,8 +147,20 @@ def products(request):
             category_name = str(item.get('cat', '')).strip()
             category = Category.objects.filter(name=category_name).first() if category_name else None
             payload = {key: value for key, value in item.items() if key != 'created_at'}
+            if 'img' in payload:
+                payload['img'] = _normalize_product_image(request, payload['img'])
             Product.objects.update_or_create(external_id=str(item['id']), defaults={'category': category, 'payload': payload})
-    return JsonResponse({'results': [{**product.payload, 'created_at': product.created_at.isoformat()} for product in Product.objects.order_by('-created_at', '-pk')]})
+        # Tồn kho của sản phẩm đã phân kho do module Kho quản lý; bỏ qua số tồn gửi từ form sản phẩm.
+        from .inventory_views import sync_product_stock
+        sync_product_stock()
+    return JsonResponse({'results': [_product_data(request, product) for product in Product.objects.order_by('-created_at', '-pk')]})
+
+
+def _allocation_labels(allocations):
+    ids = [a.get('warehouse_id') for a in allocations or [] if a.get('warehouse_id')]
+    codes = dict(Warehouse.objects.filter(pk__in=ids).values_list('id', 'code')) if ids else {}
+    return [{'code': codes.get(a['warehouse_id'], 'Kho đã xóa'), 'quantity': a.get('quantity', 0)}
+            for a in allocations or [] if a.get('warehouse_id')]
 
 
 def _serialize_order(order):
@@ -146,7 +175,8 @@ def _serialize_order(order):
         'handler': {'id': order.handler_id, 'name': order.handler.get_full_name() or order.handler.username} if order.handler else None,
         'created_at': order.created_at.isoformat(),
         'items': [{'product_id': item.product_external_id, 'sku': item.sku, 'name': item.name, 'image': item.image,
-                   'price': item.unit_price, 'quantity': item.quantity, 'total': item.total} for item in order.items.all()],
+                   'price': item.unit_price, 'quantity': item.quantity, 'total': item.total,
+                   'warehouses': _allocation_labels(item.allocations)} for item in order.items.all()],
     }
 
 
@@ -184,6 +214,14 @@ def create_order(request):
                     'productId': sale.product_external_id,
                     'remaining': remaining,
                 }, status=400)
+        from .inventory_views import OutOfStock, allocate_stock
+        try:
+            allocations = [allocate_stock(str(item.get('productId', '')), item['quantity'], str(item.get('name') or ''))
+                           for item in items]
+        except OutOfStock as error:
+            transaction.set_rollback(True)
+            return JsonResponse({'message': str(error), 'code': 'OUT_OF_STOCK', 'productId': error.product_id,
+                                 'remaining': error.remaining}, status=400)
         for sale in sales:
             sale.sold += amounts[sale.product_external_id]
             sale.save(update_fields=['sold'])
@@ -197,7 +235,8 @@ def create_order(request):
         )
         OrderItem.objects.bulk_create([OrderItem(order=order, product_external_id=str(item.get('productId', '')),
             sku=str(item.get('sku', '')), name=str(item.get('name', '')), image=str(item.get('img', '')),
-            unit_price=int(item.get('price', 0)), quantity=int(item.get('quantity', 0)), total=int(item.get('total', 0))) for item in items])
+            unit_price=int(item.get('price', 0)), quantity=int(item.get('quantity', 0)), total=int(item.get('total', 0)),
+            allocations=allocation) for item, allocation in zip(items, allocations)])
     return JsonResponse({'order': _serialize_order(Order.objects.prefetch_related('items').get(pk=order.pk))}, status=201)
 
 
@@ -237,6 +276,13 @@ def admin_orders(request, order_id=None):
             next_status = sequence[position + 1] if 0 <= position < len(sequence) - 1 else None
             if status not in sequence or (status != order.status and status != next_status):
                 return JsonResponse({'message': 'Chỉ được chuyển sang trạng thái kế tiếp theo thứ tự quy định.'}, status=400)
+            if status == Order.Status.CANCELLED and order.status != Order.Status.CANCELLED:
+                # Hoàn tồn kho về đúng các kho đã trừ khi đặt hàng.
+                from .inventory_views import release_stock
+                for item in order.items.select_for_update():
+                    release_stock(item.product_external_id, item.allocations)
+                    item.allocations = []
+                    item.save(update_fields=['allocations'])
             order.status = status
         if 'handler_name' in data:
             return JsonResponse({'message': 'Choose an existing employee.'}, status=400)
@@ -324,6 +370,9 @@ def login(request):
     if user is None or not user.is_active:
         cache.set(rate_key, cache.get(rate_key, 0) + 1, LOGIN_RATE_LIMIT_WINDOW_SECONDS)
         return JsonResponse(generic_error, status=400)
+
+    if payload.get('admin_only') and not user.is_staff:
+        return JsonResponse({'message': 'Tài khoản này chưa có quyền quản trị.'}, status=403)
 
     cache.delete(rate_key)
     auth_login(request, user)
@@ -420,10 +469,14 @@ def _validate_address_fields(full_name, phone, province_code, ward_code, detail)
 
 
 @csrf_exempt
-def addresses(request):
+def addresses(request, customer_id=None):
     """FR-ADDR-01: address book scoped to the authenticated account only."""
-    customer = _owned_customer(request)
+    if customer_id is not None and not (request.user.is_authenticated and request.user.is_staff):
+        return JsonResponse({'message': 'Administrator access required.'}, status=403)
+    customer = Customer.objects.filter(pk=customer_id).first() if customer_id is not None else _owned_customer(request)
     if customer is None:
+        if customer_id is not None:
+            return JsonResponse({'message': 'Customer not found.'}, status=404)
         return JsonResponse({'message': 'Vui lòng đăng nhập để quản lý sổ địa chỉ.'}, status=401)
 
     if request.method == 'GET':
@@ -457,10 +510,14 @@ def addresses(request):
 
 
 @csrf_exempt
-def address_detail(request, address_id):
+def address_detail(request, address_id, customer_id=None):
     """FR-ADDR-01: only the owning account may edit or delete its own address."""
-    customer = _owned_customer(request)
+    if customer_id is not None and not (request.user.is_authenticated and request.user.is_staff):
+        return JsonResponse({'message': 'Administrator access required.'}, status=403)
+    customer = Customer.objects.filter(pk=customer_id).first() if customer_id is not None else _owned_customer(request)
     if customer is None:
+        if customer_id is not None:
+            return JsonResponse({'message': 'Customer not found.'}, status=404)
         return JsonResponse({'message': 'Vui lòng đăng nhập để quản lý sổ địa chỉ.'}, status=401)
     address = customer.addresses.filter(pk=address_id).first()
     if address is None:

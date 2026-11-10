@@ -1,0 +1,888 @@
+[
+  {
+    "source_id": "HcPgXL",
+    "category_en": "CPU",
+    "name_en": "Intel Core i5-10600K 4.1 GHz 6-Core Processor",
+    "source_url": "https://pcpartpicker.com/product/HcPgXL/intel-core-i5-10600k-41-ghz-6-core-processor-bx8070110600k",
+    "price_usd": "199.00",
+    "price_vnd": 5174000,
+    "price_original_text": "$199.00",
+    "image_saved_path": "./(2021) CAD Workstation + Gaming by abodnieks - Intel Core i5-10600K, GeForce RTX 3060 Ti LHR, Phanteks Eclipse P400A ATX Mid Tower - PCPartPicker_files/cec5ee818776737baefc9603bdbf9391.256p.jpg",
+    "build_id": "BRMbt6",
+    "build_ids": [
+      "BRMbt6"
+    ],
+    "image_file_name": "(2021) CAD Workstation + Gaming by abodnieks - Intel Core i5-10600K, GeForce RTX 3060 Ti LHR, Phanteks Eclipse P400A ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "smDkcf",
+    "category_en": "CPU Cooler",
+    "name_en": "ARCTIC Liquid Freezer II 280 72.8 CFM Liquid CPU Cooler",
+    "source_url": "https://pcpartpicker.com/product/smDkcf/arctic-liquid-freezer-ii-280-728-cfm-liquid-cpu-cooler-acfre00066a",
+    "price_usd": null,
+    "price_vnd": null,
+    "price_original_text": "",
+    "image_saved_path": "./(2021) CAD Workstation + Gaming by abodnieks - Intel Core i5-10600K, GeForce RTX 3060 Ti LHR, Phanteks Eclipse P400A ATX Mid Tower - PCPartPicker_files/d4be1665d9e39cda9ce38d3cac4abfe6.256p.jpg",
+    "build_id": "BRMbt6",
+    "build_ids": [
+      "BRMbt6"
+    ],
+    "image_file_name": "(2021) CAD Workstation + Gaming by abodnieks - Intel Core i5-10600K, GeForce RTX 3060 Ti LHR, Phanteks Eclipse P400A ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "J9PgXL",
+    "category_en": "Motherboard",
+    "name_en": "Asus ROG STRIX Z490-E GAMING ATX LGA1200 Motherboard",
+    "source_url": "https://pcpartpicker.com/product/J9PgXL/asus-rog-strix-z490-e-gaming-atx-lga1200-motherboard-rog-strix-z490-e-gaming",
+    "price_usd": "535.00",
+    "price_vnd": 13910000,
+    "price_original_text": "$535.00",
+    "image_saved_path": "./(2021) CAD Workstation + Gaming by abodnieks - Intel Core i5-10600K, GeForce RTX 3060 Ti LHR, Phanteks Eclipse P400A ATX Mid Tower - PCPartPicker_files/cecf707cb59521400fc68f887de78eb0.256p.jpg",
+    "build_id": "BRMbt6",
+    "build_ids": [
+      "BRMbt6"
+    ],
+    "image_file_name": "(2021) CAD Workstation + Gaming by abodnieks - Intel Core i5-10600K, GeForce RTX 3060 Ti LHR, Phanteks Eclipse P400A ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "W6ndnQ",
+    "category_en": "Memory",
+    "name_en": "Corsair Vengeance LPX 32 GB (2 x 16 GB) DDR4-3200 CL16 Memory",
+    "source_url": "https://pcpartpicker.com/product/W6ndnQ/corsair-vengeance-lpx-32-gb-2-x-16-gb-ddr4-3200-memory-cmk32gx4m2e3200c16",
+    "price_usd": "239.99",
+    "price_vnd": 6239740,
+    "price_original_text": "$239.99",
+    "image_saved_path": "./(2021) CAD Workstation + Gaming by abodnieks - Intel Core i5-10600K, GeForce RTX 3060 Ti LHR, Phanteks Eclipse P400A ATX Mid Tower - PCPartPicker_files/ae9c14173c768f2fa9ad4d3c957e94a0.256p.jpg",
+    "build_id": "BRMbt6",
+    "build_ids": [
+      "BRMbt6"
+    ],
+    "image_file_name": "(2021) CAD Workstation + Gaming by abodnieks - Intel Core i5-10600K, GeForce RTX 3060 Ti LHR, Phanteks Eclipse P400A ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "w96qqs",
+    "category_en": "Storage",
+    "name_en": "Samsung 980 Pro 500 GB M.2-2280 PCIe 4.0 X4 NVME Solid State Drive",
+    "source_url": "https://pcpartpicker.com/product/w96qqs/samsung-980-pro-500-gb-m2-2280-nvme-solid-state-drive-mz-v8p500bam",
+    "price_usd": null,
+    "price_vnd": null,
+    "price_original_text": "",
+    "image_saved_path": "./(2021) CAD Workstation + Gaming by abodnieks - Intel Core i5-10600K, GeForce RTX 3060 Ti LHR, Phanteks Eclipse P400A ATX Mid Tower - PCPartPicker_files/81d258654f0eb603dc240de6cbca9754.256p.jpg",
+    "build_id": "BRMbt6",
+    "build_ids": [
+      "BRMbt6"
+    ],
+    "image_file_name": "(2021) CAD Workstation + Gaming by abodnieks - Intel Core i5-10600K, GeForce RTX 3060 Ti LHR, Phanteks Eclipse P400A ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "btkwrH",
+    "category_en": "Storage",
+    "name_en": "Seagate IronWolf NAS 2 TB 3.5\" 5900 RPM Internal Hard Drive",
+    "source_url": "https://pcpartpicker.com/product/btkwrH/seagate-ironwolf-2tb-35-5900rpm-internal-hard-drive-st2000vn004",
+    "price_usd": null,
+    "price_vnd": null,
+    "price_original_text": "",
+    "image_saved_path": "./(2021) CAD Workstation + Gaming by abodnieks - Intel Core i5-10600K, GeForce RTX 3060 Ti LHR, Phanteks Eclipse P400A ATX Mid Tower - PCPartPicker_files/985887c588ee8a7321a6947b2f91bf1f.256p.jpg",
+    "build_id": "BRMbt6",
+    "build_ids": [
+      "BRMbt6"
+    ],
+    "image_file_name": "(2021) CAD Workstation + Gaming by abodnieks - Intel Core i5-10600K, GeForce RTX 3060 Ti LHR, Phanteks Eclipse P400A ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "JXTzK8",
+    "category_en": "Video Card",
+    "name_en": "Palit GamingPro OC GeForce RTX 3060 Ti LHR 8 GB Video Card",
+    "source_url": "https://pcpartpicker.com/product/JXTzK8/palit-geforce-rtx-3060-ti-lhr-8-gb-gamingpro-oc-video-card-ne6306tt19p2-1041a",
+    "price_usd": null,
+    "price_vnd": null,
+    "price_original_text": "",
+    "image_saved_path": "./(2021) CAD Workstation + Gaming by abodnieks - Intel Core i5-10600K, GeForce RTX 3060 Ti LHR, Phanteks Eclipse P400A ATX Mid Tower - PCPartPicker_files/41oPXFgqrcL.jpg",
+    "build_id": "BRMbt6",
+    "build_ids": [
+      "BRMbt6"
+    ],
+    "image_file_name": "(2021) CAD Workstation + Gaming by abodnieks - Intel Core i5-10600K, GeForce RTX 3060 Ti LHR, Phanteks Eclipse P400A ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "3RJmP6",
+    "category_en": "Case",
+    "name_en": "Phanteks Eclipse P400A ATX Mid Tower Case",
+    "source_url": "https://pcpartpicker.com/product/3RJmP6/phanteks-eclipse-p400a-atx-mid-tower-case-ph-ec400atg_bk",
+    "price_usd": null,
+    "price_vnd": null,
+    "price_original_text": "",
+    "image_saved_path": "./(2021) CAD Workstation + Gaming by abodnieks - Intel Core i5-10600K, GeForce RTX 3060 Ti LHR, Phanteks Eclipse P400A ATX Mid Tower - PCPartPicker_files/c62d93ddd59d252799a01f178b5da199.256p.jpg",
+    "build_id": "BRMbt6",
+    "build_ids": [
+      "BRMbt6"
+    ],
+    "image_file_name": "(2021) CAD Workstation + Gaming by abodnieks - Intel Core i5-10600K, GeForce RTX 3060 Ti LHR, Phanteks Eclipse P400A ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "2HbwrH",
+    "category_en": "Power Supply",
+    "name_en": "Corsair RM650x (2018) 650 W 80+ Gold Certified Fully Modular ATX Power Supply",
+    "source_url": "https://pcpartpicker.com/product/2HbwrH/corsair-rm650x-2018-650-w-80-gold-certified-fully-modular-atx-power-supply-cp-9020178-na",
+    "price_usd": null,
+    "price_vnd": null,
+    "price_original_text": "",
+    "image_saved_path": "./(2021) CAD Workstation + Gaming by abodnieks - Intel Core i5-10600K, GeForce RTX 3060 Ti LHR, Phanteks Eclipse P400A ATX Mid Tower - PCPartPicker_files/c6df4edbb596b2818cd0c5e204fb3df3.256p.jpg",
+    "build_id": "BRMbt6",
+    "build_ids": [
+      "BRMbt6"
+    ],
+    "image_file_name": "(2021) CAD Workstation + Gaming by abodnieks - Intel Core i5-10600K, GeForce RTX 3060 Ti LHR, Phanteks Eclipse P400A ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "fPyH99",
+    "category_en": "CPU",
+    "name_en": "AMD Ryzen 7 9800X3D 4.7 GHz 8-Core Processor",
+    "source_url": "https://pcpartpicker.com/product/fPyH99/amd-ryzen-7-9800x3d-47-ghz-8-core-processor-100-1000001084wof",
+    "price_usd": null,
+    "price_vnd": null,
+    "price_original_text": "£470.00 GBP",
+    "image_saved_path": "./Endgame by Blackbere - AMD Ryzen 7 9800X3D, GeForce RTX 5090, Corsair AIR 5400 LX-R RGB iCUE LINK ATX Mid Tower - PCPartPicker_files/7e2d17b7b777f8b56e1b5119aa97be20.256p.jpg",
+    "build_id": "VnjZxr",
+    "build_ids": [
+      "VnjZxr",
+      "kZjZxr"
+    ],
+    "image_file_name": "Endgame by Blackbere - AMD Ryzen 7 9800X3D, GeForce RTX 5090, Corsair AIR 5400 LX-R RGB iCUE LINK ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "TtXV3C",
+    "category_en": "CPU Cooler",
+    "name_en": "Corsair iCUE LINK TITAN 360 RX LCD 73.5 CFM Liquid CPU Cooler",
+    "source_url": "https://pcpartpicker.com/product/TtXV3C/corsair-icue-link-titan-360-rx-lcd-735-cfm-liquid-cpu-cooler-cw-9061023-ww",
+    "price_usd": null,
+    "price_vnd": null,
+    "price_original_text": "£259.97 GBP",
+    "image_saved_path": "./Endgame by Blackbere - AMD Ryzen 7 9800X3D, GeForce RTX 5090, Corsair AIR 5400 LX-R RGB iCUE LINK ATX Mid Tower - PCPartPicker_files/34813b9b3153ddbea54e46dfe496930e.256p.jpg",
+    "build_id": "VnjZxr",
+    "build_ids": [
+      "VnjZxr"
+    ],
+    "image_file_name": "Endgame by Blackbere - AMD Ryzen 7 9800X3D, GeForce RTX 5090, Corsair AIR 5400 LX-R RGB iCUE LINK ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "HBdMnQ",
+    "category_en": "Motherboard",
+    "name_en": "Gigabyte X870 AORUS STEALTH ATX AM5 Motherboard",
+    "source_url": "https://pcpartpicker.com/product/HBdMnQ/gigabyte-x870-aorus-stealth-atx-am5-motherboard-x870-aorus-stealth",
+    "price_usd": null,
+    "price_vnd": null,
+    "price_original_text": "£308.99 GBP",
+    "image_saved_path": "./Endgame by Blackbere - AMD Ryzen 7 9800X3D, GeForce RTX 5090, Corsair AIR 5400 LX-R RGB iCUE LINK ATX Mid Tower - PCPartPicker_files/965c13a83c76991c0b3ccb4921e559a8.256p.jpg",
+    "build_id": "VnjZxr",
+    "build_ids": [
+      "VnjZxr"
+    ],
+    "image_file_name": "Endgame by Blackbere - AMD Ryzen 7 9800X3D, GeForce RTX 5090, Corsair AIR 5400 LX-R RGB iCUE LINK ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "XxV2FT",
+    "category_en": "Memory",
+    "name_en": "Corsair Dominator Titanium 32 GB (2 x 16 GB) DDR5-6000 CL30 Memory",
+    "source_url": "https://pcpartpicker.com/product/XxV2FT/corsair-dominator-titanium-32-gb-2-x-16-gb-ddr5-6000-cl30-memory-cmp32gx5m2b6000z30",
+    "price_usd": null,
+    "price_vnd": null,
+    "price_original_text": "£159.97 GBP",
+    "image_saved_path": "./Endgame by Blackbere - AMD Ryzen 7 9800X3D, GeForce RTX 5090, Corsair AIR 5400 LX-R RGB iCUE LINK ATX Mid Tower - PCPartPicker_files/327d514df1e5e3bc915a0a33b5b654fa.256p.jpg",
+    "build_id": "VnjZxr",
+    "build_ids": [
+      "VnjZxr"
+    ],
+    "image_file_name": "Endgame by Blackbere - AMD Ryzen 7 9800X3D, GeForce RTX 5090, Corsair AIR 5400 LX-R RGB iCUE LINK ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "f3cRsY",
+    "category_en": "Storage",
+    "name_en": "Samsung 980 Pro 2 TB M.2-2280 PCIe 4.0 X4 NVME Solid State Drive",
+    "source_url": "https://pcpartpicker.com/product/f3cRsY/samsung-980-pro-2-tb-m2-2280-nvme-solid-state-drive-mz-v8p2t0bam",
+    "price_usd": null,
+    "price_vnd": null,
+    "price_original_text": "£105.00 GBP",
+    "image_saved_path": "./Endgame by Blackbere - AMD Ryzen 7 9800X3D, GeForce RTX 5090, Corsair AIR 5400 LX-R RGB iCUE LINK ATX Mid Tower - PCPartPicker_files/3b2a91588d1a28bfa1b0184fb7f1c0a1.256p.jpg",
+    "build_id": "VnjZxr",
+    "build_ids": [
+      "VnjZxr"
+    ],
+    "image_file_name": "Endgame by Blackbere - AMD Ryzen 7 9800X3D, GeForce RTX 5090, Corsair AIR 5400 LX-R RGB iCUE LINK ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "67FmP6",
+    "category_en": "Storage",
+    "name_en": "Crucial T705 4 TB M.2-2280 PCIe 5.0 X4 NVME Solid State Drive",
+    "source_url": "https://pcpartpicker.com/product/67FmP6/crucial-t705-4-tb-m2-2280-pcie-50-x4-nvme-solid-state-drive-ct4000t705ssd3",
+    "price_usd": null,
+    "price_vnd": null,
+    "price_original_text": "£404.99 GBP",
+    "image_saved_path": "./Endgame by Blackbere - AMD Ryzen 7 9800X3D, GeForce RTX 5090, Corsair AIR 5400 LX-R RGB iCUE LINK ATX Mid Tower - PCPartPicker_files/26411ed56b8f23776f841818083ed115.256p.jpg",
+    "build_id": "VnjZxr",
+    "build_ids": [
+      "VnjZxr"
+    ],
+    "image_file_name": "Endgame by Blackbere - AMD Ryzen 7 9800X3D, GeForce RTX 5090, Corsair AIR 5400 LX-R RGB iCUE LINK ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "QD2j4D",
+    "category_en": "Video Card",
+    "name_en": "NVIDIA Founders Edition GeForce RTX 5090 32 GB Video Card",
+    "source_url": "https://pcpartpicker.com/product/QD2j4D/nvidia-founders-edition-geforce-rtx-5090-32-gb-video-card-geforce-rtx-5090-founders-edition",
+    "price_usd": null,
+    "price_vnd": null,
+    "price_original_text": "£1899.00 GBP",
+    "image_saved_path": "./Endgame by Blackbere - AMD Ryzen 7 9800X3D, GeForce RTX 5090, Corsair AIR 5400 LX-R RGB iCUE LINK ATX Mid Tower - PCPartPicker_files/6b0f4a7c280559e287c8a35ed24da423.256p.jpg",
+    "build_id": "VnjZxr",
+    "build_ids": [
+      "VnjZxr"
+    ],
+    "image_file_name": "Endgame by Blackbere - AMD Ryzen 7 9800X3D, GeForce RTX 5090, Corsair AIR 5400 LX-R RGB iCUE LINK ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "HZPv6h",
+    "category_en": "Case",
+    "name_en": "Corsair AIR 5400 LX-R RGB iCUE LINK ATX Mid Tower Case",
+    "source_url": "https://pcpartpicker.com/product/HZPv6h/corsair-air-5400-lx-r-rgb-icue-link-atx-mid-tower-case-cc-9011320-ww",
+    "price_usd": null,
+    "price_vnd": null,
+    "price_original_text": "£284.99 GBP",
+    "image_saved_path": "./Endgame by Blackbere - AMD Ryzen 7 9800X3D, GeForce RTX 5090, Corsair AIR 5400 LX-R RGB iCUE LINK ATX Mid Tower - PCPartPicker_files/1b68a1def6ccade80fa69194d852016f.256p.jpg",
+    "build_id": "VnjZxr",
+    "build_ids": [
+      "VnjZxr"
+    ],
+    "image_file_name": "Endgame by Blackbere - AMD Ryzen 7 9800X3D, GeForce RTX 5090, Corsair AIR 5400 LX-R RGB iCUE LINK ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "vYP8TW",
+    "category_en": "Power Supply",
+    "name_en": "ASRock Taichi TC-1650T 1650 W 80+ Titanium Certified Fully Modular ATX Power Supply",
+    "source_url": "https://pcpartpicker.com/product/vYP8TW/asrock-taichi-tc-1650t-1650-w-80-titanium-certified-fully-modular-atx-power-supply-tc-1650t",
+    "price_usd": null,
+    "price_vnd": null,
+    "price_original_text": "£438.06 GBP",
+    "image_saved_path": "./Endgame by Blackbere - AMD Ryzen 7 9800X3D, GeForce RTX 5090, Corsair AIR 5400 LX-R RGB iCUE LINK ATX Mid Tower - PCPartPicker_files/e99f5a8095473d18c465d2602974e99c.256p.jpg",
+    "build_id": "VnjZxr",
+    "build_ids": [
+      "VnjZxr"
+    ],
+    "image_file_name": "Endgame by Blackbere - AMD Ryzen 7 9800X3D, GeForce RTX 5090, Corsair AIR 5400 LX-R RGB iCUE LINK ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "HdLdnQ",
+    "category_en": "Case Fan",
+    "name_en": "Corsair iCUE LINK LX120 RGB Starter Kit 69.9 CFM 120 mm Fans 3-Pack",
+    "source_url": "https://pcpartpicker.com/product/HdLdnQ/corsair-icue-link-lx120-rgb-starter-kit-699-cfm-120-mm-fans-3-pack-co-9051026-ww",
+    "price_usd": null,
+    "price_vnd": null,
+    "price_original_text": "£109.99 GBP",
+    "image_saved_path": "./Endgame by Blackbere - AMD Ryzen 7 9800X3D, GeForce RTX 5090, Corsair AIR 5400 LX-R RGB iCUE LINK ATX Mid Tower - PCPartPicker_files/4289ddce095f6004a6e3cbb06083823b.256p.jpg",
+    "build_id": "VnjZxr",
+    "build_ids": [
+      "VnjZxr"
+    ],
+    "image_file_name": "Endgame by Blackbere - AMD Ryzen 7 9800X3D, GeForce RTX 5090, Corsair AIR 5400 LX-R RGB iCUE LINK ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "rf4Pxr",
+    "category_en": "Monitor",
+    "name_en": "Asus ROG Strix OLED XG32UCWMG 31.5\" 3840 x 2160 240 Hz Monitor",
+    "source_url": "https://pcpartpicker.com/product/rf4Pxr/asus-rog-strix-oled-xg32ucwmg-315-3840-x-2160-240-hz-monitor-rog-strix-oled-xg32ucwmg",
+    "price_usd": null,
+    "price_vnd": null,
+    "price_original_text": "£679.99 GBP",
+    "image_saved_path": "./Endgame by Blackbere - AMD Ryzen 7 9800X3D, GeForce RTX 5090, Corsair AIR 5400 LX-R RGB iCUE LINK ATX Mid Tower - PCPartPicker_files/833791086a788b542cc0a002360a0014.256p.jpg",
+    "build_id": "VnjZxr",
+    "build_ids": [
+      "VnjZxr"
+    ],
+    "image_file_name": "Endgame by Blackbere - AMD Ryzen 7 9800X3D, GeForce RTX 5090, Corsair AIR 5400 LX-R RGB iCUE LINK ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "WMfxFT",
+    "category_en": "Keyboard",
+    "name_en": "Keychron Q1 HE QMK PBT RGB Bluetooth/Wireless/Wired Standard Keyboard",
+    "source_url": "https://pcpartpicker.com/product/WMfxFT/keychron-q1-he-qmk-pbt-rgb-wirelessbluetoothwired-standard-keyboard-q1h-m1-bo",
+    "price_usd": null,
+    "price_vnd": null,
+    "price_original_text": "£191.00 GBP",
+    "image_saved_path": "./Endgame by Blackbere - AMD Ryzen 7 9800X3D, GeForce RTX 5090, Corsair AIR 5400 LX-R RGB iCUE LINK ATX Mid Tower - PCPartPicker_files/c06c9e7c96b73bd9e1378607c9e45199.256p.jpg",
+    "build_id": "VnjZxr",
+    "build_ids": [
+      "VnjZxr"
+    ],
+    "image_file_name": "Endgame by Blackbere - AMD Ryzen 7 9800X3D, GeForce RTX 5090, Corsair AIR 5400 LX-R RGB iCUE LINK ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "xNqrxr",
+    "category_en": "Headphones",
+    "name_en": "Audeze Maxwell for Xbox Series X|S  Headset",
+    "source_url": "https://pcpartpicker.com/product/xNqrxr/audeze-maxwell-for-xbox-series-xs-headset-207-mw-1120-01",
+    "price_usd": null,
+    "price_vnd": null,
+    "price_original_text": "£349.99 GBP",
+    "image_saved_path": "./Endgame by Blackbere - AMD Ryzen 7 9800X3D, GeForce RTX 5090, Corsair AIR 5400 LX-R RGB iCUE LINK ATX Mid Tower - PCPartPicker_files/1df40b8e7169afdba5d4f75aef3123c5.256p.jpg",
+    "build_id": "VnjZxr",
+    "build_ids": [
+      "VnjZxr"
+    ],
+    "image_file_name": "Endgame by Blackbere - AMD Ryzen 7 9800X3D, GeForce RTX 5090, Corsair AIR 5400 LX-R RGB iCUE LINK ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "3hyH99",
+    "category_en": "CPU",
+    "name_en": "AMD Ryzen 7 7800X3D 4.2 GHz 8-Core Processor",
+    "source_url": "https://pcpartpicker.com/product/3hyH99/amd-ryzen-7-7800x3d-42-ghz-8-core-processor-100-100000910wof",
+    "price_usd": "348.00",
+    "price_vnd": 9048000,
+    "price_original_text": "$348.00",
+    "image_saved_path": "./My First Build by notsdub - AMD Ryzen 7 7800X3D, Radeon RX 9060 XT, Thermaltake View 270 Plus TG ARGB ATX Mid Tower - PCPartPicker_files/f0e0e59d75066ec825667b71c31e3c83.256p.jpg",
+    "build_id": "9HbKHx",
+    "build_ids": [
+      "9HbKHx"
+    ],
+    "image_file_name": "My First Build by notsdub - AMD Ryzen 7 7800X3D, Radeon RX 9060 XT, Thermaltake View 270 Plus TG ARGB ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "g8pD4D",
+    "category_en": "CPU Cooler",
+    "name_en": "Thermalright Frozen Warframe 360 SE ARGB V2 68.9 CFM Liquid CPU Cooler",
+    "source_url": "https://pcpartpicker.com/product/g8pD4D/thermalright-frozen-warframe-360-se-argb-v2-689-cfm-liquid-cpu-cooler-fw360-se-argb-b-v2",
+    "price_usd": "69.98",
+    "price_vnd": 1819480,
+    "price_original_text": "$69.98",
+    "image_saved_path": "./My First Build by notsdub - AMD Ryzen 7 7800X3D, Radeon RX 9060 XT, Thermaltake View 270 Plus TG ARGB ATX Mid Tower - PCPartPicker_files/41laOQLCK8L.jpg",
+    "build_id": "9HbKHx",
+    "build_ids": [
+      "9HbKHx"
+    ],
+    "image_file_name": "My First Build by notsdub - AMD Ryzen 7 7800X3D, Radeon RX 9060 XT, Thermaltake View 270 Plus TG ARGB ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "s8nypg",
+    "category_en": "Motherboard",
+    "name_en": "Asus ROG STRIX B650E-F GAMING WIFI ATX AM5 Motherboard",
+    "source_url": "https://pcpartpicker.com/product/s8nypg/asus-rog-strix-b650e-f-gaming-wifi-atx-am5-motherboard-rog-strix-b650e-f-gaming-wifi",
+    "price_usd": null,
+    "price_vnd": null,
+    "price_original_text": "£203.70",
+    "image_saved_path": "./My First Build by notsdub - AMD Ryzen 7 7800X3D, Radeon RX 9060 XT, Thermaltake View 270 Plus TG ARGB ATX Mid Tower - PCPartPicker_files/b950287e2f141caa4638fc93dc99a6ba.256p.jpg",
+    "build_id": "9HbKHx",
+    "build_ids": [
+      "9HbKHx"
+    ],
+    "image_file_name": "My First Build by notsdub - AMD Ryzen 7 7800X3D, Radeon RX 9060 XT, Thermaltake View 270 Plus TG ARGB ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "QF9wrH",
+    "category_en": "Memory",
+    "name_en": "Crucial Pro Overclocking 32 GB (2 x 16 GB) DDR5-6000 CL36 Memory",
+    "source_url": "https://pcpartpicker.com/product/QF9wrH/crucial-pro-overclocking-32-gb-2-x-16-gb-ddr5-6000-cl36-memory-cp2k16g60c36u5b",
+    "price_usd": "755.96",
+    "price_vnd": 19654960,
+    "price_original_text": "$755.96",
+    "image_saved_path": "./My First Build by notsdub - AMD Ryzen 7 7800X3D, Radeon RX 9060 XT, Thermaltake View 270 Plus TG ARGB ATX Mid Tower - PCPartPicker_files/9fdbfba897aab27f8669458508239fe1.256p.jpg",
+    "build_id": "9HbKHx",
+    "build_ids": [
+      "9HbKHx"
+    ],
+    "image_file_name": "My First Build by notsdub - AMD Ryzen 7 7800X3D, Radeon RX 9060 XT, Thermaltake View 270 Plus TG ARGB ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "hh4Zxr",
+    "category_en": "Storage",
+    "name_en": "Crucial P310 2 TB M.2-2280 PCIe 4.0 X4 NVME Solid State Drive",
+    "source_url": "https://pcpartpicker.com/product/hh4Zxr/crucial-p310-2-tb-m2-2280-pcie-40-x4-nvme-solid-state-drive-ct2000p310ssd8",
+    "price_usd": "314.50",
+    "price_vnd": 8177000,
+    "price_original_text": "$314.50",
+    "image_saved_path": "./My First Build by notsdub - AMD Ryzen 7 7800X3D, Radeon RX 9060 XT, Thermaltake View 270 Plus TG ARGB ATX Mid Tower - PCPartPicker_files/df4e2992d37f23922fb5d8d9ce743981.256p.jpg",
+    "build_id": "9HbKHx",
+    "build_ids": [
+      "9HbKHx"
+    ],
+    "image_file_name": "My First Build by notsdub - AMD Ryzen 7 7800X3D, Radeon RX 9060 XT, Thermaltake View 270 Plus TG ARGB ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "TcG2FT",
+    "category_en": "Video Card",
+    "name_en": "Gigabyte GAMING OC Radeon RX 9060 XT 16 GB Video Card",
+    "source_url": "https://pcpartpicker.com/product/TcG2FT/gigabyte-gaming-oc-radeon-rx-9060-xt-16-gb-video-card-gv-r9060xtgaming-oc-16gd",
+    "price_usd": "649.99",
+    "price_vnd": 16899740,
+    "price_original_text": "$649.99",
+    "image_saved_path": "./My First Build by notsdub - AMD Ryzen 7 7800X3D, Radeon RX 9060 XT, Thermaltake View 270 Plus TG ARGB ATX Mid Tower - PCPartPicker_files/867a636cde1c3c9762b06bde17acd022.256p.jpg",
+    "build_id": "9HbKHx",
+    "build_ids": [
+      "9HbKHx"
+    ],
+    "image_file_name": "My First Build by notsdub - AMD Ryzen 7 7800X3D, Radeon RX 9060 XT, Thermaltake View 270 Plus TG ARGB ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "3nTFf7",
+    "category_en": "Case",
+    "name_en": "Thermaltake View 270 Plus TG ARGB ATX Mid Tower Case",
+    "source_url": "https://pcpartpicker.com/product/3nTFf7/thermaltake-view-270-plus-tg-argb-atx-mid-tower-case-ca-1y7-00m1wn-01",
+    "price_usd": "66.98",
+    "price_vnd": 1741480,
+    "price_original_text": "$66.98",
+    "image_saved_path": "./My First Build by notsdub - AMD Ryzen 7 7800X3D, Radeon RX 9060 XT, Thermaltake View 270 Plus TG ARGB ATX Mid Tower - PCPartPicker_files/9e5614134f25613ad1680297287c0aea.256p.jpg",
+    "build_id": "9HbKHx",
+    "build_ids": [
+      "9HbKHx"
+    ],
+    "image_file_name": "My First Build by notsdub - AMD Ryzen 7 7800X3D, Radeon RX 9060 XT, Thermaltake View 270 Plus TG ARGB ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "yWJBD3",
+    "category_en": "Power Supply",
+    "name_en": "be quiet! Pure Power 13 M 750 W 80+ Gold Certified Fully Modular ATX Power Supply",
+    "source_url": "https://pcpartpicker.com/product/yWJBD3/be-quiet-pure-power-13-m-750-w-80-gold-certified-fully-modular-atx-power-supply-bp026us",
+    "price_usd": "87.90",
+    "price_vnd": 2285400,
+    "price_original_text": "$87.90",
+    "image_saved_path": "./My First Build by notsdub - AMD Ryzen 7 7800X3D, Radeon RX 9060 XT, Thermaltake View 270 Plus TG ARGB ATX Mid Tower - PCPartPicker_files/51NcpqwxV1L.jpg",
+    "build_id": "9HbKHx",
+    "build_ids": [
+      "9HbKHx"
+    ],
+    "image_file_name": "My First Build by notsdub - AMD Ryzen 7 7800X3D, Radeon RX 9060 XT, Thermaltake View 270 Plus TG ARGB ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "WtyV3C",
+    "category_en": "CPU",
+    "name_en": "Intel Core i7-9700K 3.6 GHz 8-Core Processor",
+    "source_url": "https://pcpartpicker.com/product/WtyV3C/intel-core-i7-9700k-36ghz-8-core-processor-bx80684i79700k",
+    "price_usd": "211.13",
+    "price_vnd": 5489380,
+    "price_original_text": "$211.13",
+    "image_saved_path": "./My first gaming PC by RC-1009 - Intel Core i7-9700K, GeForce GTX 1070, Fractal Design Pop XL Air ATX Full Tower - PCPartPicker_files/3760e89d1820da393f084e2c18a62e3b.256p.jpg",
+    "build_id": "RtH2FT",
+    "build_ids": [
+      "RtH2FT"
+    ],
+    "image_file_name": "My first gaming PC by RC-1009 - Intel Core i7-9700K, GeForce GTX 1070, Fractal Design Pop XL Air ATX Full Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "hmtCmG",
+    "category_en": "CPU Cooler",
+    "name_en": "Cooler Master Hyper 212 EVO 82.9 CFM Sleeve Bearing CPU Cooler",
+    "source_url": "https://pcpartpicker.com/product/hmtCmG/cooler-master-cpu-cooler-rr212e20pkr2",
+    "price_usd": null,
+    "price_vnd": null,
+    "price_original_text": "",
+    "image_saved_path": "./My first gaming PC by RC-1009 - Intel Core i7-9700K, GeForce GTX 1070, Fractal Design Pop XL Air ATX Full Tower - PCPartPicker_files/ddea57de9797549e80d05fb3acb2e83d.med.256p.jpg",
+    "build_id": "RtH2FT",
+    "build_ids": [
+      "RtH2FT"
+    ],
+    "image_file_name": "My first gaming PC by RC-1009 - Intel Core i7-9700K, GeForce GTX 1070, Fractal Design Pop XL Air ATX Full Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "QDVD4D",
+    "category_en": "Motherboard",
+    "name_en": "MSI MPG Z390 GAMING PLUS ATX LGA1151 Motherboard",
+    "source_url": "https://pcpartpicker.com/product/QDVD4D/msi-mpg-z390-gaming-plus-atx-lga1151-motherboard-mpg-z390-gaming-plus",
+    "price_usd": null,
+    "price_vnd": null,
+    "price_original_text": "",
+    "image_saved_path": "./My first gaming PC by RC-1009 - Intel Core i7-9700K, GeForce GTX 1070, Fractal Design Pop XL Air ATX Full Tower - PCPartPicker_files/f68bd53f6c04fd23f6c3f2a1dfdaa1e2.256p.jpg",
+    "build_id": "RtH2FT",
+    "build_ids": [
+      "RtH2FT"
+    ],
+    "image_file_name": "My first gaming PC by RC-1009 - Intel Core i7-9700K, GeForce GTX 1070, Fractal Design Pop XL Air ATX Full Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "BxTzK8",
+    "category_en": "Memory",
+    "name_en": "Crucial Ballistix 16 GB (2 x 8 GB) DDR4-3200 CL16 Memory",
+    "source_url": "https://pcpartpicker.com/product/BxTzK8/crucial-ballistix-16-gb-2-x-8-gb-ddr4-3200-memory-bl2k8g32c16u4b",
+    "price_usd": null,
+    "price_vnd": null,
+    "price_original_text": "",
+    "image_saved_path": "./My first gaming PC by RC-1009 - Intel Core i7-9700K, GeForce GTX 1070, Fractal Design Pop XL Air ATX Full Tower - PCPartPicker_files/aa34b3c28154431c4b8ebd2f90a647e4.256p.jpg",
+    "build_id": "RtH2FT",
+    "build_ids": [
+      "RtH2FT"
+    ],
+    "image_file_name": "My first gaming PC by RC-1009 - Intel Core i7-9700K, GeForce GTX 1070, Fractal Design Pop XL Air ATX Full Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "P4FKHx",
+    "category_en": "Memory",
+    "name_en": "Silicon Power GAMING 16 GB (2 x 8 GB) DDR4-3200 CL16 Memory",
+    "source_url": "https://pcpartpicker.com/product/P4FKHx/silicon-power-gaming-16-gb-2-x-8-gb-ddr4-3200-cl16-memory-sp016gxlzu320bdaj5",
+    "price_usd": "107.97",
+    "price_vnd": 2807220,
+    "price_original_text": "$107.97",
+    "image_saved_path": "./My first gaming PC by RC-1009 - Intel Core i7-9700K, GeForce GTX 1070, Fractal Design Pop XL Air ATX Full Tower - PCPartPicker_files/62a4ba196f5f165e68619a63ef5d0b70.256p.jpg",
+    "build_id": "RtH2FT",
+    "build_ids": [
+      "RtH2FT"
+    ],
+    "image_file_name": "My first gaming PC by RC-1009 - Intel Core i7-9700K, GeForce GTX 1070, Fractal Design Pop XL Air ATX Full Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "tbJwrH",
+    "category_en": "Storage",
+    "name_en": "Samsung 830 128 GB 2.5\" Solid State Drive",
+    "source_url": "https://pcpartpicker.com/product/tbJwrH/samsung-internal-hard-drive-mz7pc128bww",
+    "price_usd": null,
+    "price_vnd": null,
+    "price_original_text": "",
+    "image_saved_path": "./My first gaming PC by RC-1009 - Intel Core i7-9700K, GeForce GTX 1070, Fractal Design Pop XL Air ATX Full Tower - PCPartPicker_files/317Kink9poL.jpg",
+    "build_id": "RtH2FT",
+    "build_ids": [
+      "RtH2FT"
+    ],
+    "image_file_name": "My first gaming PC by RC-1009 - Intel Core i7-9700K, GeForce GTX 1070, Fractal Design Pop XL Air ATX Full Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "M82j4D",
+    "category_en": "Storage",
+    "name_en": "Crucial P310 w/ Acronis Data Recovery 1 TB M.2-2280 PCIe 4.0 X4 NVME Solid State Drive",
+    "source_url": "https://pcpartpicker.com/product/M82j4D/crucial-p310-w-acronis-data-recovery-1-tb-m2-2280-pcie-40-x4-nvme-solid-state-drive-ct1000p310ssd801",
+    "price_usd": "170.02",
+    "price_vnd": 4420520,
+    "price_original_text": "$170.02",
+    "image_saved_path": "./My first gaming PC by RC-1009 - Intel Core i7-9700K, GeForce GTX 1070, Fractal Design Pop XL Air ATX Full Tower - PCPartPicker_files/31s-wKnYDvL.jpg",
+    "build_id": "RtH2FT",
+    "build_ids": [
+      "RtH2FT"
+    ],
+    "image_file_name": "My first gaming PC by RC-1009 - Intel Core i7-9700K, GeForce GTX 1070, Fractal Design Pop XL Air ATX Full Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "J2KcCJ",
+    "category_en": "Storage",
+    "name_en": "Seagate EXOS Enterprise 4 TB 3.5\" 7200 RPM Internal Hard Drive",
+    "source_url": "https://pcpartpicker.com/product/J2KcCJ/seagate-exos-enterprise-4-tb-35-7200rpm-internal-hard-drive-st4000nm0035",
+    "price_usd": "205.00",
+    "price_vnd": 5330000,
+    "price_original_text": "$205.00",
+    "image_saved_path": "./My first gaming PC by RC-1009 - Intel Core i7-9700K, GeForce GTX 1070, Fractal Design Pop XL Air ATX Full Tower - PCPartPicker_files/46f426f602bdcb9e6a03ba9469ffb699.256p.jpg",
+    "build_id": "RtH2FT",
+    "build_ids": [
+      "RtH2FT"
+    ],
+    "image_file_name": "My first gaming PC by RC-1009 - Intel Core i7-9700K, GeForce GTX 1070, Fractal Design Pop XL Air ATX Full Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "fKp323",
+    "category_en": "Video Card",
+    "name_en": "MSI GAMING X GeForce GTX 1070 8 GB Video Card",
+    "source_url": "https://pcpartpicker.com/product/fKp323/msi-geforce-gtx-1070-8gb-video-card-gtx-1070-gaming-x-8g",
+    "price_usd": "468.96",
+    "price_vnd": 12192960,
+    "price_original_text": "$468.96",
+    "image_saved_path": "./My first gaming PC by RC-1009 - Intel Core i7-9700K, GeForce GTX 1070, Fractal Design Pop XL Air ATX Full Tower - PCPartPicker_files/c69e387e529c6dff34f773565b075bb7.256p.jpg",
+    "build_id": "RtH2FT",
+    "build_ids": [
+      "RtH2FT"
+    ],
+    "image_file_name": "My first gaming PC by RC-1009 - Intel Core i7-9700K, GeForce GTX 1070, Fractal Design Pop XL Air ATX Full Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "8qFbt6",
+    "category_en": "Case",
+    "name_en": "Fractal Design Pop XL Air ATX Full Tower Case",
+    "source_url": "https://pcpartpicker.com/product/8qFbt6/fractal-design-pop-xl-air-atx-full-tower-case-fd-c-por1x-06",
+    "price_usd": "95.99",
+    "price_vnd": 2495740,
+    "price_original_text": "$95.99",
+    "image_saved_path": "./My first gaming PC by RC-1009 - Intel Core i7-9700K, GeForce GTX 1070, Fractal Design Pop XL Air ATX Full Tower - PCPartPicker_files/048e9d2f829061df55885fb8eabd5952.256p.jpg",
+    "build_id": "RtH2FT",
+    "build_ids": [
+      "RtH2FT"
+    ],
+    "image_file_name": "My first gaming PC by RC-1009 - Intel Core i7-9700K, GeForce GTX 1070, Fractal Design Pop XL Air ATX Full Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "4FH48d",
+    "category_en": "Power Supply",
+    "name_en": "EVGA 600 W1 600 W 80+ Certified ATX Power Supply",
+    "source_url": "https://pcpartpicker.com/product/4FH48d/evga-600-w1-600-w-80-certified-atx-power-supply-100-w1-0600-k1",
+    "price_usd": "50.00",
+    "price_vnd": 1300000,
+    "price_original_text": "$50.00",
+    "image_saved_path": "./My first gaming PC by RC-1009 - Intel Core i7-9700K, GeForce GTX 1070, Fractal Design Pop XL Air ATX Full Tower - PCPartPicker_files/41LvV7J3OuL.jpg",
+    "build_id": "RtH2FT",
+    "build_ids": [
+      "RtH2FT"
+    ],
+    "image_file_name": "My first gaming PC by RC-1009 - Intel Core i7-9700K, GeForce GTX 1070, Fractal Design Pop XL Air ATX Full Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "z2dqqs",
+    "category_en": "Optical Drive",
+    "name_en": "LG WH14NS40 Blu-Ray/DVD/CD Writer",
+    "source_url": "https://pcpartpicker.com/product/z2dqqs/lg-optical-drive-wh14ns40",
+    "price_usd": null,
+    "price_vnd": null,
+    "price_original_text": "",
+    "image_saved_path": "./My first gaming PC by RC-1009 - Intel Core i7-9700K, GeForce GTX 1070, Fractal Design Pop XL Air ATX Full Tower - PCPartPicker_files/f01ff4c3a2b299c6c8ee623bab52413b.256p.jpg",
+    "build_id": "RtH2FT",
+    "build_ids": [
+      "RtH2FT"
+    ],
+    "image_file_name": "My first gaming PC by RC-1009 - Intel Core i7-9700K, GeForce GTX 1070, Fractal Design Pop XL Air ATX Full Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "XdcRsY",
+    "category_en": "Wireless Network Adapter",
+    "name_en": "TP-Link Archer T5E 802.11a/b/g/n/ac PCIe x1 Wi-Fi Adapter",
+    "source_url": "https://pcpartpicker.com/product/XdcRsY/tp-link-archer-t5e-pcie-x1-80211abgnac-wi-fi-adapter-archer-t5e",
+    "price_usd": "22.99",
+    "price_vnd": 597740,
+    "price_original_text": "$22.99",
+    "image_saved_path": "./My first gaming PC by RC-1009 - Intel Core i7-9700K, GeForce GTX 1070, Fractal Design Pop XL Air ATX Full Tower - PCPartPicker_files/f3a2cc530e89e2756e22eef346e6c581.256p.jpg",
+    "build_id": "RtH2FT",
+    "build_ids": [
+      "RtH2FT"
+    ],
+    "image_file_name": "My first gaming PC by RC-1009 - Intel Core i7-9700K, GeForce GTX 1070, Fractal Design Pop XL Air ATX Full Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "2YMMnQ",
+    "category_en": "Fan Controller",
+    "name_en": "Lian Li UNI HUB – SL Controller Fan Controller",
+    "source_url": "https://pcpartpicker.com/product/2YMMnQ/lian-li-uni-hub-sl-controller-fan-controller-uf-in-l-connect3-wt",
+    "price_usd": null,
+    "price_vnd": null,
+    "price_original_text": "",
+    "image_saved_path": "./My first gaming PC by RC-1009 - Intel Core i7-9700K, GeForce GTX 1070, Fractal Design Pop XL Air ATX Full Tower - PCPartPicker_files/31iKOtbksqL.jpg",
+    "build_id": "RtH2FT",
+    "build_ids": [
+      "RtH2FT"
+    ],
+    "image_file_name": "My first gaming PC by RC-1009 - Intel Core i7-9700K, GeForce GTX 1070, Fractal Design Pop XL Air ATX Full Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "NLdMnQ",
+    "category_en": "Monitor",
+    "name_en": "KTC H27T22S 27.0\" 2560 x 1440 180 Hz Monitor",
+    "source_url": "https://pcpartpicker.com/product/NLdMnQ/ktc-h27t22s-270-2560-x-1440-180-hz-monitor-h27t22s",
+    "price_usd": null,
+    "price_vnd": null,
+    "price_original_text": "",
+    "image_saved_path": "./My first gaming PC by RC-1009 - Intel Core i7-9700K, GeForce GTX 1070, Fractal Design Pop XL Air ATX Full Tower - PCPartPicker_files/51i9+XLXPDL.jpg",
+    "build_id": "RtH2FT",
+    "build_ids": [
+      "RtH2FT"
+    ],
+    "image_file_name": "My first gaming PC by RC-1009 - Intel Core i7-9700K, GeForce GTX 1070, Fractal Design Pop XL Air ATX Full Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "NDrYcf",
+    "category_en": "Custom",
+    "name_en": "PCI-E to USB 3.0 7-Port(2x USB-C - 5x USB-A )Expansion Card ,PCI Express USB 3.2 Add In Card , Internal USB3 Hub Converter for Desktop PC host card Support Windows 10/8/7/XP and MAC OS 10.8.2",
+    "source_url": "https://pcpartpicker.com/product/NDrYcf/placeholder-",
+    "price_usd": "28.39",
+    "price_vnd": 738140,
+    "price_original_text": "$28.39",
+    "image_saved_path": "./My first gaming PC by RC-1009 - Intel Core i7-9700K, GeForce GTX 1070, Fractal Design Pop XL Air ATX Full Tower - PCPartPicker_files/51dEMmz5Z2L.jpg",
+    "build_id": "RtH2FT",
+    "build_ids": [
+      "RtH2FT"
+    ],
+    "image_file_name": "My first gaming PC by RC-1009 - Intel Core i7-9700K, GeForce GTX 1070, Fractal Design Pop XL Air ATX Full Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "vrh2FT",
+    "category_en": "CPU Cooler",
+    "name_en": "Asus ROG RYUO IV 360 ARGB Hatsune Miku Edition 71.44 CFM Liquid CPU Cooler",
+    "source_url": "https://pcpartpicker.com/product/vrh2FT/asus-rog-ryuo-iv-360-argb-hatsune-miku-edition-7144-cfm-liquid-cpu-cooler-90rc01p1-b0aay0",
+    "price_usd": null,
+    "price_vnd": null,
+    "price_original_text": "",
+    "image_saved_path": "./THE MIKU DESTROYER by JaxMullet12 - AMD Ryzen 7 9800X3D, GeForce RTX 5080, Asus ROG Strix Helios II Hatsune Miku Edition ATX Mid Tower - PCPartPicker_files/742a890914d74f64d6f9be0bd363761a.256p.jpg",
+    "build_id": "kZjZxr",
+    "build_ids": [
+      "kZjZxr"
+    ],
+    "image_file_name": "THE MIKU DESTROYER by JaxMullet12 - AMD Ryzen 7 9800X3D, GeForce RTX 5080, Asus ROG Strix Helios II Hatsune Miku Edition ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "fDm2FT",
+    "category_en": "Motherboard",
+    "name_en": "Asus ROG STRIX X870E-H GAMING WIFI7 HATSUNE MIKU EDITION ATX AM5 Motherboard",
+    "source_url": "https://pcpartpicker.com/product/fDm2FT/asus-rog-strix-x870e-h-gaming-wifi7-hatsune-miku-edition-atx-am5-motherboard-rog-strix-x870e-h-gaming-wifi7-hatsune-miku-edition",
+    "price_usd": "599.99",
+    "price_vnd": 15599740,
+    "price_original_text": "$599.99",
+    "image_saved_path": "./THE MIKU DESTROYER by JaxMullet12 - AMD Ryzen 7 9800X3D, GeForce RTX 5080, Asus ROG Strix Helios II Hatsune Miku Edition ATX Mid Tower - PCPartPicker_files/40eb512adea85ba4dc671cf7b5d80eba.256p.jpg",
+    "build_id": "kZjZxr",
+    "build_ids": [
+      "kZjZxr"
+    ],
+    "image_file_name": "THE MIKU DESTROYER by JaxMullet12 - AMD Ryzen 7 9800X3D, GeForce RTX 5080, Asus ROG Strix Helios II Hatsune Miku Edition ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "hRQcCJ",
+    "category_en": "Memory",
+    "name_en": "G.Skill Trident Z5 Neo RGB 64 GB (2 x 32 GB) DDR5-6000 CL30 Memory",
+    "source_url": "https://pcpartpicker.com/product/hRQcCJ/gskill-trident-z5-neo-rgb-64-gb-2-x-32-gb-ddr5-6000-cl30-memory-f5-6000j3040g32gx2-tz5nr",
+    "price_usd": "1399.99",
+    "price_vnd": 36399740,
+    "price_original_text": "$1399.99",
+    "image_saved_path": "./THE MIKU DESTROYER by JaxMullet12 - AMD Ryzen 7 9800X3D, GeForce RTX 5080, Asus ROG Strix Helios II Hatsune Miku Edition ATX Mid Tower - PCPartPicker_files/fa05a92bf5e27cd0ba94bb8372db2419.256p.jpg",
+    "build_id": "kZjZxr",
+    "build_ids": [
+      "kZjZxr"
+    ],
+    "image_file_name": "THE MIKU DESTROYER by JaxMullet12 - AMD Ryzen 7 9800X3D, GeForce RTX 5080, Asus ROG Strix Helios II Hatsune Miku Edition ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "RKYmP6",
+    "category_en": "Storage",
+    "name_en": "Samsung 990 Pro 4 TB M.2-2280 PCIe 4.0 X4 NVME Solid State Drive",
+    "source_url": "https://pcpartpicker.com/product/RKYmP6/samsung-990-pro-4-tb-m2-2280-pcie-40-x4-nvme-solid-state-drive-mz-v9p4t0bw",
+    "price_usd": "949.00",
+    "price_vnd": 24674000,
+    "price_original_text": "$949.00",
+    "image_saved_path": "./THE MIKU DESTROYER by JaxMullet12 - AMD Ryzen 7 9800X3D, GeForce RTX 5080, Asus ROG Strix Helios II Hatsune Miku Edition ATX Mid Tower - PCPartPicker_files/242cc7c9d1e07078de3b04029e20dd82.256p.jpg",
+    "build_id": "kZjZxr",
+    "build_ids": [
+      "kZjZxr"
+    ],
+    "image_file_name": "THE MIKU DESTROYER by JaxMullet12 - AMD Ryzen 7 9800X3D, GeForce RTX 5080, Asus ROG Strix Helios II Hatsune Miku Edition ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "N2zp99",
+    "category_en": "Video Card",
+    "name_en": "Asus ROG Astral OC HATSUNE MIKU EDITION GeForce RTX 5080 16 GB Video Card",
+    "source_url": "https://pcpartpicker.com/product/N2zp99/asus-rog-astral-oc-hatsune-miku-edition-geforce-rtx-5080-16-gb-video-card-rog-astral-rtx5080-o16g-hatsune-miku-edition",
+    "price_usd": "1899.99",
+    "price_vnd": 49399740,
+    "price_original_text": "$1899.99",
+    "image_saved_path": "./THE MIKU DESTROYER by JaxMullet12 - AMD Ryzen 7 9800X3D, GeForce RTX 5080, Asus ROG Strix Helios II Hatsune Miku Edition ATX Mid Tower - PCPartPicker_files/47544b5d26d244d914d4de4120b3bbc5.256p.jpg",
+    "build_id": "kZjZxr",
+    "build_ids": [
+      "kZjZxr"
+    ],
+    "image_file_name": "THE MIKU DESTROYER by JaxMullet12 - AMD Ryzen 7 9800X3D, GeForce RTX 5080, Asus ROG Strix Helios II Hatsune Miku Edition ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "pQxTwP",
+    "category_en": "Case",
+    "name_en": "Asus ROG Strix Helios II Hatsune Miku Edition ATX Mid Tower Case",
+    "source_url": "https://pcpartpicker.com/product/pQxTwP/asus-rog-strix-helios-ii-hatsune-miku-edition-atx-mid-tower-case-rog-strix-helios-ii-hatsune-miku-edition",
+    "price_usd": "429.99",
+    "price_vnd": 11179740,
+    "price_original_text": "$429.99",
+    "image_saved_path": "./THE MIKU DESTROYER by JaxMullet12 - AMD Ryzen 7 9800X3D, GeForce RTX 5080, Asus ROG Strix Helios II Hatsune Miku Edition ATX Mid Tower - PCPartPicker_files/538cba5e47717690bbbb34b221964c35.256p.jpg",
+    "build_id": "kZjZxr",
+    "build_ids": [
+      "kZjZxr"
+    ],
+    "image_file_name": "THE MIKU DESTROYER by JaxMullet12 - AMD Ryzen 7 9800X3D, GeForce RTX 5080, Asus ROG Strix Helios II Hatsune Miku Edition ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "jbVfrH",
+    "category_en": "Power Supply",
+    "name_en": "Asus ROG Thor P3 Hatsune Miku Edition 1200 W 80+ Platinum Certified Fully Modular ATX Power Supply",
+    "source_url": "https://pcpartpicker.com/product/jbVfrH/asus-rog-thor-p3-hatsune-miku-edition-1200-w-80-platinum-certified-fully-modular-atx-power-supply-rog-thor-1200p3-miku",
+    "price_usd": null,
+    "price_vnd": null,
+    "price_original_text": "",
+    "image_saved_path": "./THE MIKU DESTROYER by JaxMullet12 - AMD Ryzen 7 9800X3D, GeForce RTX 5080, Asus ROG Strix Helios II Hatsune Miku Edition ATX Mid Tower - PCPartPicker_files/ef972faa0a2acc40ded911f06d969101.256p.jpg",
+    "build_id": "kZjZxr",
+    "build_ids": [
+      "kZjZxr"
+    ],
+    "image_file_name": "THE MIKU DESTROYER by JaxMullet12 - AMD Ryzen 7 9800X3D, GeForce RTX 5080, Asus ROG Strix Helios II Hatsune Miku Edition ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "HxKKHx",
+    "category_en": "Operating System",
+    "name_en": "Microsoft Windows 11 Pro Retail - USB 64-bit",
+    "source_url": "https://pcpartpicker.com/product/HxKKHx/microsoft-windows-11-pro-retail-usb-64-bit-hav-00162",
+    "price_usd": "198.99",
+    "price_vnd": 5173740,
+    "price_original_text": "$198.99",
+    "image_saved_path": "./THE MIKU DESTROYER by JaxMullet12 - AMD Ryzen 7 9800X3D, GeForce RTX 5080, Asus ROG Strix Helios II Hatsune Miku Edition ATX Mid Tower - PCPartPicker_files/78f43eb1b5266ea1ad87edc95cb23ba1.256p.jpg",
+    "build_id": "kZjZxr",
+    "build_ids": [
+      "kZjZxr"
+    ],
+    "image_file_name": "THE MIKU DESTROYER by JaxMullet12 - AMD Ryzen 7 9800X3D, GeForce RTX 5080, Asus ROG Strix Helios II Hatsune Miku Edition ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "2hzhP6",
+    "category_en": "Case Fan",
+    "name_en": "Lian Li Uni Fan SL-Infinity 61.3 CFM 120 mm Fan",
+    "source_url": "https://pcpartpicker.com/product/2hzhP6/lian-li-uni-fan-sl-infinity-613-cfm-120-mm-fan-uf-slin120-1b",
+    "price_usd": "20.99",
+    "price_vnd": 545740,
+    "price_original_text": "$20.99",
+    "image_saved_path": "./THE MIKU DESTROYER by JaxMullet12 - AMD Ryzen 7 9800X3D, GeForce RTX 5080, Asus ROG Strix Helios II Hatsune Miku Edition ATX Mid Tower - PCPartPicker_files/9affdb4ef64ed18ff87ada4c3c0b043d.256p.jpg",
+    "build_id": "kZjZxr",
+    "build_ids": [
+      "kZjZxr"
+    ],
+    "image_file_name": "THE MIKU DESTROYER by JaxMullet12 - AMD Ryzen 7 9800X3D, GeForce RTX 5080, Asus ROG Strix Helios II Hatsune Miku Edition ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "WNbTwP",
+    "category_en": "Case Fan",
+    "name_en": "Lian Li Uni Fan SL-Infinity 61.3 CFM 120 mm Fans 3-Pack",
+    "source_url": "https://pcpartpicker.com/product/WNbTwP/lian-li-uni-fan-sl-infinity-613-cfm-120-mm-fans-3-pack-uf-slin120-3b",
+    "price_usd": "61.14",
+    "price_vnd": 1589640,
+    "price_original_text": "$61.14",
+    "image_saved_path": "./THE MIKU DESTROYER by JaxMullet12 - AMD Ryzen 7 9800X3D, GeForce RTX 5080, Asus ROG Strix Helios II Hatsune Miku Edition ATX Mid Tower - PCPartPicker_files/6e924f68ceb41087f42d587ae5f524a5.256p.jpg",
+    "build_id": "kZjZxr",
+    "build_ids": [
+      "kZjZxr"
+    ],
+    "image_file_name": "THE MIKU DESTROYER by JaxMullet12 - AMD Ryzen 7 9800X3D, GeForce RTX 5080, Asus ROG Strix Helios II Hatsune Miku Edition ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "4zsMnQ",
+    "category_en": "Monitor",
+    "name_en": "Asus XG27ACMEG-G Hatsune Miku Edition 27.0\" 2560 x 1440 260 Hz Monitor",
+    "source_url": "https://pcpartpicker.com/product/4zsMnQ/asus-xg27acmeg-g-hatsune-miku-edition-270-2560-x-1440-260-hz-monitor-xg27acmeg-g",
+    "price_usd": "529.00",
+    "price_vnd": 13754000,
+    "price_original_text": "$529.00",
+    "image_saved_path": "./THE MIKU DESTROYER by JaxMullet12 - AMD Ryzen 7 9800X3D, GeForce RTX 5080, Asus ROG Strix Helios II Hatsune Miku Edition ATX Mid Tower - PCPartPicker_files/13ac7c62e73d11d7f369a4bcafed0911.256p.jpg",
+    "build_id": "kZjZxr",
+    "build_ids": [
+      "kZjZxr"
+    ],
+    "image_file_name": "THE MIKU DESTROYER by JaxMullet12 - AMD Ryzen 7 9800X3D, GeForce RTX 5080, Asus ROG Strix Helios II Hatsune Miku Edition ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "FXYfrH",
+    "category_en": "Keyboard",
+    "name_en": "Asus TUF Gaming K3 Gen II Hatsune Miku Edition RGB Wired Gaming Keyboard",
+    "source_url": "https://pcpartpicker.com/product/FXYfrH/asus-tuf-gaming-k3-gen-ii-hatsune-miku-edition-rgb-wired-gaming-keyboard-tuf-gaming-k3-gen-ii-hatsune-miku",
+    "price_usd": null,
+    "price_vnd": null,
+    "price_original_text": "",
+    "image_saved_path": "./THE MIKU DESTROYER by JaxMullet12 - AMD Ryzen 7 9800X3D, GeForce RTX 5080, Asus ROG Strix Helios II Hatsune Miku Edition ATX Mid Tower - PCPartPicker_files/41rJzV6jOoL.jpg",
+    "build_id": "kZjZxr",
+    "build_ids": [
+      "kZjZxr"
+    ],
+    "image_file_name": "THE MIKU DESTROYER by JaxMullet12 - AMD Ryzen 7 9800X3D, GeForce RTX 5080, Asus ROG Strix Helios II Hatsune Miku Edition ATX Mid Tower - PCPartPicker.html"
+  },
+  {
+    "source_id": "nzsMnQ",
+    "category_en": "Mouse",
+    "name_en": "Asus TUF GAMING Mini Hatsune Miku Edition Bluetooth/Wireless/Wired Optical Mouse",
+    "source_url": "https://pcpartpicker.com/product/nzsMnQ/asus-tuf-gaming-mini-hatsune-miku-edition-bluetoothwirelesswired-optical-mouse-90mp0420-bmua00",
+    "price_usd": "69.98",
+    "price_vnd": 1819480,
+    "price_original_text": "$69.98",
+    "image_saved_path": "./THE MIKU DESTROYER by JaxMullet12 - AMD Ryzen 7 9800X3D, GeForce RTX 5080, Asus ROG Strix Helios II Hatsune Miku Edition ATX Mid Tower - PCPartPicker_files/24d70727a40a355c59ab65f63aa31d61.256p.jpg",
+    "build_id": "kZjZxr",
+    "build_ids": [
+      "kZjZxr"
+    ],
+    "image_file_name": "THE MIKU DESTROYER by JaxMullet12 - AMD Ryzen 7 9800X3D, GeForce RTX 5080, Asus ROG Strix Helios II Hatsune Miku Edition ATX Mid Tower - PCPartPicker.html"
+  }
+]

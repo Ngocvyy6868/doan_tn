@@ -27,7 +27,7 @@ export const navLinks = [
   { name: 'TIN CÔNG NGHỆ', icon: Newspaper, href: '/tech-news' },
 ];
 
-export const money = (n) => n.toLocaleString('vi-VN') + '₫';
+export const money = (n) => typeof n === 'number' && Number.isFinite(n) ? n.toLocaleString('vi-VN') + '₫' : '—';
 export const categorySlug = (name) =>
   encodeURIComponent(
     name

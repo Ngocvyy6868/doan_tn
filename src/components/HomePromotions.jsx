@@ -1,6 +1,7 @@
 import React,{useEffect,useRef,useState} from 'react';
-import {ChevronLeft,ChevronRight,ShoppingBag,Zap,Monitor,Cpu,Flame} from 'lucide-react';
+import {ChevronLeft,ChevronRight,ShoppingBag,Zap,Monitor,Flame} from 'lucide-react';
 import './home-promotions.css';
+import ProductSpecs from './ProductSpecs.jsx';
 const money=value=>Number(value).toLocaleString('vi-VN')+' ₫';
 function ProductRail({children,label}){
  const rail=useRef(null);
@@ -10,7 +11,7 @@ function ProductRail({children,label}){
 function ProductCard({product,add,pc,upcoming}){
  const discount=product.old>product.price?Math.round((1-product.price/product.old)*100):0;
  const unavailable=product.stock<=0||upcoming;
- return <article className={`promo-product ${pc?'promo-pc':''}`}><a className="promo-picture" href={`/product/${product.id}`}><img src={product.img} alt={product.name} loading="lazy"/>{product.flashSaleId&&<span className="flash-sale-badge"><Zap/> Flash sale</span>}{!pc&&discount>0&&<span className="promo-saving">TIẾT KIỆM<strong>{money(product.old-product.price)}</strong><Zap/></span>}</a><a className="promo-name" href={`/product/${product.id}`}>{product.name}</a>{pc&&<div className="promo-specs">{product.attributes?.length?product.attributes.slice(0,4).map((item,index)=><span key={index}><Cpu/>{item.name}: {Array.isArray(item.value)?item.value.join(', '):item.value} {item.unit||''}</span>):<span><Monitor/>Xem cấu hình chi tiết sản phẩm</span>}</div>}<div className="promo-price">{money(product.price)}</div><div className="promo-old">{discount>0&&<><del>{money(product.old)}</del><span>-{discount}%</span></>}</div><div className="promo-actions"><span className={unavailable?'promo-unavailable':''}>{upcoming?'Sắp mở bán':product.stock<=0?'Tạm hết hàng':Number.isFinite(product.stock)?`Còn ${product.stock} sản phẩm`:'Còn hàng'}</span><button disabled={unavailable} onClick={()=>add(product)} aria-label={`Thêm ${product.name} vào giỏ`}><ShoppingBag/></button></div>{!pc&&<div className="promo-sale-strip"><Flame/>{Number.isFinite(product.sold)?`Đã bán ${product.sold}`:'Ưu đãi đang chờ bạn'}</div>}</article>;
+ return <article className={`promo-product ${pc?'promo-pc':''}`}><a className="promo-picture" href={`/product/${product.id}`}><img src={product.img} alt={product.name} loading="lazy"/>{product.flashSaleId&&<span className="flash-sale-badge"><Zap/> Flash sale</span>}{!pc&&discount>0&&<span className="promo-saving">TIẾT KIỆM<strong>{money(product.old-product.price)}</strong><Zap/></span>}</a><a className="promo-name" href={`/product/${product.id}`}>{product.name}</a>{pc&&<ProductSpecs product={product} className="promo-specs"/>}<div className="promo-price">{money(product.price)}</div><div className="promo-old">{discount>0&&<><del>{money(product.old)}</del><span>-{discount}%</span></>}</div><div className="promo-actions"><span className={unavailable?'promo-unavailable':''}>{upcoming?'Sắp mở bán':product.stock<=0?'Tạm hết hàng':Number.isFinite(product.stock)?`Còn ${product.stock} sản phẩm`:'Còn hàng'}</span><button disabled={unavailable} onClick={()=>add(product)} aria-label={`Thêm ${product.name} vào giỏ`}><ShoppingBag/></button></div>{!pc&&<div className="promo-sale-strip"><Flame/>{Number.isFinite(product.sold)?`Đã bán ${product.sold}`:'Ưu đãi đang chờ bạn'}</div>}</article>;
 }
 export default function HomePromotions({products,add,openBuilder}){
  const [deal,setDeal]=useState('current'),[now,setNow]=useState(Date.now());

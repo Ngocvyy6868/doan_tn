@@ -81,6 +81,7 @@ class CatalogEditingTests(TestCase):
         stored = ProductImage.objects.get()
         self.assertEqual(bytes(stored.content), content)
         url = response.json()['url']
+        self.assertIn('/api/product-images/', url)
         image_response = self.client.get(url)
         self.assertEqual(image_response.content, content)
         self.assertEqual(image_response['Content-Type'], 'image/png')
@@ -122,3 +123,24 @@ class ProductCreationOrderTests(TestCase):
         response = self.client.put('/api/admin/products/', [keep.payload], content_type='application/json')
         self.assertEqual(response.status_code, 200)
         self.assertEqual(list(Product.objects.values_list('pk', flat=True)), [keep.pk])
+
+class LegacyProductImageTests(TestCase):
+    def test_old_local_image_uses_current_api_host_and_is_retrievable(self):
+        image = io.BytesIO()
+        Image.new('RGB', (2, 2), 'blue').save(image, format='PNG')
+        content = image.getvalue()
+        stored = ProductImage.objects.create(content=content, content_type='image/png')
+        old_url = f'http://localhost:8000/api/product-images/{stored.pk}/'
+        Product.objects.create(external_id='old-image', payload={'id': 'old-image', 'img': old_url})
+        response = self.client.get('/api/admin/products/', HTTP_HOST='localhost:8080')
+        url = response.json()['results'][0]['img']
+        self.assertEqual(url, f'http://localhost:8080/api/product-images/{stored.pk}/')
+        self.assertEqual(self.client.get(url).content, content)
+        saved = self.client.put('/api/admin/products/', [{'id': 'old-image', 'name': 'Old image', 'img': old_url}], content_type='application/json', HTTP_HOST='localhost:8080')
+        self.assertEqual(saved.status_code, 200)
+        self.assertEqual(Product.objects.get(external_id='old-image').payload['img'], url)
+
+    def test_external_image_url_is_preserved(self):
+        url = 'https://example.com/product.jpg'
+        Product.objects.create(external_id='external', payload={'id': 'external', 'img': url})
+        self.assertEqual(self.client.get('/api/admin/products/').json()['results'][0]['img'], url)

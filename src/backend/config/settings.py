@@ -36,5 +36,27 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 CORS_ALLOWED_ORIGINS = os.getenv('CORS_ALLOWED_ORIGINS', 'http://localhost:5173').split(',')
 CORS_ALLOW_CREDENTIALS = True
 CSRF_TRUSTED_ORIGINS = CORS_ALLOWED_ORIGINS
-GEMINI_API_KEY = os.getenv('GEMINI_API_KEY', '')
-GEMINI_MODEL = os.getenv('GEMINI_MODEL', 'gemini-2.5-flash')
+OLLAMA_BASE_URL = os.getenv('OLLAMA_BASE_URL', 'http://127.0.0.1:11434')
+OLLAMA_MODEL = os.getenv('OLLAMA_MODEL', 'qwen3:4b')
+
+
+# Shared cache and advisory state in production; local cache is for standalone development.
+REDIS_URL = os.getenv('REDIS_URL', '')
+if REDIS_URL:
+    CACHES = {'default': {'BACKEND': 'django.core.cache.backends.redis.RedisCache',
+                         'LOCATION': REDIS_URL}}
+ADVISOR_EMBEDDING_MODEL = os.getenv('ADVISOR_EMBEDDING_MODEL', 'BAAI/bge-m3')
+ADVISOR_RERANKER_MODEL = os.getenv('ADVISOR_RERANKER_MODEL', 'BAAI/bge-reranker-v2-m3')
+ADVISOR_MODELS_OFFLINE = os.getenv('ADVISOR_MODELS_OFFLINE', 'true').lower() == 'true'
+ADVISOR_HYDE = os.getenv('ADVISOR_HYDE', 'true').lower() == 'true'
+ADVISOR_RERANK = os.getenv('ADVISOR_RERANK', 'true').lower() == 'true'
+ADVISOR_RETRIEVAL = os.getenv('ADVISOR_RETRIEVAL', 'hybrid')
+# 'pgvector' (production, 1024-dim HNSW) or 'memory' (exact search, any dimension; TN3 baselines).
+ADVISOR_VECTOR_STORE = os.getenv('ADVISOR_VECTOR_STORE', 'pgvector')
+# 'combined' = average of question and HyDE vectors (đề cương 3.1); 'only' = HyDE vector alone (TN2).
+ADVISOR_HYDE_MODE = os.getenv('ADVISOR_HYDE_MODE', 'combined')
+# Số sản phẩm đầu kết quả truy xuất mỗi nhóm được ưu tiên trước khi xét giá cao nhất (đề cương 3.3.3).
+ADVISOR_ASSEMBLY_TOP_K = int(os.getenv('ADVISOR_ASSEMBLY_TOP_K', '5'))
+ADVISOR_LLM_TIMEOUT =int(os.getenv('ADVISOR_LLM_TIMEOUT', '30'))
+
+STATIC_ROOT = BASE_DIR / 'staticfiles'

@@ -8,3 +8,10 @@ coverage/
 __pycache__/
 *.py[cod]
 .test-deps/
+src/backend/exports/
+
+.build-check*/
+.browser-debug/
+
+# Môi trường chấm RAGAS (scripts/requirements-ragas.txt)
+.venv-eval/

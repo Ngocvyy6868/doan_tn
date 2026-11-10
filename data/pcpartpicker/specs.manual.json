@@ -1,0 +1,34 @@
+{
+  "_note": "Thông số bổ sung theo trang sản phẩm của nhà sản xuất cho các khóa dùng trong luật R1–R14. Giá trị null là nhà sản xuất không công bố. Cần đối chiếu lại trước khi dùng cho bán hàng thật.",
+  "pcpp-HcPgXL": {"socket": "LGA1200", "threads": 12, "boost_ghz": 4.8, "tdp_w": 125, "has_igpu": true, "stock_cooler": false},
+  "pcpp-fPyH99": {"socket": "AM5", "threads": 16, "boost_ghz": 5.2, "tdp_w": 120, "has_igpu": true, "stock_cooler": false},
+  "pcpp-3hyH99": {"socket": "AM5", "threads": 16, "boost_ghz": 5.0, "tdp_w": 120, "has_igpu": true, "stock_cooler": false},
+  "pcpp-WtyV3C": {"socket": "LGA1151", "threads": 8, "boost_ghz": 4.9, "tdp_w": 95, "has_igpu": true, "stock_cooler": false},
+
+  "pcpp-J9PgXL": {"ram_type": "DDR4", "ram_slots": 4, "max_ram_gb": 128, "m2_slots": 2},
+  "pcpp-HBdMnQ": {"ram_type": "DDR5", "ram_slots": 4, "max_ram_gb": 256, "m2_slots": 3},
+  "pcpp-s8nypg": {"ram_type": "DDR5", "ram_slots": 4, "max_ram_gb": 192, "m2_slots": 3},
+  "pcpp-QDVD4D": {"ram_type": "DDR4", "ram_slots": 4, "max_ram_gb": 64, "m2_slots": 2},
+  "pcpp-fDm2FT": {"ram_type": "DDR5", "ram_slots": 4, "max_ram_gb": 192, "m2_slots": 3},
+
+  "pcpp-JXTzK8": {"tdp_w": 200, "length_mm": 294},
+  "pcpp-QD2j4D": {"tdp_w": 575, "length_mm": 304},
+  "pcpp-TcG2FT": {"tdp_w": 160, "length_mm": 281},
+  "pcpp-fKp323": {"tdp_w": 150, "length_mm": 279},
+  "pcpp-N2zp99": {"tdp_w": 360, "length_mm": 358},
+
+  "pcpp-smDkcf": {"sockets": ["LGA1700", "LGA1200", "LGA1151", "AM4", "AM5"], "radiator_mm": 280},
+  "pcpp-TtXV3C": {"sockets": ["LGA1851", "LGA1700", "AM4", "AM5"], "radiator_mm": 360},
+  "pcpp-g8pD4D": {"sockets": ["LGA1851", "LGA1700", "LGA1200", "LGA1151", "AM4", "AM5"], "radiator_mm": 360},
+  "pcpp-hmtCmG": {"sockets": ["LGA1200", "LGA1151", "LGA1150", "LGA1155", "AM4"], "height_mm": 159, "tdp_w": 150},
+  "pcpp-vrh2FT": {"sockets": ["LGA1851", "LGA1700", "AM4", "AM5"], "radiator_mm": 360},
+
+  "pcpp-tbJwrH": {"interface": "SATA"},
+  "pcpp-4FH48d": {"modular": false},
+
+  "pcpp-3RJmP6": {"supported_mb": ["E-ATX", "ATX", "Micro ATX", "Mini ITX"], "max_gpu_length_mm": 420, "max_cooler_height_mm": 160},
+  "pcpp-HZPv6h": {"supported_mb": ["ATX", "Micro ATX", "Mini ITX"], "max_gpu_length_mm": 430, "max_cooler_height_mm": 170},
+  "pcpp-3nTFf7": {"supported_mb": ["ATX", "Micro ATX", "Mini ITX"], "max_gpu_length_mm": 400, "max_cooler_height_mm": 175},
+  "pcpp-8qFbt6": {"supported_mb": ["E-ATX", "ATX", "Micro ATX", "Mini ITX"], "max_gpu_length_mm": 455, "max_cooler_height_mm": 185},
+  "pcpp-pQxTwP": {"supported_mb": ["E-ATX", "ATX", "Micro ATX", "Mini ITX"], "max_gpu_length_mm": 450, "max_cooler_height_mm": 190}
+}

@@ -1,9 +1,10 @@
-.git
-.gitignore
+﻿.git
 node_modules
 dist
-npm-debug.log*
-Resources
-README.md
-Dockerfile*
-docker-compose*.yml
+.env
+.env.*
+**/__pycache__
+**/*.pyc
+src/backend/exports
+.build-check*
+*.log

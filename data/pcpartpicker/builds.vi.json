@@ -1,0 +1,342 @@
+[
+  {
+    "id": "BRMbt6",
+    "title": "Máy trạm CAD kết hợp chơi game (2021)",
+    "title_en": "(2021) CAD Workstation + Gaming by abodnieks - Intel Core i5-10600K, GeForce RTX 3060 Ti LHR, Phanteks Eclipse P400A ATX Mid Tower - PCPartPicker",
+    "source_url": "https://pcpartpicker.com/b/BRMbt6",
+    "source_html": "(2021) CAD Workstation + Gaming by abodnieks - Intel Core i5-10600K, GeForce RTX 3060 Ti LHR, Phanteks Eclipse P400A ATX Mid Tower - PCPartPicker.html",
+    "items": [
+      {
+        "product_id": "pcpp-HcPgXL",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-smDkcf",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-J9PgXL",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-W6ndnQ",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-w96qqs",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-btkwrH",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-JXTzK8",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-3RJmP6",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-2HbwrH",
+        "quantity": 1
+      }
+    ],
+    "quoted_subtotal_vnd": 25323740,
+    "total_vnd": null,
+    "missing_price_product_ids": [
+      "pcpp-2HbwrH",
+      "pcpp-3RJmP6",
+      "pcpp-JXTzK8",
+      "pcpp-btkwrH",
+      "pcpp-smDkcf",
+      "pcpp-w96qqs"
+    ],
+    "note": "Tổng phần có giá chỉ là tổng tạm tính; số lượng tính theo các dòng linh kiện của bản lưu HTML."
+  },
+  {
+    "id": "VnjZxr",
+    "title": "Cấu hình đỉnh cao",
+    "title_en": "Endgame by Blackbere - AMD Ryzen 7 9800X3D, GeForce RTX 5090, Corsair AIR 5400 LX-R RGB iCUE LINK ATX Mid Tower - PCPartPicker",
+    "source_url": "https://pcpartpicker.com/b/VnjZxr",
+    "source_html": "Endgame by Blackbere - AMD Ryzen 7 9800X3D, GeForce RTX 5090, Corsair AIR 5400 LX-R RGB iCUE LINK ATX Mid Tower - PCPartPicker.html",
+    "items": [
+      {
+        "product_id": "pcpp-fPyH99",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-TtXV3C",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-HBdMnQ",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-XxV2FT",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-f3cRsY",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-67FmP6",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-QD2j4D",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-HZPv6h",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-vYP8TW",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-HdLdnQ",
+        "quantity": 2
+      },
+      {
+        "product_id": "pcpp-rf4Pxr",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-WMfxFT",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-xNqrxr",
+        "quantity": 1
+      }
+    ],
+    "quoted_subtotal_vnd": 0,
+    "total_vnd": null,
+    "missing_price_product_ids": [
+      "pcpp-67FmP6",
+      "pcpp-HBdMnQ",
+      "pcpp-HZPv6h",
+      "pcpp-HdLdnQ",
+      "pcpp-QD2j4D",
+      "pcpp-TtXV3C",
+      "pcpp-WMfxFT",
+      "pcpp-XxV2FT",
+      "pcpp-f3cRsY",
+      "pcpp-fPyH99",
+      "pcpp-rf4Pxr",
+      "pcpp-vYP8TW",
+      "pcpp-xNqrxr"
+    ],
+    "note": "Tổng phần có giá chỉ là tổng tạm tính; số lượng tính theo các dòng linh kiện của bản lưu HTML."
+  },
+  {
+    "id": "9HbKHx",
+    "title": "Lần đầu tự lắp máy",
+    "title_en": "My First Build by notsdub - AMD Ryzen 7 7800X3D, Radeon RX 9060 XT, Thermaltake View 270 Plus TG ARGB ATX Mid Tower - PCPartPicker",
+    "source_url": "https://pcpartpicker.com/b/9HbKHx",
+    "source_html": "My First Build by notsdub - AMD Ryzen 7 7800X3D, Radeon RX 9060 XT, Thermaltake View 270 Plus TG ARGB ATX Mid Tower - PCPartPicker.html",
+    "items": [
+      {
+        "product_id": "pcpp-3hyH99",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-g8pD4D",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-s8nypg",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-QF9wrH",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-hh4Zxr",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-TcG2FT",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-3nTFf7",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-yWJBD3",
+        "quantity": 1
+      }
+    ],
+    "quoted_subtotal_vnd": 59626060,
+    "total_vnd": null,
+    "missing_price_product_ids": [
+      "pcpp-s8nypg"
+    ],
+    "note": "Tổng phần có giá chỉ là tổng tạm tính; số lượng tính theo các dòng linh kiện của bản lưu HTML."
+  },
+  {
+    "id": "RtH2FT",
+    "title": "Máy tính chơi game đầu tiên",
+    "title_en": "My first gaming PC by RC-1009 - Intel Core i7-9700K, GeForce GTX 1070, Fractal Design Pop XL Air ATX Full Tower - PCPartPicker",
+    "source_url": "https://pcpartpicker.com/b/RtH2FT",
+    "source_html": "My first gaming PC by RC-1009 - Intel Core i7-9700K, GeForce GTX 1070, Fractal Design Pop XL Air ATX Full Tower - PCPartPicker.html",
+    "items": [
+      {
+        "product_id": "pcpp-WtyV3C",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-hmtCmG",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-QDVD4D",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-BxTzK8",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-P4FKHx",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-tbJwrH",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-M82j4D",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-J2KcCJ",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-fKp323",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-8qFbt6",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-4FH48d",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-z2dqqs",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-XdcRsY",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-2YMMnQ",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-NLdMnQ",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-NDrYcf",
+        "quantity": 1
+      }
+    ],
+    "quoted_subtotal_vnd": 35371700,
+    "total_vnd": null,
+    "missing_price_product_ids": [
+      "pcpp-2YMMnQ",
+      "pcpp-BxTzK8",
+      "pcpp-NLdMnQ",
+      "pcpp-QDVD4D",
+      "pcpp-hmtCmG",
+      "pcpp-tbJwrH",
+      "pcpp-z2dqqs"
+    ],
+    "note": "Tổng phần có giá chỉ là tổng tạm tính; số lượng tính theo các dòng linh kiện của bản lưu HTML."
+  },
+  {
+    "id": "kZjZxr",
+    "title": "THE MIKU DESTROYER — cấu hình chủ đề Hatsune Miku",
+    "title_en": "THE MIKU DESTROYER by JaxMullet12 - AMD Ryzen 7 9800X3D, GeForce RTX 5080, Asus ROG Strix Helios II Hatsune Miku Edition ATX Mid Tower - PCPartPicker",
+    "source_url": "https://pcpartpicker.com/b/kZjZxr",
+    "source_html": "THE MIKU DESTROYER by JaxMullet12 - AMD Ryzen 7 9800X3D, GeForce RTX 5080, Asus ROG Strix Helios II Hatsune Miku Edition ATX Mid Tower - PCPartPicker.html",
+    "items": [
+      {
+        "product_id": "pcpp-fPyH99",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-vrh2FT",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-fDm2FT",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-hRQcCJ",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-RKYmP6",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-N2zp99",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-pQxTwP",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-jbVfrH",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-HxKKHx",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-2hzhP6",
+        "quantity": 19
+      },
+      {
+        "product_id": "pcpp-WNbTwP",
+        "quantity": 2
+      },
+      {
+        "product_id": "pcpp-4zsMnQ",
+        "quantity": 3
+      },
+      {
+        "product_id": "pcpp-FXYfrH",
+        "quantity": 1
+      },
+      {
+        "product_id": "pcpp-nzsMnQ",
+        "quantity": 1
+      }
+    ],
+    "quoted_subtotal_vnd": 210210520,
+    "total_vnd": null,
+    "missing_price_product_ids": [
+      "pcpp-FXYfrH",
+      "pcpp-jbVfrH",
+      "pcpp-vrh2FT"
+    ],
+    "note": "Tổng phần có giá chỉ là tổng tạm tính; số lượng tính theo các dòng linh kiện của bản lưu HTML."
+  }
+]

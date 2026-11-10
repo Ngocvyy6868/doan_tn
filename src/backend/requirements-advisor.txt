@@ -1,0 +1,7 @@
+# Phụ thuộc của chatbot tư vấn (BGE-M3 + bge-reranker-v2-m3 chạy CPU), tách khỏi requirements.txt
+# vì kéo theo PyTorch (~vài trăm MB). Cài sau requirements.txt:
+#   pip install -r requirements.txt -r requirements-advisor.txt
+# Linux/Docker: cài torch bản CPU trước để tránh tải bản CUDA:
+#   pip install torch --index-url https://download.pytorch.org/whl/cpu
+# Windows/macOS: torch trên PyPI đã là bản CPU.
+sentence-transformers>=3.4,<6.0
