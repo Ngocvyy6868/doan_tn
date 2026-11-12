@@ -62,7 +62,22 @@ Giữ các thuộc tính tiếng Việt hiện tại; ưu tiên `payload.specs` 
 
 Các số không kèm đơn vị trong giá trị; dùng W, mm, GB theo tên khóa. `has_igpu`, `stock_cooler`, `modular` là boolean thật; `sockets`, `supported_mb` là mảng chuỗi. `capacity_gb` của RAM là tổng dung lượng một kit, `modules` là số thanh trong kit. `interface` dùng nvme/sata, `cooler_type` dùng air/liquid (chấp nhận cả aio). R11 chỉ so chiều cao với tản khí; với tản nước, R11 là cảnh báo "cần kiểm tra vị trí lắp radiator" và không chặn cấu hình, nên tản nước không cần `height_mm`.
 
-Copy file dữ liệu vào container rồi kiểm tra, nhập và nhúng:
+### Nhập bằng Excel (CSV)
+
+Lệnh nhập nhận cả `.json` và `.csv`. Mở `data/import-template.csv` bằng Excel (chỉ có dòng tiêu đề), điền mỗi sản phẩm một dòng rồi lưu dạng **CSV UTF-8**. Xem `data/import-example.csv` cho mỗi nhóm linh kiện một dòng mẫu (tên có “[VÍ DỤ]”, `active=không`, số liệu chỉ để minh họa định dạng).
+
+| Cột | Ghi chú |
+|---|---|
+| `id` hoặc `sku` | Bắt buộc, duy nhất, ≤ 64 ký tự. Nhập lại cùng id là cập nhật. |
+| `name`, `category`, `price`, `stock` | Bắt buộc. `category`: cpu, mainboard, ram, vga/gpu, tản nhiệt/cooler, ssd, hdd, nguồn/psu, case, bản quyền/license… Giá ghi `2990000` hoặc `2.990.000`. |
+| `brand`, `old`, `active`, `img`, `description` | Tùy chọn. `old` là giá gốc; `active` có/không (bỏ trống = giữ nguyên). |
+| Cột thông số | Theo bảng khóa ở trên. Ô trống = chưa có dữ liệu (luật sẽ báo “chưa xác minh”, không chặn nhầm). Có/không cho has_igpu, stock_cooler, modular. Danh sách (`sockets`, `supported_mb`) ngăn bằng dấu `;`. |
+
+Lệnh nhập tự chuẩn hóa để luật so khớp được: socket bỏ khoảng trắng và viết hoa (`LGA 1700` → `LGA1700`), kích thước mainboard về ATX / Micro ATX / Mini ITX / E-ATX (nhận `mATX`, `micro-atx`, `ITX`…), chuẩn RAM về DDR3/DDR4/DDR5 (mainboard hỗ trợ hai loại ghi `DDR4/DDR5`), `interface` về nvme/sata, `cooler_type` về air/liquid (nhận `khí`, `nước`, `AIO`), số bỏ đơn vị (`360 mm` → 360, `4,4 GHz` → 4.4). Giá trị không nhận ra (ví dụ `DDR5-6000`, kích thước mainboard lạ) bị từ chối.
+
+Lệnh kiểm tra toàn bộ file và liệt kê **tất cả** lỗi một lượt; có lỗi thì không ghi gì. Khi cập nhật sản phẩm đã có, các trường file không có (giá vốn, giá gốc, ảnh tải lên trong admin) được giữ nguyên; sản phẩm đã phân kho giữ tồn kho tính từ module Kho, không lấy số `stock` trong file. Lệnh không xóa sản phẩm; muốn ngừng bán thì nhập `active=không`.
+
+Copy file dữ liệu vào container rồi kiểm tra, nhập và nhúng (Git Bash trên Windows cần `MSYS_NO_PATHCONV=1` để giữ đường dẫn `/tmp`):
 
 ```bash
 docker compose -f docker-compose.advisor.yml cp products.json backend:/tmp/products.json
@@ -70,6 +85,8 @@ docker compose -f docker-compose.advisor.yml exec backend python manage.py impor
 docker compose -f docker-compose.advisor.yml exec backend python manage.py import_advisor_catalog /tmp/products.json
 docker compose -f docker-compose.advisor.yml exec backend python manage.py index_advisor_catalog
 ```
+
+`index_advisor_catalog` nhúng theo lô 16 sản phẩm và chỉ nhúng sản phẩm có tên/thông số/mô tả thay đổi; `--force` để nhúng lại toàn bộ.
 
 Lệnh nhập chỉ upsert các mã trong file, không xóa sản phẩm khác. Giá/tồn đọc trực tiếp từ DB, không nằm trong nội dung embedding. Sau khi đổi mô tả/specs/tên/hãng/danh mục, chạy lại lệnh index; vector cũ không được dùng trong truy xuất ngữ nghĩa. Không cần index lại khi chỉ đổi giá/tồn.
 
@@ -82,7 +99,18 @@ Lệnh nhập chỉ upsert các mã trong file, không xóa sản phẩm khác. 
 - Lỗi hoặc chưa xác minh ở luật error chặn xác nhận cấu hình; warning được hiển thị. Không tìm được linh kiện thì báo thiếu và đề nghị điều chỉnh, không tự tạo sản phẩm.
 - Hai yêu cầu đồng thời của cùng tài khoản bị chặn. Rate limit 5 yêu cầu/phút dùng Redis. Lịch sử bền vững theo tài khoản, hội thoại mới không xóa lịch sử cũ.
 - Thêm cả bộ kiểm tra lại cả giỏ hiện có bằng giá/tồn DB. Giỏ đã có linh kiện trùng nhóm có thể cần được điều chỉnh trước khi thêm. Sửa số lượng ở thanh toán sẽ chạy kiểm tra backend lại.
+- Nút "Đổi" trên từng linh kiện của cấu hình đề xuất (chỉ ở tin nhắn cuối) mở danh sách sản phẩm cùng nhóm còn hàng. Chọn một sản phẩm sẽ gửi `swap: true` kèm id đó; backend ghim sản phẩm và để thuật toán luật chọn lại các nhóm còn lại, nên cấu hình mới vẫn qua R1–R14. Tiền chênh lệch được phân bổ lại cho nhóm khác.
 - Đây không phải cơ chế giữ hàng; tồn kho có thể đổi sau tư vấn. Luồng tạo đơn hàng hiện tại chưa được thay bằng hệ thống giữ tồn kho giao dịch.
+
+## Độ trễ
+
+Đo trên RTX 5060 8GB, catalog mẫu 30 sản phẩm còn bán (10/11/2026): một lượt đề xuất mất 11–14 s khi server đã chạy sẵn, trong đó ba lần gọi Qwen3 (trích nhu cầu, HyDE, viết câu trả lời) chiếm khoảng 7 s. Các biện pháp đang bật:
+
+- `OLLAMA_KEEP_ALIVE=-1`: giữ Qwen3 thường trực trên GPU (mặc định Ollama gỡ model sau 5 phút rảnh, nạp lại mất ~9 s).
+- `ADVISOR_WARMUP=true`: khi gunicorn khởi động, luồng nền nạp sẵn Qwen3, BGE-M3 và reranker, nên lượt chat đầu không phải chờ nạp model.
+- Reranker bỏ qua khi chỉ có 0–1 ứng viên và giới hạn đầu vào 512 token.
+
+Giới hạn đã biết: reranker bge-reranker-v2-m3 trên CPU 4 nhân mất ~0,3–0,45 s mỗi cặp và gọi riêng cho từng nhóm linh kiện. Với catalog thật (20–50 ứng viên mỗi nhóm), bước này sẽ vượt xa mục tiêu 10 s; cần chạy reranker trên GPU hoặc quyết định dựa trên kết quả TN2 (có/không reranker).
 
 ## API
 
@@ -90,13 +118,14 @@ Lệnh nhập chỉ upsert các mã trong file, không xóa sản phẩm khác. 
 |---|---|
 | GET /api/chat/ | CSRF token, 12 tin gần nhất, phiếu nhu cầu |
 | POST /api/chat/ | `{"message":"Build PC 25tr","product_ids":[]}` |
+| POST /api/chat/ (đổi linh kiện) | `{"message":"Đổi RAM sang …","product_ids":["id-mới"],"swap":true}`: ghim đúng 1 sản phẩm, luôn lắp lại cấu hình (không đi nhánh tra cứu) |
 | DELETE /api/chat/ | Đóng phiên đang dùng, bắt đầu hội thoại mới |
 | GET /api/chat/sessions/ | Danh sách 50 hội thoại gần nhất của tài khoản |
 | GET /api/chat/sessions/{id}/ | Đọc lịch sử của chủ sở hữu |
 | POST /api/chat/sessions/{id}/ | Khôi phục hội thoại để tiếp tục |
 | POST /api/advisor/validate/ | `{"items":[{"id":"sku","quantity":1}]}`; đọc lại giá/tồn và rules |
 
-POST chat trả `answer`, `products`, `checks`, `stage` (clarification/lookup/recommendation), `requirements`, `can_add_to_cart`, `latency_ms`. Khi hỏi bổ sung có thêm `questions` và `quick_replies` (`[{"question": "...", "options": ["...", ...]}]`). Kết quả cấu hình có thêm `total`, `peripheral_reserve`, `component_budget`, `errors`. Các giá trị số và checks do backend tính, không lấy từ câu trả lời của LLM.
+POST chat trả `answer`, `products`, `checks`, `stage` (clarification/lookup/recommendation), `requirements`, `can_add_to_cart`, `latency_ms`. Khi hỏi bổ sung có thêm `questions` và `quick_replies` (`[{"question": "...", "options": ["...", ...]}]`). Kết quả cấu hình có thêm `total`, `peripheral_reserve`, `component_budget`, `errors`. Khi thiếu nhóm linh kiện bắt buộc có thêm `alternatives` (đề cương 1.2, mục 4): `missing` là từng nhóm còn thiếu kèm sản phẩm rẻ nhất lắp được và số tiền vượt hạn mức (`over_by`), `other_brand` là CPU hãng khác trong hạn mức, `min_build_total` là giá bộ rẻ nhất lắp được từ hàng còn bán, `budget_shortfall` là số tiền ngân sách linh kiện còn thiếu. Các giá trị này do `advisor/assembly.py` tính bằng luật, LLM chỉ diễn đạt lại. Các giá trị số và checks do backend tính, không lấy từ câu trả lời của LLM.
 
 Yêu cầu đăng nhập; POST/DELETE dùng CSRF. 400 dữ liệu sai; 401 chưa đăng nhập; 403 CSRF; 409 đang xử lý yêu cầu trước; 429 quá nhanh; 503 model/index chưa sẵn sàng.
 

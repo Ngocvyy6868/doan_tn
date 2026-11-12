@@ -13,6 +13,7 @@ from django.http import JsonResponse
 from django.views.decorators.csrf import csrf_exempt
 from django.views.decorators.http import require_GET, require_POST
 
+from . import crm
 from .models import FlashSale, Employee, Address, Category, Customer, Order, OrderItem, Product, ProductAttribute, Warehouse
 
 LOGIN_RATE_LIMIT_ATTEMPTS = 5
@@ -237,6 +238,11 @@ def create_order(request):
             sku=str(item.get('sku', '')), name=str(item.get('name', '')), image=str(item.get('img', '')),
             unit_price=int(item.get('price', 0)), quantity=int(item.get('quantity', 0)), total=int(item.get('total', 0)),
             allocations=allocation) for item, allocation in zip(items, allocations)])
+        crm.record(customer, crm.Type.ORDER_PLACED, {
+            'order_id': order.id, 'code': order.code, 'grand_total': order.grand_total,
+            'payment_method': order.payment_method, 'status': order.status,
+            'items': [{'name': str(i.get('name', '')), 'quantity': i['quantity']} for i in items][:20],
+        }, source=crm.Source.CUSTOMER, title=f'Đặt đơn hàng {order.code}')
     return JsonResponse({'order': _serialize_order(Order.objects.prefetch_related('items').get(pk=order.pk))}, status=201)
 
 
@@ -283,6 +289,12 @@ def admin_orders(request, order_id=None):
                     release_stock(item.product_external_id, item.allocations)
                     item.allocations = []
                     item.save(update_fields=['allocations'])
+            if status != order.status:
+                labels = dict(Order.Status.choices)
+                crm.record(order.customer, crm.Type.ORDER_STATUS, {
+                    'order_id': order.id, 'code': order.code, 'from': order.status, 'to': status,
+                    'from_label': labels.get(order.status, order.status), 'to_label': labels[status],
+                }, actor=request.user, source=crm.Source.STAFF, title=f'Đơn {order.code}: {labels[status]}')
             order.status = status
         if 'handler_name' in data:
             return JsonResponse({'message': 'Choose an existing employee.'}, status=400)
@@ -341,7 +353,8 @@ def register(request):
     with transaction.atomic():
         user = User.objects.create_user(username=email, email=email, password=password,
                                         first_name=first_name, last_name=' '.join(remaining_name))
-        Customer.objects.create(user=user, full_name=full_name, phone=phone)
+        customer = Customer.objects.create(user=user, full_name=full_name, phone=phone)
+        crm.record(customer, crm.Type.REGISTERED, {'email': email, 'phone': phone}, source=crm.Source.CUSTOMER)
     auth_login(request, user)
     return JsonResponse({'message': 'Đăng ký tài khoản thành công.',
                          'user': _serialize_account(user)}, status=201)
@@ -376,6 +389,8 @@ def login(request):
 
     cache.delete(rate_key)
     auth_login(request, user)
+    if not user.is_staff:
+        crm.record(crm.customer_of(user), crm.Type.LOGIN, {'ip': _client_ip(request)}, source=crm.Source.CUSTOMER)
     return JsonResponse({'message': 'Đăng nhập thành công.', 'user': _serialize_account(user)})
 
 
@@ -449,7 +464,15 @@ def profile(request):
         if not current_password or not user.check_password(current_password):
             return JsonResponse({'message': 'Mật khẩu hiện tại không đúng. Vui lòng xác nhận lại để đổi email/số điện thoại.'}, status=400)
 
+    labels = {'full_name': 'Họ tên', 'email': 'E-mail', 'phone': 'Số điện thoại', 'avatar_url': 'Ảnh đại diện'}
+    before = {'full_name': customer.full_name, 'email': user.email, 'phone': customer.phone, 'avatar_url': customer.avatar_url}
+    after = {'full_name': full_name, 'email': email, 'phone': phone, 'avatar_url': avatar_url}
+    changes = [{'field': labels[k], 'from': before[k], 'to': after[k]} for k in labels
+               if before[k] != after[k] and k != 'avatar_url'] + \
+              ([{'field': labels['avatar_url']}] if before['avatar_url'] != avatar_url else [])
     with transaction.atomic():
+        if changes:
+            crm.record(customer, crm.Type.PROFILE_UPDATED, {'changes': changes}, source=crm.Source.CUSTOMER)
         user.email = email
         user.username = email
         first_name, *remaining_name = full_name.split()
@@ -506,6 +529,8 @@ def addresses(request, customer_id=None):
             full_name=full_name, phone=phone, province_code=province_code, province_name=province_name,
             ward_code=ward_code, ward_name=ward_name, detail=detail, is_default=make_default,
         )
+        crm.record(customer, crm.Type.ADDRESS_ADDED, {'address': crm.address_text(address), 'default': make_default},
+                   actor=request.user)
     return JsonResponse({'result': _serialize_address(address)}, status=201)
 
 
@@ -549,12 +574,15 @@ def address_detail(request, address_id, customer_id=None):
                 if fallback:
                     fallback.is_default = True
                     fallback.save(update_fields=['is_default'])
+            crm.record(customer, crm.Type.ADDRESS_UPDATED, {'address': crm.address_text(address), 'default': make_default},
+                       actor=request.user)
         return JsonResponse({'result': _serialize_address(customer.addresses.get(pk=address.pk))})
 
     if request.method == 'DELETE':
         if customer.addresses.count() <= 1:
             return JsonResponse({'message': 'Cần giữ lại ít nhất một địa chỉ để sử dụng khi thanh toán.'}, status=400)
         was_default = address.is_default
+        crm.record(customer, crm.Type.ADDRESS_DELETED, {'address': crm.address_text(address)}, actor=request.user)
         address.delete()
         if was_default:
             fallback = customer.addresses.order_by('-created_at').first()

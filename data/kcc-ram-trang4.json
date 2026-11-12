@@ -1,0 +1,581 @@
+[
+ {
+  "id": "kcc-ram-desktop-gskill-trident-z5-rgb-16gb-16gbx1-ddr5-6000mhz-w",
+  "sku": "KCC-RAM-DESKTOP-GSKILL-TRIDENT-Z5-RGB-16GB-16GBX1-DDR5-6000MHZ-W",
+  "name": "Ram Desktop Gskill Trident Z5 RGB 16GB (16GBx1) DDR5 6000Mhz White (F5-6000J3636F16GX1-TZ5RW)",
+  "brand": "G.Skill",
+  "category": "ram",
+  "price": 7590000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-desktop-gskill-trident-z5-rgb-16gb-16gbx1-ddr5-6000mhz-w.jpeg",
+  "description": "Nguồn: /ram-desktop-gskill-trident-z5-rgb-16gb-16gbx1-ddr5-6000mhz-white-f5-6000j3636f16gx1-tz5rw/",
+  "specs": {
+   "ram_type": "DDR5",
+   "capacity_gb": 16,
+   "modules": 1,
+   "speed_mhz": 6000,
+   "cas_latency": null,
+   "tdp_w": 5
+  },
+  "old": 8420000
+ },
+ {
+  "id": "kcc-ram-desktop-gskill-trident-z5-rgb-32gb-32gbx1-ddr5-6000mhz-w",
+  "sku": "KCC-RAM-DESKTOP-GSKILL-TRIDENT-Z5-RGB-32GB-32GBX1-DDR5-6000MHZ-W",
+  "name": "Ram Desktop Gskill Trident Z5 RGB 32GB (32GBx1) DDR5 6000Mhz White (F5-6000J3636F32GX1-TZ5RW)",
+  "brand": "G.Skill",
+  "category": "ram",
+  "price": 15050000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-desktop-gskill-trident-z5-rgb-32gb-32gbx1-ddr5-6000mhz-w.jpeg",
+  "description": "Nguồn: /ram-desktop-gskill-trident-z5-rgb-32gb-32gbx1-ddr5-6000mhz-white-f5-6000j3636f32gx1-tz5rw/",
+  "specs": {
+   "ram_type": "DDR5",
+   "capacity_gb": 32,
+   "modules": 1,
+   "speed_mhz": 6000,
+   "cas_latency": null,
+   "tdp_w": 5
+  },
+  "old": 16560000
+ },
+ {
+  "id": "kcc-ram-desktop-gskill-trident-z5-rgb-32gb-32gbx1-ddr5-6000mhz-f",
+  "sku": "KCC-RAM-DESKTOP-GSKILL-TRIDENT-Z5-RGB-32GB-32GBX1-DDR5-6000MHZ-F",
+  "name": "Ram Desktop Gskill Trident Z5 RGB 32GB (32GBx1) DDR5 6000Mhz (F5-6000J3636F32GX1-TZ5RK)",
+  "brand": "G.Skill",
+  "category": "ram",
+  "price": 15050000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-desktop-gskill-trident-z5-rgb-32gb-32gbx1-ddr5-6000mhz-f.jpeg",
+  "description": "Nguồn: /ram-desktop-gskill-trident-z5-rgb-32gb-32gbx1-ddr5-6000mhz-f5-6000j3636f32gx1-tz5rk/",
+  "specs": {
+   "ram_type": "DDR5",
+   "capacity_gb": 32,
+   "modules": 1,
+   "speed_mhz": 6000,
+   "cas_latency": null,
+   "tdp_w": 5
+  },
+  "old": 16860000
+ },
+ {
+  "id": "kcc-ram-kingston-fury-beast-rgb-kf556c40bb2ak2-64-64gb-2x32gb-c4",
+  "sku": "KCC-RAM-KINGSTON-FURY-BEAST-RGB-KF556C40BB2AK2-64-64GB-2X32GB-C4",
+  "name": "Ram Kingston FURY Beast RGB (KF556C40BB2AK2-64) 64GB (2x32GB) C40 5600MHz DDR5",
+  "brand": "Kingston",
+  "category": "ram",
+  "price": 23750000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-kingston-fury-beast-rgb-kf556c40bb2ak2-64-64gb-2x32gb-c4.jpeg",
+  "description": "Nguồn: /ram-kingston-fury-beast-rgb-kf556c40bb2ak2-64-64gb-2x32gb-c40-5600mhz-ddr5/",
+  "specs": {
+   "ram_type": "DDR5",
+   "capacity_gb": 64,
+   "modules": 2,
+   "speed_mhz": 5600,
+   "cas_latency": 40,
+   "tdp_w": 10
+  },
+  "old": 26600000
+ },
+ {
+  "id": "kcc-ram-apacer-oc-nox-cl38-16gb-1x16gb-ddr5-6000mhz-ah5u16g60c62",
+  "sku": "KCC-RAM-APACER-OC-NOX-CL38-16GB-1X16GB-DDR5-6000MHZ-AH5U16G60C62",
+  "name": "Ram Apacer OC NOX CL38 16GB (1x16GB) DDR5 6000Mhz (AH5U16G60C622MBAA-1)",
+  "brand": "Apacer",
+  "category": "ram",
+  "price": 5890000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-apacer-oc-nox-cl38-16gb-1x16gb-ddr5-6000mhz-ah5u16g60c62.jpeg",
+  "description": "Nguồn: /ram-apacer-oc-nox-cl38-16gb-1x16gb-ddr5-6000mhz-ah5u16g60c622mbaa-1/",
+  "specs": {
+   "ram_type": "DDR5",
+   "capacity_gb": 16,
+   "modules": 1,
+   "speed_mhz": 6000,
+   "cas_latency": 38,
+   "tdp_w": 5
+  },
+  "old": 6600000
+ },
+ {
+  "id": "kcc-ram-sstc-ddr4-3200-jedec-8gb-1x8gb-u3200a-c22-8g",
+  "sku": "KCC-RAM-SSTC-DDR4-3200-JEDEC-8GB-1X8GB-U3200A-C22-8G",
+  "name": "Ram SSTC DDR4 3200 JEDEC 8GB(1x8GB) (U3200A-C22-8G)",
+  "brand": "SSTC",
+  "category": "ram",
+  "price": 1590000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-sstc-ddr4-3200-jedec-8gb-1x8gb-u3200a-c22-8g.jpeg",
+  "description": "Nguồn: /ram-sstc-ddr4-3200-jedec-8gb-1x8gb-u3200a-c22-8g/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 8,
+   "modules": 1,
+   "speed_mhz": 3200,
+   "cas_latency": 22,
+   "tdp_w": 5
+  },
+  "old": 1780000
+ },
+ {
+  "id": "kcc-ram-corsair-vengeance-rgb-128gb-2x64gb-cl42-6400mhz-ddr5-cmh",
+  "sku": "KCC-RAM-CORSAIR-VENGEANCE-RGB-128GB-2X64GB-CL42-6400MHZ-DDR5-CMH",
+  "name": "Ram Corsair Vengeance RGB 128GB (2x64GB) CL42 6400MHz DDR5 (CMH128GX5M2B6400C42)",
+  "brand": "Corsair",
+  "category": "ram",
+  "price": 58990000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-corsair-vengeance-rgb-128gb-2x64gb-cl42-6400mhz-ddr5-cmh.jpeg",
+  "description": "Nguồn: /ram-corsair-vengeance-rgb-128gb-2x64gb-cl42-6400mhz-ddr5-cmh128gx5m2b6400c42/",
+  "specs": {
+   "ram_type": "DDR5",
+   "capacity_gb": 128,
+   "modules": 2,
+   "speed_mhz": 6400,
+   "cas_latency": 42,
+   "tdp_w": 10
+  },
+  "old": 63710000
+ },
+ {
+  "id": "kcc-ram-teamgroup-vulcan-ddr5-16gb-1x16gb-cl38-6000mhz-black-flb",
+  "sku": "KCC-RAM-TEAMGROUP-VULCAN-DDR5-16GB-1X16GB-CL38-6000MHZ-BLACK-FLB",
+  "name": "Ram Teamgroup Vulcan DDR5 16GB (1x16GB) CL38 6000MHz Black (FLBD516G6000HC38J01)",
+  "brand": "TEAMGROUP",
+  "category": "ram",
+  "price": 5890000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-teamgroup-vulcan-ddr5-16gb-1x16gb-cl38-6000mhz-black-flb.jpeg",
+  "description": "Nguồn: /ram-teamgroup-vulcan-ddr5-16gb-1x16gb-cl38-6000mhz-black-flbd516g6000hc38j01/",
+  "specs": {
+   "ram_type": "DDR5",
+   "capacity_gb": 16,
+   "modules": 1,
+   "speed_mhz": 6000,
+   "cas_latency": 38,
+   "tdp_w": 5
+  },
+  "old": 6480000
+ },
+ {
+  "id": "kcc-ram-corsair-vengeance-rgb-grey-heatspreader-c36-16gb-1x16gb",
+  "sku": "KCC-RAM-CORSAIR-VENGEANCE-RGB-GREY-HEATSPREADER-C36-16GB-1X16GB",
+  "name": "Ram Corsair Vengeance RGB Grey Heatspreader C36 16GB (1x16GB) 6000 MHz DDR5 AMD EXPO & Intel XMP (CMH16GX5M1E6000Z36)",
+  "brand": "Corsair",
+  "category": "ram",
+  "price": 6590000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-corsair-vengeance-rgb-grey-heatspreader-c36-16gb-1x16gb.jpeg",
+  "description": "Nguồn: /ram-corsair-vengeance-rgb-grey-heatspreader-c36-16gb-1x16gb-6000-mhz-ddr5-amd-expo-intel-xmp-cmh16gx5m1e6000z36/",
+  "specs": {
+   "ram_type": "DDR5",
+   "capacity_gb": 16,
+   "modules": 1,
+   "speed_mhz": 6000,
+   "cas_latency": 36,
+   "tdp_w": 5
+  }
+ },
+ {
+  "id": "kcc-ram-corsair-vengeance-rgb-grey-heatspreader-c36-96gb-2x48gb",
+  "sku": "KCC-RAM-CORSAIR-VENGEANCE-RGB-GREY-HEATSPREADER-C36-96GB-2X48GB",
+  "name": "Ram Corsair Vengeance RGB Grey Heatspreader C36 96GB (2x48GB) 6000 MHz DDR5 (CMH96GX5M2E6000C36)",
+  "brand": "Corsair",
+  "category": "ram",
+  "price": 32990000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-corsair-vengeance-rgb-grey-heatspreader-c36-96gb-2x48gb.jpeg",
+  "description": "Nguồn: /ram-corsair-vengeance-rgb-grey-heatspreader-c36-96gb-2x48gb-6000-mhz-ddr5-cmh96gx5m2e6000c36/",
+  "specs": {
+   "ram_type": "DDR5",
+   "capacity_gb": 96,
+   "modules": 2,
+   "speed_mhz": 6000,
+   "cas_latency": 36,
+   "tdp_w": 10
+  },
+  "old": 36290000
+ },
+ {
+  "id": "kcc-ram-corsair-dominator-titanium-grey-heatspreader-c30-64gb-2x",
+  "sku": "KCC-RAM-CORSAIR-DOMINATOR-TITANIUM-GREY-HEATSPREADER-C30-64GB-2X",
+  "name": "Ram Corsair DOMINATOR TITANIUM Grey Heatspreader C30 64GB (2x32GB) 6000 MHz DDR5 AMD EXPO & Intel XMP (CMP64GX5M2B6000Z30)",
+  "brand": "Corsair",
+  "category": "ram",
+  "price": 26490000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-corsair-dominator-titanium-grey-heatspreader-c30-64gb-2x.jpeg",
+  "description": "Nguồn: /ram-corsair-dominator-titanium-grey-heatspreader-c30-64gb-2x32gb-6000-mhz-ddr5-amd-expo-intel-xmp-cmp64gx5m2b6000z30/",
+  "specs": {
+   "ram_type": "DDR5",
+   "capacity_gb": 64,
+   "modules": 2,
+   "speed_mhz": 6000,
+   "cas_latency": 30,
+   "tdp_w": 10
+  },
+  "old": 29930000
+ },
+ {
+  "id": "kcc-ram-patriot-16gb-3200mhz-ddr4-psp416g3200h1",
+  "sku": "KCC-RAM-PATRIOT-16GB-3200MHZ-DDR4-PSP416G3200H1",
+  "name": "Ram Patriot 16GB 3200MHz DDR4 (PSP416G3200H1)",
+  "brand": "Patriot",
+  "category": "ram",
+  "price": 2790000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-patriot-16gb-3200mhz-ddr4-psp416g3200h1.jpeg",
+  "description": "Nguồn: /ram-patriot-16gb-3200mhz-ddr4-psp416g3200h1/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 16,
+   "modules": 1,
+   "speed_mhz": 3200,
+   "cas_latency": null,
+   "tdp_w": 5
+  },
+  "old": 3040000
+ },
+ {
+  "id": "kcc-ram-geil-super-luce-black-rgb-ddr4-16g-3200-mhz-gls416gb3200",
+  "sku": "KCC-RAM-GEIL-SUPER-LUCE-BLACK-RGB-DDR4-16G-3200-MHZ-GLS416GB3200",
+  "name": "RAM GEIL SUPER LUCE BLACK RGB DDR4 16G 3200 MHz (GLS416GB3200C16BSC)",
+  "brand": "GeIL",
+  "category": "ram",
+  "price": 2790000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-geil-super-luce-black-rgb-ddr4-16g-3200-mhz-gls416gb3200.jpeg",
+  "description": "Nguồn: /ram-geil-super-luce-black-rgb-ddr4-16g-3200-mhz-gls416gb3200c16bsc/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 16,
+   "modules": 1,
+   "speed_mhz": 3200,
+   "cas_latency": 16,
+   "tdp_w": 5
+  },
+  "old": 3040000
+ },
+ {
+  "id": "kcc-ram-sstc-ddr4-3200mhz-16gb-1x16gb-u3200a-c22-16g",
+  "sku": "KCC-RAM-SSTC-DDR4-3200MHZ-16GB-1X16GB-U3200A-C22-16G",
+  "name": "Ram SSTC DDR4 3200MHz 16GB(1x16GB) (U3200A-C22-16G)",
+  "brand": "SSTC",
+  "category": "ram",
+  "price": 2690000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-sstc-ddr4-3200mhz-16gb-1x16gb-u3200a-c22-16g.png",
+  "description": "Nguồn: /ram-sstc-ddr4-3200mhz-16gb-1x16gb-u3200a-c22-16g/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 16,
+   "modules": 1,
+   "speed_mhz": 3200,
+   "cas_latency": 22,
+   "tdp_w": 5
+  },
+  "old": 3010000
+ },
+ {
+  "id": "kcc-ram-geil-spear-v-16gb-16gbx1-6000mhz-cl38-ddr5-black-gsb516g",
+  "sku": "KCC-RAM-GEIL-SPEAR-V-16GB-16GBX1-6000MHZ-CL38-DDR5-BLACK-GSB516G",
+  "name": "Ram GEIL Spear V 16GB (16GBx1) 6000MHz CL38 DDR5 Black (GSB516GB6000C38BSC)",
+  "brand": "GeIL",
+  "category": "ram",
+  "price": 5790000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-geil-spear-v-16gb-16gbx1-6000mhz-cl38-ddr5-black-gsb516g.jpeg",
+  "description": "Nguồn: /ram-geil-spear-v-16gb-16gbx1-6000mhz-cl38-ddr5-black-gsb516gb6000c38bsc/",
+  "specs": {
+   "ram_type": "DDR5",
+   "capacity_gb": 16,
+   "modules": 1,
+   "speed_mhz": 6000,
+   "cas_latency": 38,
+   "tdp_w": 5
+  },
+  "old": 6250000
+ },
+ {
+  "id": "kcc-ram-geil-spear-v-16gb-16gbx1-5200mhz-cl38-ddr5-black-gsb516g",
+  "sku": "KCC-RAM-GEIL-SPEAR-V-16GB-16GBX1-5200MHZ-CL38-DDR5-BLACK-GSB516G",
+  "name": "Ram GEIL Spear V 16GB (16GBx1) 5200MHz CL38 DDR5 Black (GSB516GB5200C38BSC)",
+  "brand": "GeIL",
+  "category": "ram",
+  "price": 5290000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-geil-spear-v-16gb-16gbx1-5200mhz-cl38-ddr5-black-gsb516g.jpeg",
+  "description": "Nguồn: /ram-geil-spear-v-16gb-16gbx1-5200mhz-cl38-ddr5-black-gsb516gb5200c38bsc/",
+  "specs": {
+   "ram_type": "DDR5",
+   "capacity_gb": 16,
+   "modules": 1,
+   "speed_mhz": 5200,
+   "cas_latency": 38,
+   "tdp_w": 5
+  },
+  "old": 6000000
+ },
+ {
+  "id": "kcc-ram-acer-ud200-16gb-1x16gb-4800mhz-ddr5-black-khong-tan-nhie",
+  "sku": "KCC-RAM-ACER-UD200-16GB-1X16GB-4800MHZ-DDR5-BLACK-KHONG-TAN-NHIE",
+  "name": "RAM ACER UD200 16GB (1x16GB) 4800MHz DDR5 Black Không Tản Nhiệt",
+  "brand": "Acer",
+  "category": "ram",
+  "price": 4450000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-acer-ud200-16gb-1x16gb-4800mhz-ddr5-black-khong-tan-nhie.jpeg",
+  "description": "Nguồn: /ram-acer-ud200-16gb-1x16gb-4800mhz-ddr5-black-khong-tan-nhiet/",
+  "specs": {
+   "ram_type": "DDR5",
+   "capacity_gb": 16,
+   "modules": 1,
+   "speed_mhz": 4800,
+   "cas_latency": 40,
+   "tdp_w": 5
+  },
+  "old": 5380000
+ },
+ {
+  "id": "kcc-ram-kingbank-16gb-ddr4-3600mhz-tan-nhiet-chuyen-dung-cho-pc",
+  "sku": "KCC-RAM-KINGBANK-16GB-DDR4-3600MHZ-TAN-NHIET-CHUYEN-DUNG-CHO-PC",
+  "name": "Ram Kingbank 16GB DDR4 3600MHz Tản nhiệt (Chuyên dùng cho PC Intel)",
+  "brand": "Kingbank",
+  "category": "ram",
+  "price": 2590000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-kingbank-16gb-ddr4-3600mhz-tan-nhiet-chuyen-dung-cho-pc.png",
+  "description": "Nguồn: /ram-kingbank-16gb-ddr4-3600mhz-tan-nhiet-chuyen-dung-cho-pc-intel/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 16,
+   "modules": 1,
+   "speed_mhz": 3600,
+   "cas_latency": null,
+   "tdp_w": 5
+  },
+  "old": 2820000
+ },
+ {
+  "id": "kcc-ram-exascend-essential-x-ddr4-8gb-1x8gb-u-dimm-3200mhz-es08g",
+  "sku": "KCC-RAM-EXASCEND-ESSENTIAL-X-DDR4-8GB-1X8GB-U-DIMM-3200MHZ-ES08G",
+  "name": "Ram Exascend Essential-X DDR4 8GB (1x8GB) U-DIMM 3200MHz (ES08G4U3200AU)",
+  "brand": "Exascend",
+  "category": "ram",
+  "price": 1390000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-exascend-essential-x-ddr4-8gb-1x8gb-u-dimm-3200mhz-es08g.jpeg",
+  "description": "Nguồn: /ram-exascend-essential-x-ddr4-8gb-1x8gb-u-dimm-3200mhz-es08g4u3200au/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 8,
+   "modules": 1,
+   "speed_mhz": 3200,
+   "cas_latency": null,
+   "tdp_w": 5
+  },
+  "old": 1540000
+ },
+ {
+  "id": "kcc-ram-pc-kingbank-kjib-16gb-3200mhz-ddr4-1x16gb-den",
+  "sku": "KCC-RAM-PC-KINGBANK-KJIB-16GB-3200MHZ-DDR4-1X16GB-DEN",
+  "name": "RAM PC KINGBANK KJIB 16GB 3200MHz DDR4 (1x16GB) (Đen)",
+  "brand": "Kingbank",
+  "category": "ram",
+  "price": 2590000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-pc-kingbank-kjib-16gb-3200mhz-ddr4-1x16gb-den.jpg",
+  "description": "Nguồn: /ram-pc-kingbank-kjib-16gb-3200mhz-ddr4-1x16gb-den/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 16,
+   "modules": 1,
+   "speed_mhz": 3200,
+   "cas_latency": 14,
+   "tdp_w": 5
+  },
+  "old": 2930000
+ },
+ {
+  "id": "kcc-ram-pc-kingbank-kjxs-16gb-3200mhz-ddr4-1x16gb-trang",
+  "sku": "KCC-RAM-PC-KINGBANK-KJXS-16GB-3200MHZ-DDR4-1X16GB-TRANG",
+  "name": "RAM PC KINGBANK KJXS 16GB 3200MHz DDR4 (1x16GB) (Trắng)",
+  "brand": "Kingbank",
+  "category": "ram",
+  "price": 2590000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-pc-kingbank-kjxs-16gb-3200mhz-ddr4-1x16gb-trang.jpg",
+  "description": "Nguồn: /ram-pc-kingbank-kjxs-16gb-3200mhz-ddr4-1x16gb-trang/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 16,
+   "modules": 1,
+   "speed_mhz": 3200,
+   "cas_latency": 14,
+   "tdp_w": 5
+  },
+  "old": 2850000
+ },
+ {
+  "id": "kcc-ram-ddr4-apacer-oc-nox-64gb-3200mhz-2x32g",
+  "sku": "KCC-RAM-DDR4-APACER-OC-NOX-64GB-3200MHZ-2X32G",
+  "name": "RAM DDR4 APACER OC NOX 64GB 3200MHz (2x32G)",
+  "brand": "Apacer",
+  "category": "ram",
+  "price": 12890000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-ddr4-apacer-oc-nox-64gb-3200mhz-2x32g.jpeg",
+  "description": "Nguồn: /ram-ddr4-apacer-oc-nox-64gb-3200mhz-2x32g/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 64,
+   "modules": 2,
+   "speed_mhz": 3200,
+   "cas_latency": 16,
+   "tdp_w": 10
+  },
+  "old": 14180000
+ },
+ {
+  "id": "kcc-ram-neo-forza-trinity-16gb-ddr5-6000mhz-black-nfgd516f82-600",
+  "sku": "KCC-RAM-NEO-FORZA-TRINITY-16GB-DDR5-6000MHZ-BLACK-NFGD516F82-600",
+  "name": "Ram Neo Forza Trinity 16GB DDR5 6000MHz Black (NFGD516F82-6000LI10)",
+  "brand": "Neo Forza",
+  "category": "ram",
+  "price": 5890000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-neo-forza-trinity-16gb-ddr5-6000mhz-black-nfgd516f82-600.jpeg",
+  "description": "Nguồn: /ram-neo-forza-trinity-16gb-ddr5-6000mhz-black-nfgd516f82-6000li10/",
+  "specs": {
+   "ram_type": "DDR5",
+   "capacity_gb": 16,
+   "modules": 1,
+   "speed_mhz": 6000,
+   "cas_latency": 40,
+   "tdp_w": 5
+  },
+  "old": 6360000
+ },
+ {
+  "id": "kcc-ram-teamgroup-vulcan-ddr5-16gb-1x16gb-cl38-6000mhz-b-14699",
+  "sku": "KCC-RAM-TEAMGROUP-VULCAN-DDR5-16GB-1X16GB-CL38-6000MHZ-B-14699",
+  "name": "Ram Teamgroup Vulcan DDR5 16GB (1x16GB) CL38 6000MHz Black (FLBD516G6000HC38G01)",
+  "brand": "TEAMGROUP",
+  "category": "ram",
+  "price": 5690000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-teamgroup-vulcan-ddr5-16gb-1x16gb-cl38-6000mhz-b-14699.jpeg",
+  "description": "Nguồn: /ram-teamgroup-vulcan-ddr5-16gb-1x16gb-cl38-6000mhz-black-flbd516g6000hc38g01/",
+  "specs": {
+   "ram_type": "DDR5",
+   "capacity_gb": 16,
+   "modules": 1,
+   "speed_mhz": 6000,
+   "cas_latency": 38,
+   "tdp_w": 5
+  },
+  "old": 6430000
+ },
+ {
+  "id": "kcc-ram-hiksemi-armor-16gb-ddr4-3200mhz-1x16gb-hsc416u32d2",
+  "sku": "KCC-RAM-HIKSEMI-ARMOR-16GB-DDR4-3200MHZ-1X16GB-HSC416U32D2",
+  "name": "RAM Hiksemi Armor 16GB DDR4 3200MHz (1x16GB) (HSC416U32D2)",
+  "brand": "HIKSEMI",
+  "category": "ram",
+  "price": 2590000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-hiksemi-armor-16gb-ddr4-3200mhz-1x16gb-hsc416u32d2.jpeg",
+  "description": "Nguồn: /ram-hiksemi-armor-16gb-ddr4-3200mhz-1x16gb-hsc416u32d2/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 16,
+   "modules": 1,
+   "speed_mhz": 3200,
+   "cas_latency": null,
+   "tdp_w": 5
+  },
+  "old": 2800000
+ },
+ {
+  "id": "kcc-ram-desktop-kingston-fury-beast-rgb-kf432c16bb1-16wp-16gb-1x",
+  "sku": "KCC-RAM-DESKTOP-KINGSTON-FURY-BEAST-RGB-KF432C16BB1-16WP-16GB-1X",
+  "name": "Ram Desktop Kingston Fury Beast (KF432C16BB1A/16WP) 16GB (1x16GB) DDR4 3200Mhz",
+  "brand": "Kingston",
+  "category": "ram",
+  "price": 3290000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-desktop-kingston-fury-beast-rgb-kf432c16bb1-16wp-16gb-1x.jpeg",
+  "description": "Nguồn: /ram-desktop-kingston-fury-beast-rgb-kf432c16bb1-16wp-16gb-1x16gb-ddr4-3200mhz/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 16,
+   "modules": 1,
+   "speed_mhz": 3200,
+   "cas_latency": 16,
+   "tdp_w": 5
+  },
+  "old": 3620000
+ },
+ {
+  "id": "kcc-ram-geil-spear-v-16gb-16gbx1-6000mhz-cl38-ddr5-black-gasb516",
+  "sku": "KCC-RAM-GEIL-SPEAR-V-16GB-16GBX1-6000MHZ-CL38-DDR5-BLACK-GASB516",
+  "name": "Ram GEIL Spear V 16GB (16GBx1) 6000MHz CL38 DDR5 Black (GASB516GB6000C38CSC)",
+  "brand": "GeIL",
+  "category": "ram",
+  "price": 6090000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-geil-spear-v-16gb-16gbx1-6000mhz-cl38-ddr5-black-gasb516.jpeg",
+  "description": "Nguồn: /ram-geil-spear-v-16gb-16gbx1-6000mhz-cl38-ddr5-black-gasb516gb6000c38csc/",
+  "specs": {
+   "ram_type": "DDR5",
+   "capacity_gb": 16,
+   "modules": 1,
+   "speed_mhz": 6000,
+   "cas_latency": 38,
+   "tdp_w": 5
+  },
+  "old": 6580000
+ },
+ {
+  "id": "kcc-ram-geil-spear-v-16gb-16gbx1-6000mhz-cl38-ddr5-black-14888",
+  "sku": "KCC-RAM-GEIL-SPEAR-V-16GB-16GBX1-6000MHZ-CL38-DDR5-BLACK-14888",
+  "name": "Ram GEIL Spear V 16GB (16GBx1) 6000MHz CL38 DDR5 Black (GASB516GB5200C38CSC)",
+  "brand": "GeIL",
+  "category": "ram",
+  "price": 5790000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-geil-spear-v-16gb-16gbx1-6000mhz-cl38-ddr5-black-14888.jpeg",
+  "description": "Nguồn: /ram-geil-spear-v-16gb-16gbx1-6000mhz-cl38-ddr5-black-gasb516gb5200c38csc/",
+  "specs": {
+   "ram_type": "DDR5",
+   "capacity_gb": 16,
+   "modules": 1,
+   "speed_mhz": 6000,
+   "cas_latency": 38,
+   "tdp_w": 5
+  },
+  "old": 6540000
+ },
+ {
+  "id": "kcc-ram-corsair-vengeance-rgb-32gb-2x16gb-cl38-6000mhz-grey-ddr5",
+  "sku": "KCC-RAM-CORSAIR-VENGEANCE-RGB-32GB-2X16GB-CL38-6000MHZ-GREY-DDR5",
+  "name": "Ram Corsair Vengeance RGB 32GB (2x16GB) CL38 6000MHz Grey DDR5 (CMH32GX5M2B6000Z38)",
+  "brand": "Corsair",
+  "category": "ram",
+  "price": 14290000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-corsair-vengeance-rgb-32gb-2x16gb-cl38-6000mhz-grey-ddr5.jpeg",
+  "description": "Nguồn: /ram-corsair-vengeance-rgb-32gb-2x16gb-cl38-6000mhz-grey-ddr5-cmh32gx5m2b6000z38/",
+  "specs": {
+   "ram_type": "DDR5",
+   "capacity_gb": 32,
+   "modules": 2,
+   "speed_mhz": 6000,
+   "cas_latency": 38,
+   "tdp_w": 10
+  },
+  "old": 15860000
+ }
+]

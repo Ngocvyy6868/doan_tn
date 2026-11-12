@@ -1,0 +1,1526 @@
+[
+ {
+  "id": "pv-vga-250203310",
+  "sku": "PV-250203310",
+  "name": "Card màn hình ASUS TUF Gaming GeForce RTX 5070 Ti 16GB GDDR7 OC Edition",
+  "brand": "ASUS",
+  "category": "gpu",
+  "price": 43590000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-250203310.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-asus-tuf-gaming-rtx-5070-ti-16gb-gddr7-oc-edition--s250203310",
+  "specs": {
+   "chip": "NVIDIA RTX 5070 Ti",
+   "vram_gb": 16,
+   "tdp_w": 300,
+   "length_mm": null
+  },
+  "old": 69990000
+ },
+ {
+  "id": "pv-vga-250300082",
+  "sku": "PV-250300082",
+  "name": "Card màn hình ASUS Prime Radeon™ RX 9070 XT OC Edition 16GB GDDR6 16GB GDDR6 (PRIME-RX9070XT-O16G)",
+  "brand": "ASUS",
+  "category": "gpu",
+  "price": 30990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-250300082.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-asus-prime-radeon-rx-9070-xt-oc-edition-16gb-gddr6--s250300082",
+  "specs": {
+   "chip": "AMD Radeon RX 9070 XT",
+   "vram_gb": 16,
+   "tdp_w": 304,
+   "length_mm": null
+  },
+  "old": 39990000
+ },
+ {
+  "id": "pv-vga-261000696",
+  "sku": "PV-261000696",
+  "name": "Card màn hình Asus Dual Radeon RX 9050 8GB GDDR6 OC Edition 8GB GDDR6",
+  "brand": "ASUS",
+  "category": "gpu",
+  "price": 8990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-261000696.webp",
+  "description": "Nguồn: https://phongvu.vn/card-man-hinh-vga-asus-dual-radeon-rx-9050-8gb-gddr6-oc-edition--s261000696",
+  "specs": {
+   "chip": "AMD Radeon RX 9050",
+   "vram_gb": 8,
+   "tdp_w": 150,
+   "length_mm": null
+  },
+  "old": 15990000
+ },
+ {
+  "id": "pv-vga-240301408",
+  "sku": "PV-240301408",
+  "name": "Card màn hình Asus Dual GeForce RTX 3050 OC Edition 6GB GDDR6",
+  "brand": "ASUS",
+  "category": "gpu",
+  "price": 5690000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-240301408.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-asus-rtx-3050-oc-edition-6gb-gddr6--s240301408",
+  "specs": {
+   "chip": "NVIDIA RTX 3050",
+   "vram_gb": 6,
+   "tdp_w": 70,
+   "length_mm": null
+  },
+  "old": 10990000
+ },
+ {
+  "id": "pv-vga-250204743",
+  "sku": "PV-250204743",
+  "name": "Card màn hình MSI GeForce RTX 3050 VENTUS 2X E 6GB OC GDDR6 (912-V812-055)",
+  "brand": "MSI",
+  "category": "gpu",
+  "price": 5690000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-250204743.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-msi-rtx-3050-ventus-2x-e-6g-oc--s250204743",
+  "specs": {
+   "chip": "NVIDIA RTX 3050",
+   "vram_gb": 6,
+   "tdp_w": 70,
+   "length_mm": null
+  },
+  "old": 7090000
+ },
+ {
+  "id": "pv-vga-211205952",
+  "sku": "PV-211205952",
+  "name": "Card màn hình Gigabyte Radeon RX 6500 XT EAGLE 4GB GDDR6",
+  "brand": "Gigabyte",
+  "category": "gpu",
+  "price": 4990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-211205952.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-gigabyte-radeon-rx-6500-xt-eagle-4gb-gddr6--s211205952",
+  "specs": {
+   "chip": "AMD Radeon RX 6500 XT",
+   "vram_gb": 4,
+   "tdp_w": 107,
+   "length_mm": null
+  },
+  "old": 5690000
+ },
+ {
+  "id": "pv-vga-250509161",
+  "sku": "PV-250509161",
+  "name": "Card màn hình MSI GeForce RTX 5060 VENTUS 2X OC 8GB GDDR7",
+  "brand": "MSI",
+  "category": "gpu",
+  "price": 13990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-250509161.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-msi-rtx-5060-8g-ventus-2x-oc--s250509161",
+  "specs": {
+   "chip": "NVIDIA RTX 5060",
+   "vram_gb": 8,
+   "tdp_w": 145,
+   "length_mm": null
+  },
+  "old": 14990000
+ },
+ {
+  "id": "pv-vga-240200245",
+  "sku": "PV-240200245",
+  "name": "Card màn hình MSI GeForce RTX 3050 VENTUS 2X 6GB OC GDDR6",
+  "brand": "MSI",
+  "category": "gpu",
+  "price": 5690000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-240200245.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-msi-rtx-3050-ventus-2x-6g-oc--s240200245",
+  "specs": {
+   "chip": "NVIDIA RTX 3050",
+   "vram_gb": 6,
+   "tdp_w": 70,
+   "length_mm": null
+  },
+  "old": 6990000
+ },
+ {
+  "id": "pv-vga-250412006",
+  "sku": "PV-250412006",
+  "name": "Card màn hình ASUS Dual GeForce RTX 5060 Ti 16GB GDDR7 OC Edition",
+  "brand": "ASUS",
+  "category": "gpu",
+  "price": 25990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-250412006.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-asus-dual-rtx-5060-ti-16gb-gddr7-oc-edition--s250412006",
+  "specs": {
+   "chip": "NVIDIA RTX 5060 Ti",
+   "vram_gb": 16,
+   "tdp_w": 180,
+   "length_mm": null
+  },
+  "old": 39990000
+ },
+ {
+  "id": "pv-vga-250509150",
+  "sku": "PV-250509150",
+  "name": "Card màn hình Msi GeForce RTX 5060 8GB SHADOW 2X OC GDDR7",
+  "brand": "MSI",
+  "category": "gpu",
+  "price": 13990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-250509150.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-msi-rtx-5060-8g-shadow-2x-oc--s250509150",
+  "specs": {
+   "chip": "NVIDIA RTX 5060",
+   "vram_gb": 8,
+   "tdp_w": 145,
+   "length_mm": null
+  },
+  "old": 14990000
+ },
+ {
+  "id": "pv-vga-250509157",
+  "sku": "PV-250509157",
+  "name": "Card màn hình Msi GeForce RTX 5060 8GB VENTUS 2X OC GDDR7 White",
+  "brand": "MSI",
+  "category": "gpu",
+  "price": 13990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-250509157.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-msi-rtx-5060-8g-ventus-2x-oc-white--s250509157",
+  "specs": {
+   "chip": "NVIDIA RTX 5060",
+   "vram_gb": 8,
+   "tdp_w": 145,
+   "length_mm": null
+  },
+  "old": 14990000
+ },
+ {
+  "id": "pv-vga-250301753",
+  "sku": "PV-250301753",
+  "name": "Card màn hình Msi GeForce RTX 5070 12GB VENTUS 2X OC GDDR7",
+  "brand": "MSI",
+  "category": "gpu",
+  "price": 28990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-250301753.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-msi-rtx-5070-12g-ventus-2x-oc--s250301753",
+  "specs": {
+   "chip": "NVIDIA RTX 5070",
+   "vram_gb": 12,
+   "tdp_w": 250,
+   "length_mm": null
+  },
+  "old": 30990000
+ },
+ {
+  "id": "pv-vga-250710711",
+  "sku": "PV-250710711",
+  "name": "Card màn hình Msi GeForce RTX 5050 8G SHADOW 2X OC 8GB GDDR6",
+  "brand": "MSI",
+  "category": "gpu",
+  "price": 12290000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-250710711.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-msi-rtx-5050-8g-shadow-2x-oc--s250710711",
+  "specs": {
+   "chip": "NVIDIA RTX 5050",
+   "vram_gb": 8,
+   "tdp_w": 130,
+   "length_mm": null
+  },
+  "old": 12990000
+ },
+ {
+  "id": "pv-vga-261001925",
+  "sku": "PV-261001925",
+  "name": "Card màn hình Asus Dual Radeon RX 9060 XT 16GB GDDR6",
+  "brand": "ASUS",
+  "category": "gpu",
+  "price": 21890000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-261001925.webp",
+  "description": "Nguồn: https://phongvu.vn/card-man-hinh-vga-asus-dual-radeon-rx-9060-xt-16gb-gddr6-dual-rx9060xt-16g--s261001925",
+  "specs": {
+   "chip": "AMD Radeon RX 9060 XT",
+   "vram_gb": 16,
+   "tdp_w": 160,
+   "length_mm": null
+  },
+  "old": 23990000
+ },
+ {
+  "id": "pv-vga-260901608",
+  "sku": "PV-260901608",
+  "name": "Card màn hình Gigabyte Radeon RX 7600 GAMING OC 8GB GDDR6",
+  "brand": "Gigabyte",
+  "category": "gpu",
+  "price": 8490000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-260901608.webp",
+  "description": "Nguồn: https://phongvu.vn/card-man-hinh-vga-gigabyte-radeon-rx-7600-gaming-oc-8g-gv-r76gaming-oc-8gd--s260901608",
+  "specs": {
+   "chip": "AMD Radeon RX 7600",
+   "vram_gb": 8,
+   "tdp_w": 165,
+   "length_mm": null
+  },
+  "old": 9390000
+ },
+ {
+  "id": "pv-vga-250719828",
+  "sku": "PV-250719828",
+  "name": "Card màn hình Msi GeForce RTX™ 5060 Ti 16G SHADOW 2X OC PLUS 16GB GDDR7",
+  "brand": "MSI",
+  "category": "gpu",
+  "price": 23990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-250719828.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-msi-rtx-5060-ti-16g-shadow-2x-oc-plus--s250719828",
+  "specs": {
+   "chip": "NVIDIA RTX 5060 Ti",
+   "vram_gb": 16,
+   "tdp_w": 180,
+   "length_mm": null
+  },
+  "old": 29990000
+ },
+ {
+  "id": "pv-vga-261001901",
+  "sku": "PV-261001901",
+  "name": "Card màn hình Asus Dual GeForce RTX 5060 Ti OC Edition 16GB GDDR7",
+  "brand": "ASUS",
+  "category": "gpu",
+  "price": 25990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-261001901.webp",
+  "description": "Nguồn: https://phongvu.vn/card-man-hinh-vga-asus-dual-geforce-rtx-5060-ti-16gb-gddr7-white-oc-edition-dual-rtx5060ti-o16g-white--s261001901",
+  "specs": {
+   "chip": "NVIDIA RTX 5060 Ti",
+   "vram_gb": 16,
+   "tdp_w": 180,
+   "length_mm": null
+  },
+  "old": 29990000
+ },
+ {
+  "id": "pv-vga-250203608",
+  "sku": "PV-250203608",
+  "name": "Card màn hình Gigabyte GeForce RTX 3050 WINDFORCE OC V2 6GB GDDR6",
+  "brand": "Gigabyte",
+  "category": "gpu",
+  "price": 6090000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-250203608.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-gigabyte-rtx-3050-windforce-oc-v2-6g--s250203608",
+  "specs": {
+   "chip": "NVIDIA RTX 3050",
+   "vram_gb": 6,
+   "tdp_w": 70,
+   "length_mm": null
+  },
+  "old": 6990000
+ },
+ {
+  "id": "pv-vga-240903874",
+  "sku": "PV-240903874",
+  "name": "Card màn hình Leadtek NVIDIA RTX A1000 8GB GDDR6",
+  "brand": "Leadtek",
+  "category": "gpu",
+  "price": 17590000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-240903874.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-leadtek-a1000--s240903874",
+  "specs": {
+   "chip": "NVIDIA RTX A1000",
+   "vram_gb": 8,
+   "tdp_w": 50,
+   "length_mm": null
+  },
+  "old": 19990000
+ },
+ {
+  "id": "pv-vga-251101989",
+  "sku": "PV-251101989",
+  "name": "Card màn hình LEADTEK NVIDIA RTX PRO 4000 24G (24GB GDDR7)",
+  "brand": "Leadtek",
+  "category": "gpu",
+  "price": 96990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-251101989.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-leadtek-nvidia-rtx-pro-4000-24g--s251101989",
+  "specs": {
+   "chip": "NVIDIA RTX Pro 4000",
+   "vram_gb": 24,
+   "tdp_w": 145,
+   "length_mm": null
+  },
+  "old": 109000000
+ },
+ {
+  "id": "pv-vga-240903873",
+  "sku": "PV-240903873",
+  "name": "Card màn hình Leadtek NVIDIA RTX A400 4GB GDDR6",
+  "brand": "Leadtek",
+  "category": "gpu",
+  "price": 7190000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-240903873.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-leadtek-a400--s240903873",
+  "specs": {
+   "chip": "NVIDIA RTX A400",
+   "vram_gb": 4,
+   "tdp_w": 50,
+   "length_mm": null
+  },
+  "old": 7990000
+ },
+ {
+  "id": "pv-vga-261001296",
+  "sku": "PV-261001296",
+  "name": "Card màn hình Intel Arc Pro B70 32GB GDDR6",
+  "brand": "Intel",
+  "category": "gpu",
+  "price": 58990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-261001296.webp",
+  "description": "Nguồn: https://phongvu.vn/card-man-hinh-vga-intel-arc-pro-b70-graphics-32gb-gddr6-ecc-33p01ib0bb-99cmlt--s261001296",
+  "specs": {
+   "chip": "Intel Arc Pro B70",
+   "vram_gb": 32,
+   "tdp_w": 230,
+   "length_mm": null
+  },
+  "old": 64900000
+ },
+ {
+  "id": "pv-vga-250709448",
+  "sku": "PV-250709448",
+  "name": "Card màn hình Colorful GeForce RTX 3050 6GB-V4 6GB GDDR6",
+  "brand": "Colorful",
+  "category": "gpu",
+  "price": 5990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-250709448.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-colorful-rtx-3050-6gb-v4--s250709448",
+  "specs": {
+   "chip": "NVIDIA RTX 3050",
+   "vram_gb": 6,
+   "tdp_w": 70,
+   "length_mm": null
+  },
+  "old": 6590000
+ },
+ {
+  "id": "pv-vga-260202508",
+  "sku": "PV-260202508",
+  "name": "Card màn hình Inno3d GeForce RTX 3050 Twin X2 V2 6GB GDDR6",
+  "brand": "Inno3D",
+  "category": "gpu",
+  "price": 5990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-260202508.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-inno3d-rtx-3050-6gb-twin-x2-v2--s260202508",
+  "specs": {
+   "chip": "NVIDIA RTX 3050",
+   "vram_gb": 6,
+   "tdp_w": 70,
+   "length_mm": null
+  },
+  "old": 6590000
+ },
+ {
+  "id": "pv-vga-260100504",
+  "sku": "PV-260100504",
+  "name": "Card màn hình Inno3d GEFORCE RTX 5060 TWIN X2 8GB GDDR7",
+  "brand": "Inno3D",
+  "category": "gpu",
+  "price": 13890000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-260100504.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-inno3d-rtx-5060-twin-x2-8gb--s260100504",
+  "specs": {
+   "chip": "NVIDIA RTX 5060",
+   "vram_gb": 8,
+   "tdp_w": 145,
+   "length_mm": null
+  },
+  "old": 14990000
+ },
+ {
+  "id": "pv-vga-260108859",
+  "sku": "PV-260108859",
+  "name": "Card màn hình Palit GeForce RTX 5060 INFINITY 2 OC 8GB GDDR7",
+  "brand": "Palit",
+  "category": "gpu",
+  "price": 13890000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-260108859.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-palit-rtx-5060-infinity-2-oc--s260108859",
+  "specs": {
+   "chip": "NVIDIA RTX 5060",
+   "vram_gb": 8,
+   "tdp_w": 145,
+   "length_mm": null
+  },
+  "old": 14990000
+ },
+ {
+  "id": "pv-vga-260501452",
+  "sku": "PV-260501452",
+  "name": "Card màn hình Gainward Gainward GeForce RTX 5060 GHOST 8GB GDDR7",
+  "brand": "Gainward",
+  "category": "gpu",
+  "price": 13890000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-260501452.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-gainward-rtx-5060-ghost-8gb-gddr7-128bit--s260501452",
+  "specs": {
+   "chip": "NVIDIA RTX 5060",
+   "vram_gb": 8,
+   "tdp_w": 145,
+   "length_mm": null
+  },
+  "old": 14990000
+ },
+ {
+  "id": "pv-vga-210300569",
+  "sku": "PV-210300569",
+  "name": "Card màn hình Msi GeForce RTX™ 3060 VENTUS 2X 12G OC 12GB GDDR6",
+  "brand": "MSI",
+  "category": "gpu",
+  "price": 13990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-210300569.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-msi-rtx-3060-ventus-2x-12g-oc--s210300569",
+  "specs": {
+   "chip": "NVIDIA RTX 3060",
+   "vram_gb": 12,
+   "tdp_w": 170,
+   "length_mm": null
+  },
+  "old": 14990000
+ },
+ {
+  "id": "pv-vga-250509148",
+  "sku": "PV-250509148",
+  "name": "Card màn hình MSI GeForce RTX 5060 8G INSPIRE 2X OC (8GB GDDR7)",
+  "brand": "MSI",
+  "category": "gpu",
+  "price": 13990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-250509148.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-msi-rtx-5060-8g-inspire-2x-oc--s250509148",
+  "specs": {
+   "chip": "NVIDIA RTX 5060",
+   "vram_gb": 8,
+   "tdp_w": 145,
+   "length_mm": null
+  },
+  "old": 14990000
+ },
+ {
+  "id": "pv-vga-251111607",
+  "sku": "PV-251111607",
+  "name": "Card màn hình Colorful GeForce RTX 5060 Gaming DUO 8GB-V (8GB GDDR7)",
+  "brand": "Colorful",
+  "category": "gpu",
+  "price": 13990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-251111607.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-colorful-rtx-5060-gaming-duo-8gb-v--s251111607",
+  "specs": {
+   "chip": "NVIDIA RTX 5060",
+   "vram_gb": 8,
+   "tdp_w": 145,
+   "length_mm": null
+  },
+  "old": 14990000
+ },
+ {
+  "id": "pv-vga-260704824",
+  "sku": "PV-260704824",
+  "name": "Card màn hình Msi GeForce RTX 5060 8G VENTUS 2X OC V1 8GB GDDR7",
+  "brand": "MSI",
+  "category": "gpu",
+  "price": 13990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-260704824.webp",
+  "description": "Nguồn: https://phongvu.vn/card-man-hinh-vga-geforce-rtx-5060-8g-ventus-2x-oc-v1--s260704824",
+  "specs": {
+   "chip": "NVIDIA RTX 5060",
+   "vram_gb": 8,
+   "tdp_w": 145,
+   "length_mm": null
+  },
+  "old": 14990000
+ },
+ {
+  "id": "pv-vga-230402686",
+  "sku": "PV-230402686",
+  "name": "Card màn hình Asus GeForce 710 2G EVO 2GB GDDR5",
+  "brand": "ASUS",
+  "category": "gpu",
+  "price": 1890000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-230402686.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-asus-710-2gb-evo--s230402686",
+  "specs": {
+   "chip": "NVIDIA GT 710",
+   "vram_gb": 2,
+   "tdp_w": 19,
+   "length_mm": null
+  },
+  "old": 1990000
+ },
+ {
+  "id": "pv-vga-261001289",
+  "sku": "PV-261001289",
+  "name": "Card màn hình Leadtek NVIDIA RTX PRO 5000 Blackwell 72GB GDDR7",
+  "brand": "Leadtek",
+  "category": "gpu",
+  "price": 315990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-261001289.webp",
+  "description": "Nguồn: https://phongvu.vn/card-man-hinh-vga-leadtek-nvidia-rtx-pro-5000-blackwell-72g--s261001289",
+  "specs": {
+   "chip": "NVIDIA RTX Pro 5000",
+   "vram_gb": 72,
+   "tdp_w": 300,
+   "length_mm": null
+  },
+  "old": 320900000
+ },
+ {
+  "id": "pv-vga-210901904",
+  "sku": "PV-210901904",
+  "name": "Card màn hình Gigabyte GeForce RTX 3060 Ti VISION OC 8G (rev. 2.0) 8GB GDDR6",
+  "brand": "Gigabyte",
+  "category": "gpu",
+  "price": 10990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-210901904.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-gigabyte-rtx-3060-ti-vision-oc-8g-rev-2-0--s210901904",
+  "specs": {
+   "chip": "NVIDIA RTX 3060 Ti",
+   "vram_gb": 8,
+   "tdp_w": 200,
+   "length_mm": null
+  },
+  "old": 25090000
+ },
+ {
+  "id": "pv-vga-210901901",
+  "sku": "PV-210901901",
+  "name": "Card màn hình Gigabyte GeForce RTX 3060 Ti EAGLE OC 8G (rev. 2.0) 8GB GDDR6",
+  "brand": "Gigabyte",
+  "category": "gpu",
+  "price": 11049000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-210901901.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-gigabyte-gigabyte-rtx-3060-ti-eagle-oc-8g-rev-2-0--s210901901",
+  "specs": {
+   "chip": "NVIDIA RTX 3060 Ti",
+   "vram_gb": 8,
+   "tdp_w": 200,
+   "length_mm": null
+  },
+  "old": 23090000
+ },
+ {
+  "id": "pv-vga-191200266",
+  "sku": "PV-191200266",
+  "name": "Card màn hình Gigabyte GeForce GTX 1660 SUPER OC 6GB GDDR6",
+  "brand": "Gigabyte",
+  "category": "gpu",
+  "price": 5190000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-191200266.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-gigabyte-gtx-1660-super-oc-6g--s191200266",
+  "specs": {
+   "chip": "NVIDIA GTX 1660 Super",
+   "vram_gb": 6,
+   "tdp_w": 125,
+   "length_mm": null
+  },
+  "old": 10309000
+ },
+ {
+  "id": "pv-vga-211000710",
+  "sku": "PV-211000710",
+  "name": "Card màn hình Asus TUF Gaming GeForce GTX 1650 OC Edition 4GB GDDR6",
+  "brand": "ASUS",
+  "category": "gpu",
+  "price": 3899000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-211000710.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-asus-tuf-gaming-gtx-1650-oc-edition-4gb-gddr6--s211000710",
+  "specs": {
+   "chip": "NVIDIA GTX 1650",
+   "vram_gb": 4,
+   "tdp_w": 75,
+   "length_mm": null
+  },
+  "old": 6990000
+ },
+ {
+  "id": "pv-vga-200500758",
+  "sku": "PV-200500758",
+  "name": "Card màn hình Msi GeForce GTX 1650 D6 VENTUS XS OC 4GB GDDR6",
+  "brand": "MSI",
+  "category": "gpu",
+  "price": 4059000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-200500758.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-msi-gtx-1650-d6-ventus-xs-oc--s200500758",
+  "specs": {
+   "chip": "NVIDIA GTX 1650",
+   "vram_gb": 4,
+   "tdp_w": 75,
+   "length_mm": null
+  },
+  "old": 7199000
+ },
+ {
+  "id": "pv-vga-220610471",
+  "sku": "PV-220610471",
+  "name": "Card màn hình Colorful GeForce RTX 3050 Ultra W OC 8G-V 8GB GDDR6",
+  "brand": "Colorful",
+  "category": "gpu",
+  "price": 7199000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-220610471.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-colorful-rtx-3050-ultra-w-oc-8g-v--s220610471",
+  "specs": {
+   "chip": "NVIDIA RTX 3050",
+   "vram_gb": 8,
+   "tdp_w": 130,
+   "length_mm": null
+  },
+  "old": 11400000
+ },
+ {
+  "id": "pv-vga-220610448",
+  "sku": "PV-220610448",
+  "name": "Card màn hình Colorful GeForce GTX1050Ti 4G-V3 4GB GDDR5",
+  "brand": "Colorful",
+  "category": "gpu",
+  "price": 3499000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-220610448.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-colorful-gtx1050ti-4g-v3--s220610448",
+  "specs": {
+   "chip": "NVIDIA GTX 1050 Ti",
+   "vram_gb": 4,
+   "tdp_w": 75,
+   "length_mm": null
+  },
+  "old": 5500000
+ },
+ {
+  "id": "pv-vga-210900636",
+  "sku": "PV-210900636",
+  "name": "Card màn hình Gigabyte GeForce RTX 3060 GAMING OC 12G (rev. 2.0) 12GB GDDR6",
+  "brand": "Gigabyte",
+  "category": "gpu",
+  "price": 8790000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-210900636.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-gigabyte-rtx-3060-gaming-oc-12g-rev-2-0--s210900636",
+  "specs": {
+   "chip": "NVIDIA RTX 3060",
+   "vram_gb": 12,
+   "tdp_w": 170,
+   "length_mm": null
+  },
+  "old": 13179000
+ },
+ {
+  "id": "pv-vga-250509149",
+  "sku": "PV-250509149",
+  "name": "Card màn hình Asus PRIME GeForce RTX™ 5060 OC Edition 8GB GDDR7",
+  "brand": "ASUS",
+  "category": "gpu",
+  "price": 15990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-250509149.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-asus-prime-rtx-5060-oc-edition--s250509149",
+  "specs": {
+   "chip": "NVIDIA RTX 5060",
+   "vram_gb": 8,
+   "tdp_w": 145,
+   "length_mm": null
+  },
+  "old": 17990000
+ },
+ {
+  "id": "pv-vga-251001974",
+  "sku": "PV-251001974",
+  "name": "Card màn hình INNO3D GEFORCE RTX 5060 TWIN X2 OC 8GB GDDR7 (N50602-08D7X-195070N)",
+  "brand": "Inno3D",
+  "category": "gpu",
+  "price": 13890000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-251001974.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-inno3d-rtx-5060-twin-x2-oc--s251001974",
+  "specs": {
+   "chip": "NVIDIA RTX 5060",
+   "vram_gb": 8,
+   "tdp_w": 145,
+   "length_mm": null
+  },
+  "old": 14990000
+ },
+ {
+  "id": "pv-vga-250508152",
+  "sku": "PV-250508152",
+  "name": "Card màn hình Gigabyte GeForce RTX™ 5060 AERO OC 8GB GDDR7",
+  "brand": "Gigabyte",
+  "category": "gpu",
+  "price": 13990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-250508152.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-gigabyte-rtx-5060-aero-oc-8g--s250508152",
+  "specs": {
+   "chip": "NVIDIA RTX 5060",
+   "vram_gb": 8,
+   "tdp_w": 145,
+   "length_mm": null
+  },
+  "old": 14990000
+ },
+ {
+  "id": "pv-vga-250508153",
+  "sku": "PV-250508153",
+  "name": "Card màn hình Gigabyte RTX™ 5060 EAGLE OC 8G (GV-N5060EAGLE OC-8GD)",
+  "brand": "Gigabyte",
+  "category": "gpu",
+  "price": 13990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-250508153.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-gigabyte-rtx-5060-eagle-oc-8g--s250508153",
+  "specs": {
+   "chip": "NVIDIA RTX 5060",
+   "vram_gb": 8,
+   "tdp_w": 145,
+   "length_mm": null
+  },
+  "old": 14990000
+ },
+ {
+  "id": "pv-vga-250508154",
+  "sku": "PV-250508154",
+  "name": "Card màn hình Gigabyte RTX™ 5060 EAGLE OC ICE 8G (GV-N5060EAGLEOC ICE-8GD)",
+  "brand": "Gigabyte",
+  "category": "gpu",
+  "price": 13990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-250508154.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-gigabyte-rtx-5060-eagle-oc-ice-8g--s250508154",
+  "specs": {
+   "chip": "NVIDIA RTX 5060",
+   "vram_gb": 8,
+   "tdp_w": 145,
+   "length_mm": null
+  },
+  "old": 14990000
+ },
+ {
+  "id": "pv-vga-250508156",
+  "sku": "PV-250508156",
+  "name": "Card màn hình Gigabyte AORUS GeForce RTX™ 5060 ELITE 8GB GDDR7",
+  "brand": "Gigabyte",
+  "category": "gpu",
+  "price": 13990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-250508156.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-gigabyte-aorus-rtx-5060-elite-8g--s250508156",
+  "specs": {
+   "chip": "NVIDIA RTX 5060",
+   "vram_gb": 8,
+   "tdp_w": 145,
+   "length_mm": null
+  },
+  "old": 14990000
+ },
+ {
+  "id": "pv-vga-250508157",
+  "sku": "PV-250508157",
+  "name": "Card màn hình Gigabyte RTX™ 5060 WINDFORCE OC 8G (GV-N5060WF2OC-8GD)",
+  "brand": "Gigabyte",
+  "category": "gpu",
+  "price": 13990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-250508157.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-gigabyte-rtx-5060-windforce-oc-8g--s250508157",
+  "specs": {
+   "chip": "NVIDIA RTX 5060",
+   "vram_gb": 8,
+   "tdp_w": 145,
+   "length_mm": null
+  },
+  "old": 14990000
+ },
+ {
+  "id": "pv-vga-250508158",
+  "sku": "PV-250508158",
+  "name": "Card màn hình Gigabyte GeForce RTX 5060 WINDFORCE 8GB GDDR7",
+  "brand": "Gigabyte",
+  "category": "gpu",
+  "price": 13990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-250508158.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-gigabyte-rtx-5060-windforce-8g--s250508158",
+  "specs": {
+   "chip": "NVIDIA RTX 5060",
+   "vram_gb": 8,
+   "tdp_w": 145,
+   "length_mm": null
+  },
+  "old": 14990000
+ },
+ {
+  "id": "pv-vga-250509156",
+  "sku": "PV-250509156",
+  "name": "Card màn hình ASUS TUF GeForce RTX™ 5060 8GB GDDR7 OC Edition (90YV0N00-M0NA00)",
+  "brand": "ASUS",
+  "category": "gpu",
+  "price": 13990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-250509156.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-asus-tuf-rtx-5060-8gb-gddr7-oc-edition--s250509156",
+  "specs": {
+   "chip": "NVIDIA RTX 5060",
+   "vram_gb": 8,
+   "tdp_w": 145,
+   "length_mm": null
+  },
+  "old": 14990000
+ },
+ {
+  "id": "pv-vga-250509158",
+  "sku": "PV-250509158",
+  "name": "Card màn hình MSI GeForce RTX 5060 8G GAMING TRIO OC (8GB GDDR7)",
+  "brand": "MSI",
+  "category": "gpu",
+  "price": 13990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-250509158.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-msi-rtx-5060-8g-gaming-trio-oc--s250509158",
+  "specs": {
+   "chip": "NVIDIA RTX 5060",
+   "vram_gb": 8,
+   "tdp_w": 145,
+   "length_mm": null
+  },
+  "old": 14990000
+ },
+ {
+  "id": "pv-vga-250509159",
+  "sku": "PV-250509159",
+  "name": "Card màn hình Asus Dual GeForce RTX™ 5060 8GB GDDR7 OC Edition (90YV0N12-M0NA00)",
+  "brand": "ASUS",
+  "category": "gpu",
+  "price": 13990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-250509159.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-asus-dual-rtx-5060-8gb-gddr7-oc-edition--s250509159",
+  "specs": {
+   "chip": "NVIDIA RTX 5060",
+   "vram_gb": 8,
+   "tdp_w": 145,
+   "length_mm": null
+  },
+  "old": 14990000
+ },
+ {
+  "id": "pv-vga-250509467",
+  "sku": "PV-250509467",
+  "name": "Card màn hình MSI GeForce RTX 5060 8G GAMING OC (8GB GDDR7)",
+  "brand": "MSI",
+  "category": "gpu",
+  "price": 13990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-250509467.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-msi-rtx-5060-8g-gaming-oc--s250509467",
+  "specs": {
+   "chip": "NVIDIA RTX 5060",
+   "vram_gb": 8,
+   "tdp_w": 145,
+   "length_mm": null
+  },
+  "old": 14990000
+ },
+ {
+  "id": "pv-vga-250709451",
+  "sku": "PV-250709451",
+  "name": "Card màn hình Colorful RTX 5060 Ultra W DUO OC 8GB-V (8GB GDDR7)",
+  "brand": "Colorful",
+  "category": "gpu",
+  "price": 13990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-250709451.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-colorful-rtx-5060-ultra-w-duo-oc-8gb-v--s250709451",
+  "specs": {
+   "chip": "NVIDIA RTX 5060",
+   "vram_gb": 8,
+   "tdp_w": 145,
+   "length_mm": null
+  },
+  "old": 14990000
+ },
+ {
+  "id": "pv-vga-250709459",
+  "sku": "PV-250709459",
+  "name": "Card màn hình Colorful iGame GeForce RTX 5060 Ultra W OC 8GB-V",
+  "brand": "Colorful",
+  "category": "gpu",
+  "price": 13990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-250709459.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-colorful-rtx-5060-ultra-w-oc-8gb-v--s250709459",
+  "specs": {
+   "chip": "NVIDIA RTX 5060",
+   "vram_gb": 8,
+   "tdp_w": 145,
+   "length_mm": null
+  },
+  "old": 14990000
+ },
+ {
+  "id": "pv-vga-250709474",
+  "sku": "PV-250709474",
+  "name": "Card màn hình Colorful GeForce RTX 5060 Battle AX DUO 8GB-V 8GB GDDR7",
+  "brand": "Colorful",
+  "category": "gpu",
+  "price": 13990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-250709474.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-colorful-rtx-5060-battle-ax-duo-8gb-v--s250709474",
+  "specs": {
+   "chip": "NVIDIA RTX 5060",
+   "vram_gb": 8,
+   "tdp_w": 145,
+   "length_mm": null
+  },
+  "old": 14990000
+ },
+ {
+  "id": "pv-vga-260805888",
+  "sku": "PV-260805888",
+  "name": "Card màn hình Asus Dual GeForce RTX 5060 OC Edition Advanced 8GB GDDR7",
+  "brand": "ASUS",
+  "category": "gpu",
+  "price": 13990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-260805888.webp",
+  "description": "Nguồn: https://phongvu.vn/card-man-hinh-vga-asus-dual-geforce-rtx-5060-8gb-gddr7-oc-edition-advanced-dual-rtx5060-o8g-a--s260805888",
+  "specs": {
+   "chip": "NVIDIA RTX 5060",
+   "vram_gb": 8,
+   "tdp_w": 145,
+   "length_mm": null
+  },
+  "old": 14990000
+ },
+ {
+  "id": "pv-vga-250508155",
+  "sku": "PV-250508155",
+  "name": "Card màn hình Gigabyte GeForce RTX™ 5060 GAMING OC 8GB GDDR7",
+  "brand": "Gigabyte",
+  "category": "gpu",
+  "price": 13990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-250508155.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-gigabyte-rtx-5060-gaming-oc-8g--s250508155",
+  "specs": {
+   "chip": "NVIDIA RTX 5060",
+   "vram_gb": 8,
+   "tdp_w": 145,
+   "length_mm": null
+  },
+  "old": 14990000
+ },
+ {
+  "id": "pv-vga-250509151",
+  "sku": "PV-250509151",
+  "name": "Card màn hình MSI GeForce RTX 5060 8G GAMING TRIO OC WHITE (8GB GDDR7)",
+  "brand": "MSI",
+  "category": "gpu",
+  "price": 13990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-250509151.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-msi-rtx-5060-8g-gaming-trio-oc-white--s250509151",
+  "specs": {
+   "chip": "NVIDIA RTX 5060",
+   "vram_gb": 8,
+   "tdp_w": 145,
+   "length_mm": null
+  },
+  "old": 14990000
+ },
+ {
+  "id": "pv-vga-250509153",
+  "sku": "PV-250509153",
+  "name": "Card màn hình Msi GeForce RTX 5060 8G INSPIRE ITX OC 8GB GDDR7",
+  "brand": "MSI",
+  "category": "gpu",
+  "price": 13990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-250509153.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-msi-rtx-5060-8g-inspire-itx-oc--s250509153",
+  "specs": {
+   "chip": "NVIDIA RTX 5060",
+   "vram_gb": 8,
+   "tdp_w": 145,
+   "length_mm": null
+  },
+  "old": 14990000
+ },
+ {
+  "id": "pv-vga-250509160",
+  "sku": "PV-250509160",
+  "name": "Card màn hình Msi GeForce RTX 5060 8G VENTUS 3X OC 8GB GDDR7",
+  "brand": "MSI",
+  "category": "gpu",
+  "price": 13990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-250509160.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-msi-rtx-5060-8g-ventus-3x-oc--s250509160",
+  "specs": {
+   "chip": "NVIDIA RTX 5060",
+   "vram_gb": 8,
+   "tdp_w": 145,
+   "length_mm": null
+  },
+  "old": 14990000
+ },
+ {
+  "id": "pv-vga-250709445",
+  "sku": "PV-250709445",
+  "name": "Card màn hình Colorful GeForce RTX 5060 Battle AX 8GB-V 8GB GDDR7",
+  "brand": "Colorful",
+  "category": "gpu",
+  "price": 13990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-250709445.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-colorful-rtx-5060-battle-ax-8gb-v--s250709445",
+  "specs": {
+   "chip": "NVIDIA RTX 5060",
+   "vram_gb": 8,
+   "tdp_w": 145,
+   "length_mm": null
+  },
+  "old": 14990000
+ },
+ {
+  "id": "pv-vga-260108857",
+  "sku": "PV-260108857",
+  "name": "Card màn hình Palit GeForce RTX 5060 DUAL 8GB GDDR7",
+  "brand": "Palit",
+  "category": "gpu",
+  "price": 13990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-260108857.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-palit-rtx-5060-dual--s260108857",
+  "specs": {
+   "chip": "NVIDIA RTX 5060",
+   "vram_gb": 8,
+   "tdp_w": 145,
+   "length_mm": null
+  },
+  "old": 14990000
+ },
+ {
+  "id": "pv-vga-250407124",
+  "sku": "PV-250407124",
+  "name": "Card màn hình Gigabyte GeForce RTX™ 3060 WINDFORCE OC 12G (GV-N3060WF2OC-12GD)",
+  "brand": "Gigabyte",
+  "category": "gpu",
+  "price": 13990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-250407124.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-gigabyte-rtx-3060-windforce-oc-12g--s250407124",
+  "specs": {
+   "chip": "NVIDIA RTX 3060",
+   "vram_gb": 12,
+   "tdp_w": 170,
+   "length_mm": null
+  },
+  "old": 14990000
+ },
+ {
+  "id": "pv-vga-210602573",
+  "sku": "PV-210602573",
+  "name": "Card màn hình Asus DUAL GeForce RTX 3060 OC 12G 12GB GDDR6",
+  "brand": "ASUS",
+  "category": "gpu",
+  "price": 11590000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-210602573.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-asus-dual-rtx-3060-oc-12g--s210602573",
+  "specs": {
+   "chip": "NVIDIA RTX 3060",
+   "vram_gb": 12,
+   "tdp_w": 170,
+   "length_mm": null
+  },
+  "old": 14490000
+ },
+ {
+  "id": "pv-vga-250709456",
+  "sku": "PV-250709456",
+  "name": "Card màn hình Colorful GeForce RTX 3060 NB DUO 12G V4 12GB GDDR6",
+  "brand": "Colorful",
+  "category": "gpu",
+  "price": 10590000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-250709456.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-colorful-rtx-3060-nb-duo-12g-v4--s250709456",
+  "specs": {
+   "chip": "NVIDIA RTX 3060",
+   "vram_gb": 12,
+   "tdp_w": 170,
+   "length_mm": null
+  },
+  "old": 10990000
+ },
+ {
+  "id": "pv-vga-230600768",
+  "sku": "PV-230600768",
+  "name": "Card màn hình Asus Dual GeForce RTX 3060 8GB GDDR6 8GB GDDR6",
+  "brand": "ASUS",
+  "category": "gpu",
+  "price": 10590000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-230600768.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-asus-dual-rtx-3060-8gb-gddr6--s230600768",
+  "specs": {
+   "chip": "NVIDIA RTX 3060",
+   "vram_gb": 8,
+   "tdp_w": 170,
+   "length_mm": null
+  },
+  "old": 10990000
+ },
+ {
+  "id": "pv-vga-210800271",
+  "sku": "PV-210800271",
+  "name": "Card màn hình Asus TUF Gaming GeForce RTX™ 3060 V2 OC Edition 12GB GDDR6",
+  "brand": "ASUS",
+  "category": "gpu",
+  "price": 8999000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-210800271.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-asus-tuf-gaming-rtx-3060-v2-oc-edition-12gb-gddr6--s210800271",
+  "specs": {
+   "chip": "NVIDIA RTX 3060",
+   "vram_gb": 12,
+   "tdp_w": 170,
+   "length_mm": null
+  },
+  "old": 13490000
+ },
+ {
+  "id": "pv-vga-210900637",
+  "sku": "PV-210900637",
+  "name": "Card màn hình Gigabyte GeForce RTX 3060 VISION OC 12G (rev. 2.0) 12GB GDDR6",
+  "brand": "Gigabyte",
+  "category": "gpu",
+  "price": 9690000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-210900637.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-gigabyte-rtx-3060-vision-oc-12g-rev-2-0--s210900637",
+  "specs": {
+   "chip": "NVIDIA RTX 3060",
+   "vram_gb": 12,
+   "tdp_w": 170,
+   "length_mm": null
+  },
+  "old": 14029000
+ },
+ {
+  "id": "pv-vga-210900635",
+  "sku": "PV-210900635",
+  "name": "Card màn hình Gigabyte GeForce RTX 3060 EAGLE OC 12G (rev. 2.0) 12GB GDDR6",
+  "brand": "Gigabyte",
+  "category": "gpu",
+  "price": 8990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-210900635.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-gigabyte-rtx-3060-eagle-oc-12g-rev-2-0--s210900635",
+  "specs": {
+   "chip": "NVIDIA RTX 3060",
+   "vram_gb": 12,
+   "tdp_w": 170,
+   "length_mm": null
+  },
+  "old": 12689000
+ },
+ {
+  "id": "pv-vga-210800262",
+  "sku": "PV-210800262",
+  "name": "Card màn hình Asus TUF Gaming GeForce RTX™ 3060 Ti V2 OC Edition 8GB GDDR6",
+  "brand": "ASUS",
+  "category": "gpu",
+  "price": 11899000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-210800262.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-asus-tuf-gaming-rtx-3060-ti-v2-oc-edition-8gb-gddr6--s210800262",
+  "specs": {
+   "chip": "NVIDIA RTX 3060 Ti",
+   "vram_gb": 8,
+   "tdp_w": 200,
+   "length_mm": null
+  },
+  "old": 14990000
+ },
+ {
+  "id": "pv-vga-230300442",
+  "sku": "PV-230300442",
+  "name": "Card màn hình Asus Dual GeForce RTX 3060 Ti OC Edition 8GB GDDR6X",
+  "brand": "ASUS",
+  "category": "gpu",
+  "price": 10590000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-230300442.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-asus-dual-rtx-3060-ti-oc-edition--s230300442",
+  "specs": {
+   "chip": "NVIDIA RTX 3060 Ti",
+   "vram_gb": 8,
+   "tdp_w": 200,
+   "length_mm": null
+  },
+  "old": 12990000
+ },
+ {
+  "id": "pv-vga-210900638",
+  "sku": "PV-210900638",
+  "name": "Card màn hình Gigabyte AORUS GeForce RTX 3060 ELITE 12G (rev. 2.0) 12GB GDDR6",
+  "brand": "Gigabyte",
+  "category": "gpu",
+  "price": 12399000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-210900638.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-gigabyte-aorus-rtx-3060-elite-12g-rev-2-0--s210900638",
+  "specs": {
+   "chip": "NVIDIA RTX 3060",
+   "vram_gb": 12,
+   "tdp_w": 170,
+   "length_mm": null
+  },
+  "old": 14390000
+ },
+ {
+  "id": "pv-vga-210800275",
+  "sku": "PV-210800275",
+  "name": "Card màn hình Asus Dual GeForce RTX™ 3060 V2 12GB GDDR6",
+  "brand": "ASUS",
+  "category": "gpu",
+  "price": 9690000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-210800275.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-asus-dual-rtx-3060-v2-12gb-gddr6--s210800275",
+  "specs": {
+   "chip": "NVIDIA RTX 3060",
+   "vram_gb": 12,
+   "tdp_w": 170,
+   "length_mm": null
+  },
+  "old": 10490000
+ },
+ {
+  "id": "pv-vga-230202443",
+  "sku": "PV-230202443",
+  "name": "Card màn hình Asus Dual GeForce RTX 3060 White OC 8GB GDDR6",
+  "brand": "ASUS",
+  "category": "gpu",
+  "price": 10590000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-230202443.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-asus-dual-rtx3060-o8g-white--s230202443",
+  "specs": {
+   "chip": "NVIDIA RTX 3060",
+   "vram_gb": 8,
+   "tdp_w": 170,
+   "length_mm": null
+  },
+  "old": 10990000
+ },
+ {
+  "id": "pv-vga-241003107",
+  "sku": "PV-241003107",
+  "name": "Card Màn Hình Colorful iGame GeForce RTX 3060 Ultra W OC 12G L-V",
+  "brand": "Colorful",
+  "category": "gpu",
+  "price": 10590000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-241003107.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-colorful-igame-rtx-3060-ultra-w-oc-12g-l-v--s241003107",
+  "specs": {
+   "chip": "NVIDIA RTX 3060",
+   "vram_gb": 12,
+   "tdp_w": 170,
+   "length_mm": null
+  },
+  "old": 10990000
+ },
+ {
+  "id": "pv-vga-210900634",
+  "sku": "PV-210900634",
+  "name": "Card màn hình Gigabyte GeForce RTX 3060 EAGLE 12G (rev. 2.0) 12GB GDDR6",
+  "brand": "Gigabyte",
+  "category": "gpu",
+  "price": 12319000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-210900634.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-gigabyte-rtx-3060-eagle-12g-rev-2-0--s210900634",
+  "specs": {
+   "chip": "NVIDIA RTX 3060",
+   "vram_gb": 12,
+   "tdp_w": 170,
+   "length_mm": null
+  }
+ },
+ {
+  "id": "pv-vga-210901899",
+  "sku": "PV-210901899",
+  "name": "Card màn hình Gigabyte GeForce RTX 3060 Ti EAGLE 8G (rev. 2.0) 8GB GDDR6",
+  "brand": "Gigabyte",
+  "category": "gpu",
+  "price": 22590000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-210901899.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-gigabyte-gigabyte-rtx-3060-ti-eagle-8g-rev-2-0--s210901899",
+  "specs": {
+   "chip": "NVIDIA RTX 3060 Ti",
+   "vram_gb": 8,
+   "tdp_w": 200,
+   "length_mm": null
+  }
+ },
+ {
+  "id": "pv-vga-210903098",
+  "sku": "PV-210903098",
+  "name": "Card màn hình Msi GeForce RTX 3060 Ti VENTUS 3X OC 8GB GDDR6",
+  "brand": "MSI",
+  "category": "gpu",
+  "price": 23890000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-210903098.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-msi-rtx-3060-ti-ventus-3x-oc-8gb-gddr6--s210903098",
+  "specs": {
+   "chip": "NVIDIA RTX 3060 Ti",
+   "vram_gb": 8,
+   "tdp_w": 200,
+   "length_mm": null
+  }
+ },
+ {
+  "id": "pv-vga-220400420",
+  "sku": "PV-220400420",
+  "name": "Card màn hình Gainward GeForce RTX3060Ti GHOST 8GB GDDR6",
+  "brand": "Gainward",
+  "category": "gpu",
+  "price": 16479000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-220400420.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-gainward-rtx-3060-ti-ghost--s220400420",
+  "specs": {
+   "chip": "NVIDIA RTX 3060 Ti",
+   "vram_gb": 8,
+   "tdp_w": 200,
+   "length_mm": null
+  }
+ },
+ {
+  "id": "pv-vga-220400421",
+  "sku": "PV-220400421",
+  "name": "Card màn hình Gainward GeForce RTX3060 GHOST 12GB GDDR6",
+  "brand": "Gainward",
+  "category": "gpu",
+  "price": 11990000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-220400421.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-gainward-rtx-3060-ghost--s220400421",
+  "specs": {
+   "chip": "NVIDIA RTX 3060",
+   "vram_gb": 12,
+   "tdp_w": 170,
+   "length_mm": null
+  }
+ },
+ {
+  "id": "pv-vga-220610468",
+  "sku": "PV-220610468",
+  "name": "Card màn hình Colorful GeForce RTX 3060 Ti NB DUO V2 LHR-V 8GB GDDR6",
+  "brand": "Colorful",
+  "category": "gpu",
+  "price": 13500000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-220610468.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-colorful-rtx-3060-ti-nb-duo-v2-lhr-v--s220610468",
+  "specs": {
+   "chip": "NVIDIA RTX 3060 Ti",
+   "vram_gb": 8,
+   "tdp_w": 200,
+   "length_mm": null
+  }
+ },
+ {
+  "id": "pv-vga-230402683",
+  "sku": "PV-230402683",
+  "name": "Card màn hình Gigabyte GeForce RTX 3060 Ti EAGLE OC D6X 8GB GDDR6X",
+  "brand": "Gigabyte",
+  "category": "gpu",
+  "price": 10690000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-230402683.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-gigabyte-rtx-3060-ti-eagle-oc--s230402683",
+  "specs": {
+   "chip": "NVIDIA RTX 3060 Ti",
+   "vram_gb": 8,
+   "tdp_w": 200,
+   "length_mm": null
+  },
+  "old": 14590000
+ },
+ {
+  "id": "pv-vga-230402684",
+  "sku": "PV-230402684",
+  "name": "Card màn hình Gigabyte GeForce RTX 3060 Ti GAMING OC D6X 8GB GDDR6X",
+  "brand": "Gigabyte",
+  "category": "gpu",
+  "price": 12199000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-230402684.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-gigabyte-rtx-3060-ti-gaming-oc--s230402684",
+  "specs": {
+   "chip": "NVIDIA RTX 3060 Ti",
+   "vram_gb": 8,
+   "tdp_w": 200,
+   "length_mm": null
+  },
+  "old": 14890000
+ },
+ {
+  "id": "pv-vga-240703351",
+  "sku": "PV-240703351",
+  "name": "Card màn hình Gigabyte GeForce RTX 3060 GAMING OC 8GB GDDR6",
+  "brand": "Gigabyte",
+  "category": "gpu",
+  "price": 9190000,
+  "stock": 0,
+  "img": "/images/phongvu/pv-vga-240703351.webp",
+  "description": "Nguồn: https://phongvu.vn/vga-gigabyte-rtx-3060-gaming-oc-8g--s240703351",
+  "specs": {
+   "chip": "NVIDIA RTX 3060",
+   "vram_gb": 8,
+   "tdp_w": 170,
+   "length_mm": null
+  },
+  "old": 9590000
+ }
+]

@@ -57,6 +57,8 @@ ADVISOR_VECTOR_STORE = os.getenv('ADVISOR_VECTOR_STORE', 'pgvector')
 ADVISOR_HYDE_MODE = os.getenv('ADVISOR_HYDE_MODE', 'combined')
 # Số sản phẩm đầu kết quả truy xuất mỗi nhóm được ưu tiên trước khi xét giá cao nhất (đề cương 3.3.3).
 ADVISOR_ASSEMBLY_TOP_K = int(os.getenv('ADVISOR_ASSEMBLY_TOP_K', '5'))
+# Nạp sẵn embedding/reranker khi gunicorn khởi động (bật trong docker-compose.advisor.yml).
+ADVISOR_WARMUP = os.getenv('ADVISOR_WARMUP', 'false').lower() == 'true'
 ADVISOR_LLM_TIMEOUT =int(os.getenv('ADVISOR_LLM_TIMEOUT', '30'))
 
 STATIC_ROOT = BASE_DIR / 'staticfiles'

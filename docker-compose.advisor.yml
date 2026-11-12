@@ -32,6 +32,7 @@ services:
       ADVISOR_MODELS_OFFLINE: "true"
       ADVISOR_HYDE: ${ADVISOR_HYDE:-true}
       ADVISOR_RERANK: ${ADVISOR_RERANK:-true}
+      ADVISOR_WARMUP: "true"
       HF_HUB_OFFLINE: "1"
       OMP_NUM_THREADS: "4"
       TOKENIZERS_PARALLELISM: "false"
@@ -88,6 +89,8 @@ services:
       OLLAMA_NUM_PARALLEL: "2"
       OLLAMA_MAX_LOADED_MODELS: "1"
       OLLAMA_CONTEXT_LENGTH: "8192"
+      # Giữ Qwen3 thường trực trên GPU; mặc định Ollama gỡ model sau 5 phút rảnh và lần nạp lại mất ~9 s.
+      OLLAMA_KEEP_ALIVE: "-1"
       OLLAMA_NO_CLOUD: "1"
     volumes:
       - advisor_ollama:/root/.ollama

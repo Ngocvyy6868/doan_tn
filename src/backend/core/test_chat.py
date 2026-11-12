@@ -82,7 +82,10 @@ class ChatTests(TestCase):
     def test_login_validation_and_csrf(self):
         self.assertEqual(Client().get('/api/chat/').status_code, 401)
         for data in ([], {}, {'message': ''}, {'message': 'x' * 2001},
-                     {'message': 'test', 'product_ids': [1]}):
+                     {'message': 'test', 'product_ids': [1]},
+                     {'message': 'Đổi', 'swap': 'yes', 'product_ids': ['cpu']},
+                     {'message': 'Đổi', 'swap': True, 'product_ids': []},
+                     {'message': 'Đổi', 'swap': True, 'product_ids': ['cpu', 'x']}):
             self.assertEqual(self.post(data).status_code, 400)
         client = Client(enforce_csrf_checks=True)
         client.force_login(self.user)

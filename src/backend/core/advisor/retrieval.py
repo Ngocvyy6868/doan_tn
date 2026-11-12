@@ -19,7 +19,8 @@ def embedding_model(name=None):
 @lru_cache(maxsize=1)
 def reranker_model():
     from sentence_transformers import CrossEncoder
-    return CrossEncoder(settings.ADVISOR_RERANKER_MODEL, device='cpu',
+    # 512 token đủ cho tên + thông số + mô tả; giới hạn để mỗi cặp không tốn thời gian như ngữ cảnh 8192.
+    return CrossEncoder(settings.ADVISOR_RERANKER_MODEL, device='cpu', max_length=512,
                         local_files_only=settings.ADVISOR_MODELS_OFFLINE)
 
 
@@ -132,7 +133,8 @@ def hybrid_search(query, hypothetical, catalog):
         for i, key in enumerate(ranking):
             scores[key] = scores.get(key, 0) + 1 / (60 + i + 1)
     ranked = sorted(scores, key=lambda key: (-scores[key], key))[:40]
-    if settings.ADVISOR_RERANK and ranked:
+    # Một ứng viên thì không có gì để xếp hạng lại; bỏ qua để khỏi tốn ~0,6 s CPU mỗi nhóm linh kiện.
+    if settings.ADVISOR_RERANK and len(ranked) > 1:
         predictions = reranker_model().predict([(query, search_text(by_id[key])) for key in ranked])
         ranked = [key for _, key in sorted(zip(map(float, predictions), ranked), reverse=True)]
     return ranked, {'mode': 'hybrid', 'hyde': bool(hypothetical),

@@ -13,6 +13,7 @@ import{AppstoreOutlined,BellOutlined,DeleteOutlined,EditOutlined,EyeInvisibleOut
 import'antd/dist/reset.css';
 import viVN from'antd/locale/vi_VN';
 import'./admin.css';
+import{DEFAULT_TDP_BY_CATEGORY}from'../lib/compatibility.mjs';
 
 const{Header,Sider,Content}=Layout,{Title,Text}=Typography;
 const defaultCategories=['CPU','VGA','Mainboard','RAM','SSD','Nguồn','Case'];
@@ -132,11 +133,19 @@ function AttributeValueInput({definitions,form,fieldIndex,value,onChange}){
  const definition=definitions.find(item=>item.name===attributeName);
  if(definition?.values?.length)return <Select value={Array.isArray(value)?value:(value?value.split(',').map(item=>item.trim()).filter(Boolean):[])} onChange={onChange} style={{width:320,minWidth:320}} mode="multiple" placeholder="Chọn một hoặc nhiều giá trị" options={definition.values.map(value=>({label:value,value}))}/>;
  return <Input value={Array.isArray(value)?value.join(', '):value} onChange={onChange} placeholder="Giá trị"/>;
-}function ProductDrawer({categories,definitions,open,data,close,save}){
+}
+// Linh kiện nào cũng có TDP (W) để tính nguồn: điền mức tiêu thụ điển hình nếu ô TDP còn trống.
+function fillDefaultTdp(form){
+ const fallback=DEFAULT_TDP_BY_CATEGORY[form.getFieldValue('cat')];
+ const attributes=form.getFieldValue('attributes')||[],index=attributes.findIndex(item=>item?.name==='TDP');
+ if(fallback==null||index<0||String(attributes[index].value??'').trim())return;
+ form.setFieldValue(['attributes',index],{...attributes[index],value:String(fallback),unit:'W'});
+}
+function ProductDrawer({categories,definitions,open,data,close,save}){
  const[form]=Form.useForm();
  const[uploading,setUploading]=useState(false);
- return <Drawer title={<Space direction="vertical" size={0}><Text type="secondary" className="drawer-eyebrow">{data?'CHỈNH SỬA':'TẠO MỚI'}</Text><Title level={4} style={{margin:0}}>{data?'Cập nhật sản phẩm':'Thêm sản phẩm'}</Title></Space>} width={620} open={open} onClose={close} destroyOnHidden afterOpenChange={visible=>{if(!visible)return;const existing=data?.attributes||[];const attributes=[...definitions.map(definition=>{const saved=existing.find(attribute=>attribute.name===definition.name);return saved?{...saved}:{name:definition.name,value:'',unit:definition.unit||''}}),...existing.filter(attribute=>!definitions.some(definition=>definition.name===attribute.name))];form.resetFields();form.setFieldsValue({...blank,...data,cost:data?.cost??null,attributes})}} extra={<Button type="primary" icon={<SaveOutlined/>} disabled={uploading} onClick={()=>form.submit()}>Lưu</Button>}>
-  <Form form={form} layout="vertical" onFinish={save} initialValues={blank}>
+ return <Drawer title={<Space direction="vertical" size={0}><Text type="secondary" className="drawer-eyebrow">{data?'CHỈNH SỬA':'TẠO MỚI'}</Text><Title level={4} style={{margin:0}}>{data?'Cập nhật sản phẩm':'Thêm sản phẩm'}</Title></Space>} width={620} open={open} onClose={close} destroyOnHidden afterOpenChange={visible=>{if(!visible)return;const existing=data?.attributes||[];const attributes=[...definitions.map(definition=>{const saved=existing.find(attribute=>attribute.name===definition.name);return saved?{...saved}:{name:definition.name,value:'',unit:definition.unit||''}}),...existing.filter(attribute=>!definitions.some(definition=>definition.name===attribute.name))];form.resetFields();form.setFieldsValue({...blank,...data,cost:data?.cost??null,attributes});fillDefaultTdp(form)}} extra={<Button type="primary" icon={<SaveOutlined/>} disabled={uploading} onClick={()=>form.submit()}>Lưu</Button>}>
+  <Form form={form} layout="vertical" onFinish={save} initialValues={blank} onValuesChange={changed=>{if('cat' in changed)fillDefaultTdp(form)}}>
    <Form.Item label="Tên sản phẩm" name="name" rules={[{required:true,message:'Nhập tên sản phẩm'}]}><Input placeholder="AMD Ryzen 7 7800X3D"/></Form.Item>
    <Row gutter={12}><Col span={12}><Form.Item label="Mã SKU" name="sku" rules={[{required:true,message:'Nhập mã SKU'}]}><Input placeholder="TZ-CPU-1001"/></Form.Item></Col><Col span={12}><Form.Item label="Thương hiệu" name="brand"><Input placeholder="AMD"/></Form.Item></Col></Row>
    <Row gutter={12}><Col span={12}><Form.Item label="Danh mục" name="cat"><Select options={categories.map(x=>({label:x,value:x}))}/></Form.Item></Col><Col span={12}><Form.Item label="Nhãn sản phẩm" name="badge"><Input placeholder="MỚI"/></Form.Item></Col></Row>

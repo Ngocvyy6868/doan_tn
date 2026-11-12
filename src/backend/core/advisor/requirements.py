@@ -39,6 +39,20 @@ PROMPT = (
 )
 
 
+# Tùy chọn chỉ nhận khi tin nhắn có nhắc tới; LLM hay tự điền "có" dù khách không nói.
+MENTIONS = {'gom_man_hinh_phim_chuot': ('man hinh', 'phim', 'chuot', 'monitor'),
+            'gom_ban_quyen': ('windows', 'win ', 'win1', 'ban quyen', 'he dieu hanh', 'license')}
+
+
+def drop_unmentioned(extracted, message):
+    from .catalog import fold
+    if not isinstance(extracted, dict):
+        return extracted
+    text = fold(message) + ' '
+    return {k: (None if k in MENTIONS and not any(word in text for word in MENTIONS[k]) else v)
+            for k, v in extracted.items()}
+
+
 def merge_sheet(previous, extracted):
     from ..chat_service import ChatUnavailable
     if not isinstance(extracted, dict):
@@ -63,17 +77,26 @@ def merge_sheet(previous, extracted):
     return sheet
 
 
+CORE = ('ngan_sach', 'muc_dich')
+CORE_LABELS = {'ngan_sach': 'ngân sách', 'muc_dich': 'mục đích sử dụng'}
+DEFAULT_ASSUMPTIONS = {'gom_man_hinh_phim_chuot': 'Ngân sách chưa gồm màn hình, bàn phím, chuột.',
+                       'gom_ban_quyen': 'Chưa gồm Windows bản quyền.'}
+
+
+def missing_core(sheet):
+    return [key for key in CORE if sheet.get(key) is None]
+
+
 def clarify(sheet, ask_counts):
+    """Chỉ hỏi lại khi thiếu ngân sách hoặc mục đích. Đủ hai thông tin này thì tư vấn ngay một bộ hoàn chỉnh;
+    các tùy chọn khách chưa nói (màn hình/phím chuột, Windows) mặc định là chưa gồm và báo rõ là giả định."""
     sheet, counts, assumptions = dict(sheet), dict(ask_counts), []
-    for key in ('gom_man_hinh_phim_chuot', 'gom_ban_quyen'):
-        if sheet.get(key) is None and counts.get(key, 0) >= 2:
-            sheet[key] = False
-            assumptions.append('Chưa gồm màn hình/phím/chuột.' if key == 'gom_man_hinh_phim_chuot'
-                               else 'Chưa gồm Windows bản quyền.')
-    # Establish the two core needs before asking about optional extras.
-    missing = [key for key in ('ngan_sach', 'muc_dich') if sheet.get(key) is None]
+    missing = missing_core(sheet)
     if not missing:
-        missing = [key for key in QUESTIONS if sheet.get(key) is None][:2]
+        for key, text in DEFAULT_ASSUMPTIONS.items():
+            if sheet.get(key) is None:
+                sheet[key] = False
+                assumptions.append(text)
     for key in missing:
         counts[key] = counts.get(key, 0) + 1
     return sheet, counts, [QUESTIONS[k] for k in missing], assumptions

@@ -1,5 +1,6 @@
 from django.conf import settings
 from django.db import models
+from django.utils import timezone
 from .advisor.fields import ProductVectorField
 
 
@@ -176,6 +177,88 @@ class ChatMessage(models.Model):
 
     class Meta:
         ordering = ['id']
+
+
+class CustomerEvent(models.Model):
+    """CDP: một sự kiện trên dòng thời gian của khách hàng (khách tự làm, nhân viên làm hoặc hệ thống ghi)."""
+
+    class Type(models.TextChoices):
+        REGISTERED = 'REGISTERED', 'Đăng ký tài khoản'
+        LOGIN = 'LOGIN', 'Đăng nhập'
+        PROFILE_UPDATED = 'PROFILE_UPDATED', 'Cập nhật thông tin Profile'
+        ADDRESS_ADDED = 'ADDRESS_ADDED', 'Thêm địa chỉ'
+        ADDRESS_UPDATED = 'ADDRESS_UPDATED', 'Sửa địa chỉ'
+        ADDRESS_DELETED = 'ADDRESS_DELETED', 'Xóa địa chỉ'
+        ORDER_PLACED = 'ORDER_PLACED', 'Đặt đơn hàng'
+        ORDER_STATUS = 'ORDER_STATUS', 'Cập nhật trạng thái đơn hàng'
+        CHAT_STARTED = 'CHAT_STARTED', 'Trò chuyện với trợ lý AI'
+        NOTE_ADDED = 'NOTE_ADDED', 'Thêm ghi chú'
+        TASK_CREATED = 'TASK_CREATED', 'Tạo công việc'
+        TASK_COMPLETED = 'TASK_COMPLETED', 'Hoàn thành công việc'
+
+    class Source(models.TextChoices):
+        CUSTOMER = 'customer', 'Khách hàng'
+        STAFF = 'staff', 'Nhân viên'
+        SYSTEM = 'system', 'Hệ thống'
+
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name='events')
+    type = models.CharField(max_length=24, choices=Type.choices)
+    source = models.CharField(max_length=10, choices=Source.choices, default=Source.CUSTOMER)
+    title = models.CharField(max_length=255)
+    data = models.JSONField(default=dict, blank=True)
+    actor = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=True, on_delete=models.SET_NULL, related_name='+')
+    # Không dùng auto_now_add để dựng lại được sự kiện cũ từ dữ liệu có sẵn (đăng ký, đơn hàng...).
+    created_at = models.DateTimeField(default=timezone.now)
+
+    class Meta:
+        ordering = ['-created_at', '-id']
+        indexes = [models.Index(fields=['customer', '-created_at'])]
+
+
+class CustomerNote(models.Model):
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name='notes')
+    author = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=True, on_delete=models.SET_NULL, related_name='+')
+    content = models.TextField()
+    pinned = models.BooleanField(default=False)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['-pinned', '-created_at', '-id']
+
+
+class CustomerTask(models.Model):
+    """Công việc chăm sóc khách hàng: liên hệ, xử lý phản ánh, tư vấn..."""
+
+    class Type(models.TextChoices):
+        CONTACT = 'CONTACT', 'Liên hệ khách hàng'
+        COMPLAINT = 'COMPLAINT', 'Xử lý phản ánh'
+        CONSULT = 'CONSULT', 'Tư vấn'
+        CARE = 'CARE', 'Chăm sóc sau bán'
+        OTHER = 'OTHER', 'Khác'
+
+    class Status(models.TextChoices):
+        TODO = 'TODO', 'Cần làm'
+        DONE = 'DONE', 'Hoàn thành'
+        CANCELLED = 'CANCELLED', 'Đã hủy'
+
+    customer = models.ForeignKey(Customer, on_delete=models.CASCADE, related_name='tasks')
+    type = models.CharField(max_length=12, choices=Type.choices, default=Type.CONTACT)
+    status = models.CharField(max_length=12, choices=Status.choices, default=Status.TODO)
+    title = models.CharField(max_length=255)
+    description = models.TextField(blank=True, default='')
+    channel = models.CharField(max_length=20, blank=True, default='')  # phone, email, zalo, store...
+    result = models.TextField(blank=True, default='')
+    order = models.ForeignKey(Order, null=True, blank=True, on_delete=models.SET_NULL, related_name='tasks')
+    assignee = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=True, on_delete=models.SET_NULL, related_name='+')
+    created_by = models.ForeignKey(settings.AUTH_USER_MODEL, null=True, blank=True, on_delete=models.SET_NULL, related_name='+')
+    due_at = models.DateTimeField(null=True, blank=True)
+    completed_at = models.DateTimeField(null=True, blank=True)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
+
+    class Meta:
+        ordering = ['-created_at', '-id']
 
 
 class Warehouse(models.Model):

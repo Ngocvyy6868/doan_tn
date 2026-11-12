@@ -20,3 +20,10 @@ test('supported lists and numeric limits',()=>{
  assert.equal(checkCompatibility(items,[{...rule,operator:'gte'}])[0].status,'unknown');
  assert.equal(checkCompatibility(products('unknown','750'),[{...rule,operator:'gte'}])[0].status,'unknown');
 });
+test('mainboard RAM generation',()=>{
+ const ramRule={name:'Thế hệ RAM và Mainboard',source_category:'Mainboard',source_attribute:'Thế hệ RAM hỗ trợ',target_category:'RAM',target_attribute:'Thế hệ RAM',operator:'overlap',active:true};
+ const build=(board,ram)=>[{cat:'Mainboard',name:'Board',attributes:[{name:'Thế hệ RAM hỗ trợ',value:board}]},{cat:'RAM',name:'RAM',attributes:[{name:'Thế hệ RAM',value:ram}]}];
+ assert.equal(checkCompatibility(build('DDR5','DDR4'),[ramRule])[0].status,'fail');
+ assert.equal(checkCompatibility(build('DDR4','DDR4'),[ramRule])[0].status,'pass');
+ assert.equal(checkCompatibility(build('DDR4, DDR5','DDR5'),[ramRule])[0].status,'pass');
+});

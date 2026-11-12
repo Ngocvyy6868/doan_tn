@@ -6,6 +6,7 @@ from django.http import JsonResponse
 from django.middleware.csrf import get_token
 from django.views.decorators.http import require_http_methods
 
+from . import crm
 from .advisor.catalog import adapt, available
 from .advisor.pipeline import respond
 from .chat_service import ChatUnavailable, generate
@@ -50,6 +51,9 @@ def chat(request):
     if not isinstance(data, dict) or not isinstance(data.get('message'), str) or not 1 <= len(data['message'].strip()) <= 2000:
         return JsonResponse({'message': 'Câu hỏi cần từ 1 đến 2000 ký tự.'}, status=400)
     selected = data.get('product_ids', [])
+    swap = data.get('swap', False)
+    if not isinstance(swap, bool) or (swap and len(selected) != 1):
+        return JsonResponse({'message': 'Yêu cầu đổi linh kiện không hợp lệ.'}, status=400)
     if not isinstance(selected, list) or len(selected) > 10 or any(not isinstance(i, str) or len(i) > 64 for i in selected) or len(set(selected)) != len(selected):
         return JsonResponse({'message': 'Danh sách sản phẩm không hợp lệ.'}, status=400)
     rate_key = f'chat-rate:{request.user.pk}'
@@ -68,12 +72,14 @@ def chat(request):
             ChatSession.objects.filter(user=request.user, active=True).update(active=False)
             session = ChatSession.objects.create(user=request.user)
             request.session['advisor_session_id'] = session.pk
+            crm.record(crm.customer_of(request.user), crm.Type.CHAT_STARTED,
+                       {'session_id': session.pk, 'message': data['message'].strip()[:300]}, source=crm.Source.CUSTOMER)
         history = [{'role': m.role, 'text': m.text} for m in
                    list(session.messages.order_by('-id')[:12])[::-1]]
         # Database is durable source; cache speeds state reads and recovers after Redis eviction.
         state = cache.get(f'advisor-state:{session.pk}') or session.state
         try:
-            result, next_state = respond(data['message'].strip(), history, catalog, selected, state, generate)
+            result, next_state = respond(data['message'].strip(), history, catalog, selected, state, generate, swap=swap)
         except ChatUnavailable as exc:
             return JsonResponse({'message': str(exc)}, status=503)
         except (ImportError, OSError, RuntimeError, ValueError) as exc:

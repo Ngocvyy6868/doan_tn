@@ -1,0 +1,602 @@
+[
+ {
+  "id": "kcc-ram-hiksemi-future-ddr4-16gb-3200mhz-u10-u-dimm-hsc416u32c2",
+  "sku": "KCC-RAM-HIKSEMI-FUTURE-DDR4-16GB-3200MHZ-U10-U-DIMM-HSC416U32C2",
+  "name": "Ram HIKSEMI FUTURE DDR4 16GB 3200MHZ U10 U-DIMM (HSC416U32C2)",
+  "brand": "HIKSEMI",
+  "category": "ram",
+  "price": 2590000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-hiksemi-future-ddr4-16gb-3200mhz-u10-u-dimm-hsc416u32c2.jpg",
+  "description": "Nguồn: https://kccshop.vn/ram-hiksemi-future-ddr4-16gb-3200mhz-u10-u-dimm-hsc416u32c2/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 16,
+   "modules": 1,
+   "speed_mhz": 3200,
+   "cas_latency": null,
+   "tdp_w": 5
+  },
+  "old": 2910000
+ },
+ {
+  "id": "kcc-ram-desktop-corsair-vengeance-lpx-cmk16gx4m1e3200c16-16gb-1x",
+  "sku": "KCC-RAM-DESKTOP-CORSAIR-VENGEANCE-LPX-CMK16GX4M1E3200C16-16GB-1X",
+  "name": "Ram Desktop Corsair Vengeance LPX (CMK16GX4M1E3200C16) 16GB (1x16GB) DDR4 3200MHz",
+  "brand": "Corsair",
+  "category": "ram",
+  "price": 3190000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-desktop-corsair-vengeance-lpx-cmk16gx4m1e3200c16-16gb-1x.jpg",
+  "description": "Nguồn: https://kccshop.vn/ram-desktop-corsair-vengeance-lpx-cmk16gx4m1e3200c16-16gb-1x16gb-ddr4-3200mhz/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 16,
+   "modules": 1,
+   "speed_mhz": 3200,
+   "cas_latency": 16,
+   "tdp_w": 5
+  },
+  "old": 3450000
+ },
+ {
+  "id": "kcc-ram-pc-corsair-vengeance-lpx-8gb-3200mhz-ddr4-cmk8gx4m1e3200",
+  "sku": "KCC-RAM-PC-CORSAIR-VENGEANCE-LPX-8GB-3200MHZ-DDR4-CMK8GX4M1E3200",
+  "name": "Ram PC Corsair Vengeance LPX 8GB 3200MHz DDR4 (CMK8GX4M1E3200C16)",
+  "brand": "Corsair",
+  "category": "ram",
+  "price": 1890000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-pc-corsair-vengeance-lpx-8gb-3200mhz-ddr4-cmk8gx4m1e3200.jpg",
+  "description": "Nguồn: https://kccshop.vn/ram-pc-corsair-vengeance-lpx-8gb-3200mhz-ddr4-cmk8gx4m1e3200c16/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 8,
+   "modules": 1,
+   "speed_mhz": 3200,
+   "cas_latency": 16,
+   "tdp_w": 5
+  },
+  "old": 2140000
+ },
+ {
+  "id": "kcc-ram-desktop-gskill-trident-z-neo-rgb-f4-3600c18d-32gtzn-32gb",
+  "sku": "KCC-RAM-DESKTOP-GSKILL-TRIDENT-Z-NEO-RGB-F4-3600C18D-32GTZN-32GB",
+  "name": "Ram Desktop Gskill Trident Z Neo RGB (F4-3600C18D-32GTZN) 32GB (2x16GB) DDR4 3600MHz",
+  "brand": "G.Skill",
+  "category": "ram",
+  "price": 8590000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-desktop-gskill-trident-z-neo-rgb-f4-3600c18d-32gtzn-32gb.jpg",
+  "description": "Nguồn: https://kccshop.vn/ram-desktop-gskill-trident-z-neo-rgb-f4-3600c18d-32gtzn-32gb-2x16gb-ddr4-3600mhz/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 32,
+   "modules": 2,
+   "speed_mhz": 3600,
+   "cas_latency": 18,
+   "tdp_w": 10
+  },
+  "old": 9540000
+ },
+ {
+  "id": "kcc-ram-adata-xpg-spectrix-d50-16gb-1x16gb-ddr4-3200mhz-ax4u3200",
+  "sku": "KCC-RAM-ADATA-XPG-SPECTRIX-D50-16GB-1X16GB-DDR4-3200MHZ-AX4U3200",
+  "name": "Ram ADATA XPG SPECTRIX D50 16GB (1x16GB) DDR4 3200MHz (AX4U3200716G16A-ST50)",
+  "brand": "ADATA",
+  "category": "ram",
+  "price": 3190000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-adata-xpg-spectrix-d50-16gb-1x16gb-ddr4-3200mhz-ax4u3200.jpg",
+  "description": "Nguồn: https://kccshop.vn/ram-adata-xpg-spectrix-d50-16gb-1x16gb-ddr4-3200mhz-ax4u3200716g16a-st50/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 16,
+   "modules": 1,
+   "speed_mhz": 3200,
+   "cas_latency": 16,
+   "tdp_w": 5
+  },
+  "old": 3600000
+ },
+ {
+  "id": "kcc-ram-adata-xpg-d50-ddr4-8gb-3200mhz-grey-rgb-ax4u32008g16a-st",
+  "sku": "KCC-RAM-ADATA-XPG-D50-DDR4-8GB-3200MHZ-GREY-RGB-AX4U32008G16A-ST",
+  "name": "RAM ADATA XPG D50 DDR4 8GB 3200Mhz Grey RGB (AX4U32008G16A-ST50)",
+  "brand": "ADATA",
+  "category": "ram",
+  "price": 3090000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-adata-xpg-d50-ddr4-8gb-3200mhz-grey-rgb-ax4u32008g16a-st.jpg",
+  "description": "Nguồn: https://kccshop.vn/ram-adata-xpg-d50-ddr4-8gb-3200mhz-grey-rgb-ax4u32008g16a-st50/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 8,
+   "modules": 1,
+   "speed_mhz": 3200,
+   "cas_latency": null,
+   "tdp_w": 5
+  },
+  "old": 3460000
+ },
+ {
+  "id": "kcc-ram-desktop-gskill-trident-z-rgb-f4-3600c18d-32gtzr-32gb-2x1",
+  "sku": "KCC-RAM-DESKTOP-GSKILL-TRIDENT-Z-RGB-F4-3600C18D-32GTZR-32GB-2X1",
+  "name": "RAM Desktop Gskill Trident Z RGB (F4-3600C18D-32GTZR) 32GB (2x16GB) DDR4 3600MHz",
+  "brand": "G.Skill",
+  "category": "ram",
+  "price": 8450000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-desktop-gskill-trident-z-rgb-f4-3600c18d-32gtzr-32gb-2x1.jpg",
+  "description": "Nguồn: https://kccshop.vn/ram-desktop-gskill-trident-z-rgb-f4-3600c18d-32gtzr-32gb-2x16gb-ddr4-3600mhz/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 32,
+   "modules": 2,
+   "speed_mhz": 3600,
+   "cas_latency": 18,
+   "tdp_w": 10
+  },
+  "old": 9130000
+ },
+ {
+  "id": "kcc-ram-ddr4-gskill-16g-3200-aegis-1x-16gb-f4-3200c16s-16gis",
+  "sku": "KCC-RAM-DDR4-GSKILL-16G-3200-AEGIS-1X-16GB-F4-3200C16S-16GIS",
+  "name": "Ram DDR4 Gskill 16G/3200 Aegis (1x 16GB) (F4-3200C16S-16GIS)",
+  "brand": "G.Skill",
+  "category": "ram",
+  "price": 3480000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-ddr4-gskill-16g-3200-aegis-1x-16gb-f4-3200c16s-16gis.jpg",
+  "description": "Nguồn: https://kccshop.vn/ram-ddr4-gskill-16g-3200-aegis-1x-16gb-f4-3200c16s-16gis/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 16,
+   "modules": 1,
+   "speed_mhz": 3200,
+   "cas_latency": 16,
+   "tdp_w": 5
+  },
+  "old": 3830000
+ },
+ {
+  "id": "kcc-ram-teamgroup-vulcan-z-8gb-1x8gb-ddr4-3200mhz-do",
+  "sku": "KCC-RAM-TEAMGROUP-VULCAN-Z-8GB-1X8GB-DDR4-3200MHZ-DO",
+  "name": "Ram TEAMGROUP Vulcan Z 8GB (1x8GB) DDR4 3200Mhz (Đỏ)",
+  "brand": "TEAMGROUP",
+  "category": "ram",
+  "price": 1820000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-teamgroup-vulcan-z-8gb-1x8gb-ddr4-3200mhz-do.jpg",
+  "description": "Nguồn: https://kccshop.vn/ram-teamgroup-vulcan-z-8gb-1x8gb-ddr4-3200mhz-do/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 8,
+   "modules": 1,
+   "speed_mhz": 3200,
+   "cas_latency": 16,
+   "tdp_w": 5
+  },
+  "old": 1980000
+ },
+ {
+  "id": "kcc-ram-teamgroup-elite-plus-8gb-bus-3200-ddr4",
+  "sku": "KCC-RAM-TEAMGROUP-ELITE-PLUS-8GB-BUS-3200-DDR4",
+  "name": "Ram TEAMGROUP Elite Plus 8GB Bus 3200 DDR4",
+  "brand": "TEAMGROUP",
+  "category": "ram",
+  "price": 1760000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-teamgroup-elite-plus-8gb-bus-3200-ddr4.jpg",
+  "description": "Nguồn: https://kccshop.vn/ram-teamgroup-elite-plus-8gb-bus-3200-ddr4/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 8,
+   "modules": 1,
+   "speed_mhz": 3200,
+   "cas_latency": 22,
+   "tdp_w": 5
+  },
+  "old": 1940000
+ },
+ {
+  "id": "kcc-ram-desktop-gskill-ripjaws-v-f4-3200c16s-16gvk-16gb-1x16gb-d",
+  "sku": "KCC-RAM-DESKTOP-GSKILL-RIPJAWS-V-F4-3200C16S-16GVK-16GB-1X16GB-D",
+  "name": "Ram Desktop Gskill RIPJAWS V (F4-3200C16S-16GVK) 16GB (1x16GB) DDR4 3200Mhz",
+  "brand": "G.Skill",
+  "category": "ram",
+  "price": 3620000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-desktop-gskill-ripjaws-v-f4-3200c16s-16gvk-16gb-1x16gb-d.jpg",
+  "description": "Nguồn: https://kccshop.vn/ram-desktop-gskill-ripjaws-v-f4-3200c16s-16gvk-16gb-1x16gb-ddr4-3200mhz/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 16,
+   "modules": 1,
+   "speed_mhz": 3200,
+   "cas_latency": 16,
+   "tdp_w": 5
+  },
+  "old": 3980000
+ },
+ {
+  "id": "kcc-ram-desktop-kingston-fury-beast-kf432c16bb-16-16gb-1x16gb-dd",
+  "sku": "KCC-RAM-DESKTOP-KINGSTON-FURY-BEAST-KF432C16BB-16-16GB-1X16GB-DD",
+  "name": "Ram Desktop Kingston Fury Beast (KF432C16BB/16) 16GB (1x16GB) DDR4 3200Mhz",
+  "brand": "Kingston",
+  "category": "ram",
+  "price": 3290000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-desktop-kingston-fury-beast-kf432c16bb-16-16gb-1x16gb-dd.jpg",
+  "description": "Nguồn: https://kccshop.vn/ram-desktop-kingston-fury-beast-kf432c16bb-16-16gb-1x16gb-ddr4-3200mhz/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 16,
+   "modules": 1,
+   "speed_mhz": 3200,
+   "cas_latency": 16,
+   "tdp_w": 5
+  },
+  "old": 3680000
+ },
+ {
+  "id": "kcc-ram-g-skill-ripjaws-v-8gb-1x8gb-ddr4-3200mhz-f4-3200c16s-8gv",
+  "sku": "KCC-RAM-G-SKILL-RIPJAWS-V-8GB-1X8GB-DDR4-3200MHZ-F4-3200C16S-8GV",
+  "name": "Ram G.Skill Ripjaws V 8GB (1x8GB) DDR4 3200MHz (F4-3200C16S-8GVKB)",
+  "brand": "G.Skill",
+  "category": "ram",
+  "price": 1790000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-g-skill-ripjaws-v-8gb-1x8gb-ddr4-3200mhz-f4-3200c16s-8gv.jpg",
+  "description": "Nguồn: https://kccshop.vn/ram-g-skill-ripjaws-v-8gb-1x8gb-ddr4-3200mhz-f4-3200c16s-8gvkb/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 8,
+   "modules": 1,
+   "speed_mhz": 3200,
+   "cas_latency": 16,
+   "tdp_w": 5
+  },
+  "old": 1990000
+ },
+ {
+  "id": "kcc-ram-desktop-adata-xpg-spectrix-d50-rgb-white-ax4u320016g16a",
+  "sku": "KCC-RAM-DESKTOP-ADATA-XPG-SPECTRIX-D50-RGB-WHITE-AX4U320016G16A",
+  "name": "RAM DESKTOP ADATA XPG SPECTRIX D50 RGB WHITE (AX4U320016G16A-SW50) 16GB (1X16GB) DDR4 3200MHZ",
+  "brand": "ADATA",
+  "category": "ram",
+  "price": 3190000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-desktop-adata-xpg-spectrix-d50-rgb-white-ax4u320016g16a.jpg",
+  "description": "Nguồn: https://kccshop.vn/ram-desktop-adata-xpg-spectrix-d50-rgb-white-ax4u320016g16a-sw50-16gb-1x16gb-ddr4-3200mhz/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 16,
+   "modules": 1,
+   "speed_mhz": 3200,
+   "cas_latency": null,
+   "tdp_w": 5
+  },
+  "old": 3540000
+ },
+ {
+  "id": "kcc-ram-teamgroup-t-force-delta-rgb-8gb-1x8gb-ddr4-3200mhz-white",
+  "sku": "KCC-RAM-TEAMGROUP-T-FORCE-DELTA-RGB-8GB-1X8GB-DDR4-3200MHZ-WHITE",
+  "name": "Ram TEAMGROUP T-Force DELTA RGB 8GB (1x8GB) DDR4 3200MHz White",
+  "brand": "TEAMGROUP",
+  "category": "ram",
+  "price": 1820000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-teamgroup-t-force-delta-rgb-8gb-1x8gb-ddr4-3200mhz-white.jpg",
+  "description": "Nguồn: https://kccshop.vn/ram-teamgroup-t-force-delta-rgb-8gb-1x8gb-ddr4-3200mhz-white/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 8,
+   "modules": 1,
+   "speed_mhz": 3200,
+   "cas_latency": 16,
+   "tdp_w": 5
+  },
+  "old": 1980000
+ },
+ {
+  "id": "kcc-ram-adata-xpg-spectrix-d35g-16gb-3200-mhz-ddr4-white-ax4u320",
+  "sku": "KCC-RAM-ADATA-XPG-SPECTRIX-D35G-16GB-3200-MHZ-DDR4-WHITE-AX4U320",
+  "name": "Ram Adata XPG SPECTRIX D35G 16GB 3200 Mhz DDR4 White (AX4U320016G16A-SWHD35G)",
+  "brand": "ADATA",
+  "category": "ram",
+  "price": 3190000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-adata-xpg-spectrix-d35g-16gb-3200-mhz-ddr4-white-ax4u320.png",
+  "description": "Nguồn: https://kccshop.vn/ram-adata-xpg-spectrix-d35g-16gb-3200-mhz-ddr4-white-ax4u320016g16a-swhd35g/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 16,
+   "modules": 1,
+   "speed_mhz": 3200,
+   "cas_latency": null,
+   "tdp_w": 5
+  },
+  "old": 3480000
+ },
+ {
+  "id": "kcc-ram-adata-xpg-spectrix-d35g-16gb-3200-mhz-ddr4-black-ax4u320",
+  "sku": "KCC-RAM-ADATA-XPG-SPECTRIX-D35G-16GB-3200-MHZ-DDR4-BLACK-AX4U320",
+  "name": "Ram Adata XPG SPECTRIX D35G 16GB 3200 Mhz DDR4 Black (AX4U320016G16A-SBKD35G)",
+  "brand": "ADATA",
+  "category": "ram",
+  "price": 2990000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-adata-xpg-spectrix-d35g-16gb-3200-mhz-ddr4-black-ax4u320.png",
+  "description": "Nguồn: https://kccshop.vn/ram-adata-xpg-spectrix-d35g-16gb-3200-mhz-ddr4-black-ax4u320016g16a-sbkd35g/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 16,
+   "modules": 1,
+   "speed_mhz": 3200,
+   "cas_latency": null,
+   "tdp_w": 5
+  },
+  "old": 3320000
+ },
+ {
+  "id": "kcc-ram-adata-xpg-d10-gammix-ddr4-8g-3200mhz-red-ax4u32008g16a-s",
+  "sku": "KCC-RAM-ADATA-XPG-D10-GAMMIX-DDR4-8G-3200MHZ-RED-AX4U32008G16A-S",
+  "name": "RAM ADATA XPG D10 GAMMIX DDR4 8G 3200Mhz RED (AX4U32008G16A-SR10)",
+  "brand": "ADATA",
+  "category": "ram",
+  "price": 1950000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-adata-xpg-d10-gammix-ddr4-8g-3200mhz-red-ax4u32008g16a-s.jpg",
+  "description": "Nguồn: https://kccshop.vn/ram-adata-xpg-d10-gammix-ddr4-8g-3200mhz-red-ax4u32008g16a-sr10/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 8,
+   "modules": 1,
+   "speed_mhz": 3200,
+   "cas_latency": 16,
+   "tdp_w": 5
+  },
+  "old": 2140000
+ },
+ {
+  "id": "kcc-ram-desktop-sstc-16gb-1x16gb-cl22-3200mhz-ddr4-u3200i-cl22-1",
+  "sku": "KCC-RAM-DESKTOP-SSTC-16GB-1X16GB-CL22-3200MHZ-DDR4-U3200I-CL22-1",
+  "name": "Ram Desktop SSTC 16GB (1x16GB) CL22 3200MHz DDR4 (U3200I-CL22-16GB)",
+  "brand": "SSTC",
+  "category": "ram",
+  "price": 2690000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-desktop-sstc-16gb-1x16gb-cl22-3200mhz-ddr4-u3200i-cl22-1.jpg",
+  "description": "Nguồn: https://kccshop.vn/ram-desktop-sstc-16gb-1x16gb-cl22-3200mhz-ddr4-u3200i-cl22-16gb/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 16,
+   "modules": 1,
+   "speed_mhz": 3200,
+   "cas_latency": 22,
+   "tdp_w": 5
+  },
+  "old": 2910000
+ },
+ {
+  "id": "kcc-ram-adata-spectrix-d50-rgb-16gb-1x16gb-ddr4-3200mhz-ax4u3200",
+  "sku": "KCC-RAM-ADATA-SPECTRIX-D50-RGB-16GB-1X16GB-DDR4-3200MHZ-AX4U3200",
+  "name": "Ram Adata Spectrix D50 RGB 16GB (1x16GB) DDR4 3200Mhz (AX4U320016G16A-ST50)",
+  "brand": "ADATA",
+  "category": "ram",
+  "price": 3190000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-adata-spectrix-d50-rgb-16gb-1x16gb-ddr4-3200mhz-ax4u3200.jpg",
+  "description": "Nguồn: https://kccshop.vn/ram-adata-spectrix-d50-rgb-16gb-1x16gb-ddr4-3200mhz-ax4u320016g16a-st50/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 16,
+   "modules": 1,
+   "speed_mhz": 3200,
+   "cas_latency": 16,
+   "tdp_w": 5
+  },
+  "old": 3600000
+ },
+ {
+  "id": "kcc-ram-sstc-ddr4-3200-jedec-8gb-1x8gb-u3200a-c22-8g",
+  "sku": "KCC-RAM-SSTC-DDR4-3200-JEDEC-8GB-1X8GB-U3200A-C22-8G",
+  "name": "Ram SSTC DDR4 3200 JEDEC 8GB(1x8GB) (U3200A-C22-8G)",
+  "brand": "SSTC",
+  "category": "ram",
+  "price": 1590000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-sstc-ddr4-3200-jedec-8gb-1x8gb-u3200a-c22-8g.jpg",
+  "description": "Nguồn: https://kccshop.vn/ram-sstc-ddr4-3200-jedec-8gb-1x8gb-u3200a-c22-8g/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 8,
+   "modules": 1,
+   "speed_mhz": 3200,
+   "cas_latency": 22,
+   "tdp_w": 5
+  },
+  "old": 1780000
+ },
+ {
+  "id": "kcc-ram-patriot-16gb-3200mhz-ddr4-psp416g3200h1",
+  "sku": "KCC-RAM-PATRIOT-16GB-3200MHZ-DDR4-PSP416G3200H1",
+  "name": "Ram Patriot 16GB 3200MHz DDR4 (PSP416G3200H1)",
+  "brand": "Patriot",
+  "category": "ram",
+  "price": 2790000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-patriot-16gb-3200mhz-ddr4-psp416g3200h1.jpg",
+  "description": "Nguồn: https://kccshop.vn/ram-patriot-16gb-3200mhz-ddr4-psp416g3200h1/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 16,
+   "modules": 1,
+   "speed_mhz": 3200,
+   "cas_latency": null,
+   "tdp_w": 5
+  },
+  "old": 3040000
+ },
+ {
+  "id": "kcc-ram-geil-super-luce-black-rgb-ddr4-16g-3200-mhz-gls416gb3200",
+  "sku": "KCC-RAM-GEIL-SUPER-LUCE-BLACK-RGB-DDR4-16G-3200-MHZ-GLS416GB3200",
+  "name": "RAM GEIL SUPER LUCE BLACK RGB DDR4 16G 3200 MHz (GLS416GB3200C16BSC)",
+  "brand": "GeIL",
+  "category": "ram",
+  "price": 2790000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-geil-super-luce-black-rgb-ddr4-16g-3200-mhz-gls416gb3200.jpg",
+  "description": "Nguồn: https://kccshop.vn/ram-geil-super-luce-black-rgb-ddr4-16g-3200-mhz-gls416gb3200c16bsc/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 16,
+   "modules": 1,
+   "speed_mhz": 3200,
+   "cas_latency": 16,
+   "tdp_w": 5
+  },
+  "old": 3040000
+ },
+ {
+  "id": "kcc-ram-sstc-ddr4-3200mhz-16gb-1x16gb-u3200a-c22-16g",
+  "sku": "KCC-RAM-SSTC-DDR4-3200MHZ-16GB-1X16GB-U3200A-C22-16G",
+  "name": "Ram SSTC DDR4 3200MHz 16GB(1x16GB) (U3200A-C22-16G)",
+  "brand": "SSTC",
+  "category": "ram",
+  "price": 2690000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-sstc-ddr4-3200mhz-16gb-1x16gb-u3200a-c22-16g.png",
+  "description": "Nguồn: https://kccshop.vn/ram-sstc-ddr4-3200mhz-16gb-1x16gb-u3200a-c22-16g/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 16,
+   "modules": 1,
+   "speed_mhz": 3200,
+   "cas_latency": 22,
+   "tdp_w": 5
+  },
+  "old": 3010000
+ },
+ {
+  "id": "kcc-ram-kingbank-16gb-ddr4-3600mhz-tan-nhiet-chuyen-dung-cho-pc",
+  "sku": "KCC-RAM-KINGBANK-16GB-DDR4-3600MHZ-TAN-NHIET-CHUYEN-DUNG-CHO-PC",
+  "name": "Ram Kingbank 16GB DDR4 3600MHz Tản nhiệt (Chuyên dùng cho PC Intel)",
+  "brand": "Kingbank",
+  "category": "ram",
+  "price": 2590000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-kingbank-16gb-ddr4-3600mhz-tan-nhiet-chuyen-dung-cho-pc.png",
+  "description": "Nguồn: https://kccshop.vn/ram-kingbank-16gb-ddr4-3600mhz-tan-nhiet-chuyen-dung-cho-pc-intel/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 16,
+   "modules": 1,
+   "speed_mhz": 3600,
+   "cas_latency": null,
+   "tdp_w": 5
+  },
+  "old": 2820000
+ },
+ {
+  "id": "kcc-ram-exascend-essential-x-ddr4-8gb-1x8gb-u-dimm-3200mhz-es08g",
+  "sku": "KCC-RAM-EXASCEND-ESSENTIAL-X-DDR4-8GB-1X8GB-U-DIMM-3200MHZ-ES08G",
+  "name": "Ram Exascend Essential-X DDR4 8GB (1x8GB) U-DIMM 3200MHz (ES08G4U3200AU)",
+  "brand": "Exascend",
+  "category": "ram",
+  "price": 1390000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-exascend-essential-x-ddr4-8gb-1x8gb-u-dimm-3200mhz-es08g.jpg",
+  "description": "Nguồn: https://kccshop.vn/ram-exascend-essential-x-ddr4-8gb-1x8gb-u-dimm-3200mhz-es08g4u3200au/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 8,
+   "modules": 1,
+   "speed_mhz": 3200,
+   "cas_latency": null,
+   "tdp_w": 5
+  },
+  "old": 1540000
+ },
+ {
+  "id": "kcc-ram-pc-kingbank-kjib-16gb-3200mhz-ddr4-1x16gb-den",
+  "sku": "KCC-RAM-PC-KINGBANK-KJIB-16GB-3200MHZ-DDR4-1X16GB-DEN",
+  "name": "RAM PC KINGBANK KJIB 16GB 3200MHz DDR4 (1x16GB) (Đen)",
+  "brand": "Kingbank",
+  "category": "ram",
+  "price": 2590000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-pc-kingbank-kjib-16gb-3200mhz-ddr4-1x16gb-den.jpg",
+  "description": "Nguồn: https://kccshop.vn/ram-pc-kingbank-kjib-16gb-3200mhz-ddr4-1x16gb-den/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 16,
+   "modules": 1,
+   "speed_mhz": 3200,
+   "cas_latency": 14,
+   "tdp_w": 5
+  },
+  "old": 2930000
+ },
+ {
+  "id": "kcc-ram-pc-kingbank-kjxs-16gb-3200mhz-ddr4-1x16gb-trang",
+  "sku": "KCC-RAM-PC-KINGBANK-KJXS-16GB-3200MHZ-DDR4-1X16GB-TRANG",
+  "name": "RAM PC KINGBANK KJXS 16GB 3200MHz DDR4 (1x16GB) (Trắng)",
+  "brand": "Kingbank",
+  "category": "ram",
+  "price": 2590000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-pc-kingbank-kjxs-16gb-3200mhz-ddr4-1x16gb-trang.jpg",
+  "description": "Nguồn: https://kccshop.vn/ram-pc-kingbank-kjxs-16gb-3200mhz-ddr4-1x16gb-trang/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 16,
+   "modules": 1,
+   "speed_mhz": 3200,
+   "cas_latency": 14,
+   "tdp_w": 5
+  },
+  "old": 2850000
+ },
+ {
+  "id": "kcc-ram-ddr4-apacer-oc-nox-64gb-3200mhz-2x32g",
+  "sku": "KCC-RAM-DDR4-APACER-OC-NOX-64GB-3200MHZ-2X32G",
+  "name": "RAM DDR4 APACER OC NOX 64GB 3200MHz (2x32G)",
+  "brand": "Apacer",
+  "category": "ram",
+  "price": 12890000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-ddr4-apacer-oc-nox-64gb-3200mhz-2x32g.jpg",
+  "description": "Nguồn: https://kccshop.vn/ram-ddr4-apacer-oc-nox-64gb-3200mhz-2x32g/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 64,
+   "modules": 2,
+   "speed_mhz": 3200,
+   "cas_latency": 16,
+   "tdp_w": 10
+  },
+  "old": 14180000
+ },
+ {
+  "id": "kcc-ram-hiksemi-armor-16gb-ddr4-3200mhz-1x16gb-hsc416u32d2",
+  "sku": "KCC-RAM-HIKSEMI-ARMOR-16GB-DDR4-3200MHZ-1X16GB-HSC416U32D2",
+  "name": "RAM Hiksemi Armor 16GB DDR4 3200MHz (1x16GB) (HSC416U32D2)",
+  "brand": "HIKSEMI",
+  "category": "ram",
+  "price": 2590000,
+  "stock": 0,
+  "img": "/images/kcc/kcc-ram-hiksemi-armor-16gb-ddr4-3200mhz-1x16gb-hsc416u32d2.jpg",
+  "description": "Nguồn: https://kccshop.vn/ram-hiksemi-armor-16gb-ddr4-3200mhz-1x16gb-hsc416u32d2/",
+  "specs": {
+   "ram_type": "DDR4",
+   "capacity_gb": 16,
+   "modules": 1,
+   "speed_mhz": 3200,
+   "cas_latency": null,
+   "tdp_w": 5
+  },
+  "old": 2800000
+ }
+]

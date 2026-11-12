@@ -45,8 +45,14 @@ export function checkRamSlots(products){
  return [{...result,status:total>slots?'fail':'pass',message:total>slots?`Đã chọn ${total} thanh RAM nhưng mainboard chỉ hỗ trợ ${slots} khe RAM. Hãy giảm số lượng RAM hoặc đổi mainboard.`:`Đã sử dụng ${total}/${slots} khe RAM.`}];
 }
 
+// Mức tiêu thụ (W) điển hình, dùng để điền sẵn TDP khi tạo sản phẩm mới trong admin.
+export const DEFAULT_TDP_BY_CATEGORY={CPU:65,Mainboard:50,RAM:5,SSD:7,HDD:8,Case:10,'Tản nhiệt':10};
+
 export function productWattage(product){
- const spec=attribute(product,product.cat==='Nguồn'?'Công suất':'TDP');
+ const isPsu=product.cat==='Nguồn',spec=attribute(product,isPsu?'Công suất':'TDP');
+ // Dữ liệu import chỉ có specs.watt / specs.tdp_w; specs.tdp_w của tản nhiệt là khả năng tản, không phải điện tiêu thụ.
+ const fallback=isPsu?product.specs?.watt:['CPU','VGA'].includes(product.cat)?product.specs?.tdp_w:undefined;
+ if(!String(spec?.value??'').trim())return fallback==null||fallback===''?null:productWattage({cat:product.cat,attributes:[{name:isPsu?'Công suất':'TDP',value:fallback}]});
  if(spec?.unit&&normalize(spec.unit)!=='w')return null;
  const raw=String(spec?.value??'').trim();
  if(!/^\d+(?:[.,]\d+)?\s*(?:w)?$/i.test(raw))return null;

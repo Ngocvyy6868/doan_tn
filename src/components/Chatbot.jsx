@@ -1,5 +1,5 @@
 import React, {useEffect, useRef, useState} from 'react';
-import {Bot, ChevronDown, History, Maximize2, MessageCircle, Minimize2, Plus, Send, Sparkles, X} from 'lucide-react';
+import {Bot, ChevronDown, History, Maximize2, MessageCircle, Minimize2, Plus, RefreshCw, Send, Sparkles, X} from 'lucide-react';
 import './chatbot.css';
 import {readStore, writeStore} from './SiteLayout.jsx';
 
@@ -11,24 +11,64 @@ const STARTERS = [
  {title:'Văn phòng, học tập', text:'Máy văn phòng học tập ngân sách 12 triệu'},
 ];
 const money = value => typeof value === 'number' ? value.toLocaleString('vi-VN') + '₫' : 'Chưa có giá';
-const checkLabel = status => status === 'pass' ? 'Đạt' : status === 'fail' ? 'Xung đột' : 'Chưa đủ dữ liệu';
+const checkLabel = c => c.status === 'pass' ? 'Đạt' : c.code === 'R13' && c.status === 'fail' ? 'Thiếu linh kiện'
+ : c.status === 'fail' ? (c.severity === 'warning' ? 'Lưu ý' : 'Xung đột') : c.severity === 'warning' ? 'Chưa xác minh' : 'Chưa đủ dữ liệu';
+
+const CAT_LABEL = {cpu:'CPU', mainboard:'Mainboard', ram:'RAM', gpu:'Card đồ họa', ssd:'SSD', psu:'Nguồn', case:'Vỏ máy', cooler:'Tản nhiệt', license:'Bản quyền'};
+const SWAPPABLE = new Set(['cpu', 'mainboard', 'ram', 'gpu', 'ssd', 'psu', 'case', 'cooler']);
+
+// Danh sách sản phẩm cùng nhóm còn bán, lấy từ catalog đã đồng bộ ở trang (giá/tồn sẽ được backend kiểm tra lại).
+function SwapPicker({product, disabled, onPick}) {
+ const options = readStore('techzone_products', [])
+  .filter(p => p.product_type === product.cat && p.id !== product.id && p.active !== false && Number(p.stock) > 0 && Number(p.price) > 0)
+  .sort((a, b) => a.price - b.price);
+ if (!options.length) return <p className="ai-swap-empty">Chưa có sản phẩm {CAT_LABEL[product.cat] || product.cat} khác còn hàng.</p>;
+ return <div className="ai-swap-list" role="listbox" aria-label={`Chọn ${CAT_LABEL[product.cat] || product.cat} thay thế`}>
+  {options.map(p => <button type="button" key={p.id} disabled={disabled} onClick={() => onPick(p)}>
+   {p.img ? <img src={p.img} alt="" loading="lazy"/> : <span className="ai-product-noimg"/>}
+   <span><b>{p.name}</b><small>{money(p.price)} {p.price > product.price ? `(+${money(p.price - product.price)})` : p.price < product.price ? `(−${money(product.price - p.price)})` : ''}</small></span>
+  </button>)}
+ </div>;
+}
+
+// Phương án thay thế do backend tính khi không lắp được đủ bộ (không phải nội dung LLM tự nghĩ).
+function Alternatives({data}) {
+ const link = p => <a href={`/product/${encodeURIComponent(p.id)}`}>{p.name}</a>;
+ return <div className="ai-alt">
+  <b>Phương án thay thế</b>
+  {data.min_build_total != null && (data.budget_shortfall > 0
+   ? <p>Bộ rẻ nhất lắp được từ hàng hiện có là <strong>{money(data.min_build_total)}</strong>. Cần tăng ngân sách linh kiện thêm khoảng <strong>{money(data.budget_shortfall)}</strong>.</p>
+   : <p>Ngân sách vẫn đủ cho bộ rẻ nhất lắp được (<strong>{money(data.min_build_total)}</strong>) nếu giảm cấu hình ở các nhóm khác.</p>)}
+  {data.brand_unavailable && <p>Không lắp được đủ bộ với hãng CPU đã chọn; phương án trên dùng CPU hãng khác.</p>}
+  <ul>{data.missing.map(m => <li key={m.cat}>
+   <strong>{CAT_LABEL[m.cat] || m.cat}:</strong>{' '}
+   {m.product ? <>rẻ nhất lắp được là {link(m.product)} ({money(m.product.price)}){m.over_by > 0 && <>, vượt hạn mức {money(m.over_by)}</>}.</> : <>chưa có sản phẩm tương thích còn hàng.</>}
+   {m.other_brand && <> Hãng khác trong hạn mức: {link(m.other_brand)} ({money(m.other_brand.price)}).</>}
+  </li>)}</ul>
+ </div>;
+}
 
 function readExpanded() {try {return localStorage.getItem('techzone_chat_expanded') === '1';} catch {return false;}}
 
+// Chỉ lỗi tương thích thật (fail, mức lỗi) mới là xung đột; R13 là thiếu linh kiện, mức cảnh báo là lưu ý.
+const isConflict = c => c.status === 'fail' && c.severity === 'error' && c.code !== 'R13';
+const isMissing = c => c.status === 'fail' && c.code === 'R13';
+const isUnverified = c => c.status === 'unknown' || (c.status === 'fail' && c.severity === 'warning');
 function Checks({checks}) {
  const [open, setOpen] = useState(false);
- const count = s => checks.filter(c => c.status === s).length;
- const failed = count('fail');
- return <div className={`ai-checks ${failed ? 'has-fail' : ''}`}>
+ const count = test => checks.filter(test).length;
+ const failed = count(isConflict), missing = count(isMissing), unverified = count(isUnverified);
+ return <div className={`ai-checks ${failed || missing ? 'has-fail' : ''}`}>
   <button type="button" className="ai-checks-summary" aria-expanded={open} onClick={() => setOpen(!open)}>
    <b>Kiểm tra tương thích</b>
-   <span className="chip pass">{count('pass')} đạt</span>
+   <span className="chip pass">{count(c => c.status === 'pass')} đạt</span>
    {failed > 0 && <span className="chip fail">{failed} xung đột</span>}
-   {count('unknown') > 0 && <span className="chip unknown">{count('unknown')} chưa rõ</span>}
+   {missing > 0 && <span className="chip fail">thiếu linh kiện</span>}
+   {unverified > 0 && <span className="chip unknown">{unverified} cần lưu ý</span>}
    <ChevronDown className={open ? 'rotated' : ''}/>
   </button>
   {open && <ul>{checks.map((check, i) => <li key={i} className={`ai-check-${check.status}`}>
-   <strong>{checkLabel(check.status)}</strong> — {check.code} {check.rule}{check.severity === 'warning' && ' (cảnh báo)'}
+   <strong>{checkLabel(check)}</strong> — {check.code} {check.rule}{check.severity === 'warning' && ' (cảnh báo)'}
    {check.pair && <small>{check.pair}</small>}<small>{check.message}</small>
   </li>)}</ul>}
  </div>;
@@ -38,7 +78,7 @@ export default function Chatbot() {
  const [open, setOpen] = useState(false), [expanded, setExpanded] = useState(readExpanded), [messages, setMessages] = useState([]);
  const [input, setInput] = useState(''), [busy, setBusy] = useState(false);
  const [error, setError] = useState(''), [token, setToken] = useState(''), [login, setLogin] = useState(false);
- const [sessions, setSessions] = useState([]), [historyOpen, setHistoryOpen] = useState(false);
+ const [sessions, setSessions] = useState([]), [historyOpen, setHistoryOpen] = useState(false), [swapping, setSwapping] = useState(null);
  const bottom = useRef(null), pending = useRef(false), textarea = useRef(null);
  const loadSessions = () => fetch(endpoint + 'sessions/', {credentials:'include'}).then(r => r.ok ? r.json() : null).then(d => {if (d) setSessions(d.results);}).catch(() => {});
  useEffect(() => {
@@ -73,7 +113,7 @@ export default function Chatbot() {
   el.style.height = 'auto'; el.style.height = Math.min(el.scrollHeight, 160) + 'px';
  }, [input, open]);
 
- async function send(text = input) {
+ async function send(text = input, swapIds = null) {
   text = text.trim();
   if (!text || pending.current || !token || login) return;
   pending.current = true; setBusy(true); setError('');
@@ -82,7 +122,8 @@ export default function Chatbot() {
    const productId = location.pathname.startsWith('/product/') ? decodeURIComponent(location.pathname.split('/')[2] || '') : '';
    const response = await fetch(endpoint, {method:'POST', credentials:'include',
     headers:{'Content-Type':'application/json', 'X-CSRFToken':token},
-    body:JSON.stringify({message:text, product_ids:productId ? [productId] : []}), signal:AbortSignal.timeout(145000)});
+    // swapIds: khách bấm "Đổi" một linh kiện; backend ghim sản phẩm mới và lắp lại phần còn lại.
+    body:JSON.stringify(swapIds ? {message:text, product_ids:swapIds, swap:true} : {message:text, product_ids:productId ? [productId] : []}), signal:AbortSignal.timeout(145000)});
    const data = await response.json();
    if (!response.ok) {setLogin(response.status === 401); throw new Error(data.message || 'Không gửi được câu hỏi. Hãy mở lại chat để thử lại.');}
    setMessages(items => [...items.map(m => m.optimistic ? {role:m.role, text:m.text} : m), {...data, role:'assistant', text:data.answer}]);
@@ -171,14 +212,26 @@ export default function Chatbot() {
        {message.role !== 'user' && <span className="ai-avatar"><Sparkles/></span>}
        <div className="ai-bubble">
         <p className="ai-text">{message.text}</p>
-        {message.products?.length > 0 && <div className="ai-products">{message.products.map(product => <a className="ai-product" href={`/product/${encodeURIComponent(product.id)}`} key={product.id}>
-         {product.img ? <img src={product.img} alt="" loading="lazy"/> : <span className="ai-product-noimg"/>}
-         <span><small>{product.cat}</small><b>{product.name}</b><strong>{money(product.price)}</strong></span>
-        </a>)}</div>}
+        {message.products?.length > 0 && <div className="ai-products">{message.products.map(product => {
+         const swappable = message.stage === 'recommendation' && index === messages.length - 1 && SWAPPABLE.has(product.cat);
+         return <div className="ai-product-wrap" key={product.id}>
+          <a className="ai-product" href={`/product/${encodeURIComponent(product.id)}`}>
+           {product.img ? <img src={product.img} alt="" loading="lazy"/> : <span className="ai-product-noimg"/>}
+           <span><small>{CAT_LABEL[product.cat] || product.cat}</small><b>{product.name}</b><strong>{money(product.price)}</strong></span>
+          </a>
+          {swappable && <button type="button" className="ai-swap-btn" disabled={disabled} aria-expanded={swapping === product.id}
+           onClick={() => setSwapping(swapping === product.id ? null : product.id)}><RefreshCw/> Đổi</button>}
+          {swapping === product.id && <SwapPicker product={product} disabled={disabled} onPick={p => {
+           setSwapping(null);
+           send(`Đổi ${CAT_LABEL[product.cat] || product.cat} sang ${p.name}`, [p.id]);
+          }}/>}
+         </div>;
+        })}</div>}
         {message.total != null && <div className="ai-total"><span>Tổng sản phẩm</span><strong>{money(Number(message.total))}</strong>
          {message.peripheral_reserve > 0 && <small>Dự phòng màn hình/phím/chuột: {money(Number(message.peripheral_reserve))} (chưa chọn sản phẩm)</small>}</div>}
         {message.assumptions?.length > 0 && <ul className="ai-assumptions">{message.assumptions.map((a,i) => <li key={i}>{a}</li>)}</ul>}
         {message.errors?.map((a,i) => <p key={i} className="ai-error">{a}</p>)}
+        {message.alternatives?.missing?.length > 0 && <Alternatives data={message.alternatives}/>}
         {message.checks?.length > 0 && <Checks checks={message.checks}/>}
         {message.can_add_to_cart && <button type="button" className="ai-add" disabled={busy} onClick={() => addBuild(message.products)}>Thêm cả bộ vào giỏ</button>}
         {index === messages.length - 1 && message.quick_replies?.map(group => <div key={group.question} className="ai-starters" role="group" aria-label={group.question}>

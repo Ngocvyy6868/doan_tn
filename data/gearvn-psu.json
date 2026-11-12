@@ -1,0 +1,338 @@
+[
+ {
+  "id": "gvn-psu-fsp-vic-wd-650w-80-plus-white-650w",
+  "sku": "GVN-PSU-FSP-VIC-WD-650W-80-PLUS-WHITE-650W",
+  "name": "Nguồn máy tính FSP VIC WD 650W - 80 Plus White (650W)",
+  "brand": "FSP",
+  "category": "psu",
+  "price": 990000,
+  "stock": 0,
+  "img": "/images/gearvn/gvn-psu-fsp-vic-wd-650w-80-plus-white-650w.jpg",
+  "description": "Nguồn: https://gearvn.com/products/nguon-may-tinh-fsp-vic-wd-650w-80-plus-white-650w",
+  "specs": {
+   "watt": 650,
+   "efficiency": "80 Plus White",
+   "modular": false,
+   "form_factor": "ATX"
+  },
+  "old": 1090000
+ },
+ {
+  "id": "gvn-psu-fsp-vic-bd-750w-80-plus-bronze-750w",
+  "sku": "GVN-PSU-FSP-VIC-BD-750W-80-PLUS-BRONZE-750W",
+  "name": "Nguồn máy tính FSP VIC BD 750W - 80 Plus Bronze (750W)",
+  "brand": "FSP",
+  "category": "psu",
+  "price": 1590000,
+  "stock": 0,
+  "img": "/images/gearvn/gvn-psu-fsp-vic-bd-750w-80-plus-bronze-750w.jpg",
+  "description": "Nguồn: https://gearvn.com/products/nguon-may-tinh-fsp-vic-bd-750w-80-plus-bronze-750w",
+  "specs": {
+   "watt": 750,
+   "efficiency": "80 Plus Bronze",
+   "modular": null,
+   "form_factor": "ATX"
+  },
+  "old": 1690000
+ },
+ {
+  "id": "gvn-psu-cooler-master-v-platinum-1300-v2-1600w-80-plus-platinum",
+  "sku": "GVN-PSU-COOLER-MASTER-V-PLATINUM-1300-V2-1600W-80-PLUS-PLATINUM",
+  "name": "Nguồn máy tính Cooler Master V Platinum 1300 V2 - 1600W - 80 Plus Platinum - Full Modular",
+  "brand": "Cooler Master",
+  "category": "psu",
+  "price": 6790000,
+  "stock": 0,
+  "img": "/images/gearvn/gvn-psu-cooler-master-v-platinum-1300-v2-1600w-80-plus-platinum.png",
+  "description": "Nguồn: https://gearvn.com/products/nguon-may-tinh-cooler-master-v-platinum-1300-v2-1600w-80-plus-platinum-full-modular",
+  "specs": {
+   "watt": 1300,
+   "efficiency": "80 Plus Platinum",
+   "modular": true,
+   "form_factor": null
+  },
+  "old": 6990000
+ },
+ {
+  "id": "gvn-psu-asus-rog-thor-1600t3-atx-3-1-pcie-5-0-80-plus-titanium-f",
+  "sku": "GVN-PSU-ASUS-ROG-THOR-1600T3-ATX-3-1-PCIE-5-0-80-PLUS-TITANIUM-F",
+  "name": "Nguồn ASUS ROG THOR 1600T3 ATX 3.1, PCIe 5.0, 80 Plus Titanium, Full Modular (1600W)",
+  "brand": "ASUS",
+  "category": "psu",
+  "price": 24490000,
+  "stock": 0,
+  "img": "/images/gearvn/gvn-psu-asus-rog-thor-1600t3-atx-3-1-pcie-5-0-80-plus-titanium-f.jpg",
+  "description": "Nguồn: https://gearvn.com/products/nguon-asus-rog-thor-1600t3-atx-3-1-pcie-5-0-80-plus-titanium-full-modular-1600w",
+  "specs": {
+   "watt": 1600,
+   "efficiency": "80 Plus Titanium",
+   "modular": true,
+   "form_factor": "ATX 3.1"
+  },
+  "old": 24990000
+ },
+ {
+  "id": "gvn-psu-asus-rog-thor-1200-p3-1200w-platinum-iii-pcie-gen-5-0",
+  "sku": "GVN-PSU-ASUS-ROG-THOR-1200-P3-1200W-PLATINUM-III-PCIE-GEN-5-0",
+  "name": "Nguồn Máy Tính ASUS ROG THOR 1200 P3 1200W PLATINUM III ( PCIe Gen 5.0)",
+  "brand": "ASUS",
+  "category": "psu",
+  "price": 13990000,
+  "stock": 0,
+  "img": "/images/gearvn/gvn-psu-asus-rog-thor-1200-p3-1200w-platinum-iii-pcie-gen-5-0.jpg",
+  "description": "Nguồn: https://gearvn.com/products/nguon-may-tinh-asus-rog-thor-1200-p3-1200w-platinum-iii-pcie-gen-5-0",
+  "specs": {
+   "watt": 1200,
+   "efficiency": "80 Plus Platinum",
+   "modular": true,
+   "form_factor": "ATX 3.1"
+  },
+  "old": 15990000
+ },
+ {
+  "id": "gvn-psu-cooler-master-coolermaster-v-platinum-1600-v2-1600w-80-p",
+  "sku": "GVN-PSU-COOLER-MASTER-COOLERMASTER-V-PLATINUM-1600-V2-1600W-80-P",
+  "name": "Nguồn máy tính Cooler Master V Platinum 1600 V2 - 1600W - 80 Plus Platinum - Full Modular",
+  "brand": "Cooler Master",
+  "category": "psu",
+  "price": 7890000,
+  "stock": 0,
+  "img": "/images/gearvn/gvn-psu-cooler-master-coolermaster-v-platinum-1600-v2-1600w-80-p.png",
+  "description": "Nguồn: https://gearvn.com/products/nguon-may-tinh-cooler-master-coolermaster-v-platinum-1600-v2-1600w-80-plus-platinum-full-modular",
+  "specs": {
+   "watt": 1600,
+   "efficiency": "80 Plus Platinum",
+   "modular": true,
+   "form_factor": "ATX"
+  },
+  "old": 8090000
+ },
+ {
+  "id": "gvn-psu-msi-meg-ai1600t-pcie5-80-plus-titanium-1600w",
+  "sku": "GVN-PSU-MSI-MEG-AI1600T-PCIE5-80-PLUS-TITANIUM-1600W",
+  "name": "Nguồn máy tính MSI MEG AI1600T PCIE5 - 80 Plus Titanium (1600W)",
+  "brand": "MSI",
+  "category": "psu",
+  "price": 13990000,
+  "stock": 0,
+  "img": "/images/gearvn/gvn-psu-msi-meg-ai1600t-pcie5-80-plus-titanium-1600w.png",
+  "description": "Nguồn: https://gearvn.com/products/nguon-may-tinh-msi-meg-ai1600t-pcie5-80-plus-titanium-1600w",
+  "specs": {
+   "watt": 1600,
+   "efficiency": "80 Plus Titanium",
+   "modular": true,
+   "form_factor": "ATX 3.1"
+  }
+ },
+ {
+  "id": "gvn-psu-cooler-master-mwe-gold-1250w-v2-atx3-1-80-plus-gold-full",
+  "sku": "GVN-PSU-COOLER-MASTER-MWE-GOLD-1250W-V2-ATX3-1-80-PLUS-GOLD-FULL",
+  "name": "Nguồn máy tính Cooler Master MWE GOLD 1250W V2 ATX3.1 - 80 Plus Gold - Full Modular",
+  "brand": "Cooler Master",
+  "category": "psu",
+  "price": 5490000,
+  "stock": 0,
+  "img": "/images/gearvn/gvn-psu-cooler-master-mwe-gold-1250w-v2-atx3-1-80-plus-gold-full.png",
+  "description": "Nguồn: https://gearvn.com/products/nguon-may-tinh-cooler-master-mwe-gold-1250w-v2-atx3-1-80-plus-gold-full-modular",
+  "specs": {
+   "watt": 1250,
+   "efficiency": "80 Plus Gold",
+   "modular": true,
+   "form_factor": "ATX"
+  },
+  "old": 5990000
+ },
+ {
+  "id": "gvn-psu-cooler-master-mwe-gold-1050w-v2-atx3-1-80-plus-gold-full",
+  "sku": "GVN-PSU-COOLER-MASTER-MWE-GOLD-1050W-V2-ATX3-1-80-PLUS-GOLD-FULL",
+  "name": "Nguồn máy tính Cooler Master MWE GOLD 1050W V2 ATX3.1 - 80 Plus Gold - Full Modular",
+  "brand": "Cooler Master",
+  "category": "psu",
+  "price": 4490000,
+  "stock": 0,
+  "img": "/images/gearvn/gvn-psu-cooler-master-mwe-gold-1050w-v2-atx3-1-80-plus-gold-full.jpg",
+  "description": "Nguồn: https://gearvn.com/products/nguon-may-tinh-cooler-master-mwe-gold-1050w-v2-atx3-1-80-plus-gold-full-modular",
+  "specs": {
+   "watt": 1050,
+   "efficiency": "80 Plus Gold",
+   "modular": true,
+   "form_factor": "ATX"
+  },
+  "old": 4990000
+ },
+ {
+  "id": "gvn-psu-cooler-master-mwe-650w-80plus-bronze-v3",
+  "sku": "GVN-PSU-COOLER-MASTER-MWE-650W-80PLUS-BRONZE-V3",
+  "name": "Nguồn máy tính Cooler Master MWE 650 - 80 Plus Bronze - V3 230V (650W)",
+  "brand": "Cooler Master",
+  "category": "psu",
+  "price": 1390000,
+  "stock": 0,
+  "img": "/images/gearvn/gvn-psu-cooler-master-mwe-650w-80plus-bronze-v3.png",
+  "description": "Nguồn: https://gearvn.com/products/nguon-may-tinh-cooler-master-mwe-650w-80plus-bronze-v3",
+  "specs": {
+   "watt": 650,
+   "efficiency": "80 Plus Bronze",
+   "modular": false,
+   "form_factor": "ATX"
+  }
+ },
+ {
+  "id": "gvn-psu-corsair-rm1200x-shift-white-cp-9020276-na",
+  "sku": "GVN-PSU-CORSAIR-RM1200X-SHIFT-WHITE-CP-9020276-NA",
+  "name": "Nguồn máy tính Corsair RM1200x SHIFT White ATX 3.1 - 80 Plus Gold - Full Modular (1200W) (CP-9020276-NA)",
+  "brand": "Corsair",
+  "category": "psu",
+  "price": 6150000,
+  "stock": 0,
+  "img": "/images/gearvn/gvn-psu-corsair-rm1200x-shift-white-cp-9020276-na.png",
+  "description": "Nguồn: https://gearvn.com/products/nguon-may-tinh-corsair-rm1200x-shift-white-cp-9020276-na",
+  "specs": {
+   "watt": 1200,
+   "efficiency": "80 Plus Gold",
+   "modular": true,
+   "form_factor": "ATX 3.1"
+  }
+ },
+ {
+  "id": "gvn-psu-msi-mag-a1000gl-pcie5-80-plus-gold-full-modular-1000w",
+  "sku": "GVN-PSU-MSI-MAG-A1000GL-PCIE5-80-PLUS-GOLD-FULL-MODULAR-1000W",
+  "name": "Nguồn máy tính MSI MAG A1000GL PCIE5 - 80 Plus Gold - Full Modular (1000W)",
+  "brand": "MSI",
+  "category": "psu",
+  "price": 3990000,
+  "stock": 0,
+  "img": "/images/gearvn/gvn-psu-msi-mag-a1000gl-pcie5-80-plus-gold-full-modular-1000w.jpg",
+  "description": "Nguồn: https://gearvn.com/products/nguon-may-tinh-msi-mag-a1000gl-pcie5-80-plus-gold-full-modular-1000w",
+  "specs": {
+   "watt": 1000,
+   "efficiency": "80 Plus Gold",
+   "modular": true,
+   "form_factor": "ATX"
+  },
+  "old": 4990000
+ },
+ {
+  "id": "gvn-psu-cooler-master-mwe-850-gold-v2-atx3-1-e-eu",
+  "sku": "GVN-PSU-COOLER-MASTER-MWE-850-GOLD-V2-ATX3-1-E-EU",
+  "name": "Nguồn máy tính Cooler Master MWE GOLD 850W V2 ATX3.1 - 80 Plus Gold - Full Modular",
+  "brand": "Cooler Master",
+  "category": "psu",
+  "price": 2990000,
+  "stock": 0,
+  "img": "/images/gearvn/gvn-psu-cooler-master-mwe-850-gold-v2-atx3-1-e-eu.png",
+  "description": "Nguồn: https://gearvn.com/products/nguon-cooler-master-mwe-850-gold-v2-atx3-1-e-eu",
+  "specs": {
+   "watt": 850,
+   "efficiency": "80 Plus Gold",
+   "modular": true,
+   "form_factor": "ATX"
+  },
+  "old": 3090000
+ },
+ {
+  "id": "gvn-psu-cooler-master-mwe-750-80-plus-bronze-v3-230v-750w",
+  "sku": "GVN-PSU-COOLER-MASTER-MWE-750-80-PLUS-BRONZE-V3-230V-750W",
+  "name": "Nguồn máy tính Cooler Master MWE 750 - 80 Plus Bronze - V3 230V (750W)",
+  "brand": "Cooler Master",
+  "category": "psu",
+  "price": 1690000,
+  "stock": 0,
+  "img": "/images/gearvn/gvn-psu-cooler-master-mwe-750-80-plus-bronze-v3-230v-750w.png",
+  "description": "Nguồn: https://gearvn.com/products/nguon-may-tinh-cooler-master-mwe-750-80-plus-bronze-v3-230v-750w",
+  "specs": {
+   "watt": 750,
+   "efficiency": "80 Plus Bronze",
+   "modular": false,
+   "form_factor": "ATX"
+  },
+  "old": 1990000
+ },
+ {
+  "id": "gvn-psu-lian-li-eg1300-white",
+  "sku": "GVN-PSU-LIAN-LI-EG1300-WHITE",
+  "name": "Nguồn máy tính Lian Li EDGE 1300W White L-Shape - 80 Plus Platinum - Full Modular",
+  "brand": "Lian Li",
+  "category": "psu",
+  "price": 5990000,
+  "stock": 0,
+  "img": "/images/gearvn/gvn-psu-lian-li-eg1300-white.jpg",
+  "description": "Nguồn: https://gearvn.com/products/nguon-may-tinh-lian-li-eg1300-white",
+  "specs": {
+   "watt": 1300,
+   "efficiency": "80 Plus Platinum",
+   "modular": true,
+   "form_factor": "ATX"
+  }
+ },
+ {
+  "id": "gvn-psu-lian-li-eg1300-black",
+  "sku": "GVN-PSU-LIAN-LI-EG1300-BLACK",
+  "name": "Nguồn máy tính Lian Li EDGE 1300W Black L-Shape - 80 Plus Platinum - Full Modular",
+  "brand": "Lian Li",
+  "category": "psu",
+  "price": 5490000,
+  "stock": 0,
+  "img": "/images/gearvn/gvn-psu-lian-li-eg1300-black.jpg",
+  "description": "Nguồn: https://gearvn.com/products/nguon-may-tinh-lian-li-eg1300-black",
+  "specs": {
+   "watt": 1300,
+   "efficiency": "80 Plus Platinum",
+   "modular": true,
+   "form_factor": "ATX"
+  }
+ },
+ {
+  "id": "gvn-psu-msi-mag-a1250gl-pcie5",
+  "sku": "GVN-PSU-MSI-MAG-A1250GL-PCIE5",
+  "name": "Nguồn máy tính MSI MAG A1250GL PCIE5 - 80 Plus Gold - Full Modular (1250W)",
+  "brand": "MSI",
+  "category": "psu",
+  "price": 5490000,
+  "stock": 0,
+  "img": "/images/gearvn/gvn-psu-msi-mag-a1250gl-pcie5.png",
+  "description": "Nguồn: https://gearvn.com/products/nguon-may-tinh-msi-mag-a1250gl-pcie5",
+  "specs": {
+   "watt": 1250,
+   "efficiency": "80 Plus Gold",
+   "modular": true,
+   "form_factor": "ATX"
+  }
+ },
+ {
+  "id": "gvn-psu-corsair-hx1200i-80-plus-platinum-full-modular-1200w-cp-9",
+  "sku": "GVN-PSU-CORSAIR-HX1200I-80-PLUS-PLATINUM-FULL-MODULAR-1200W-CP-9",
+  "name": "Nguồn máy tính Corsair HX1200i - 80 Plus Platinum - Full Modular (1200W) (CP-9020281-NA)",
+  "brand": "Corsair",
+  "category": "psu",
+  "price": 7590000,
+  "stock": 0,
+  "img": "/images/gearvn/gvn-psu-corsair-hx1200i-80-plus-platinum-full-modular-1200w-cp-9.png",
+  "description": "Nguồn: https://gearvn.com/products/nguon-may-tinh-corsair-hx1200i-80-plus-platinum-full-modular-1200w-cp-9020281-na",
+  "specs": {
+   "watt": 1200,
+   "efficiency": "80 Plus Platinum",
+   "modular": true,
+   "form_factor": "ATX"
+  },
+  "old": 8990000
+ },
+ {
+  "id": "gvn-psu-corsair-cx650-80-plus-bronze-650w-cp-9020278-na",
+  "sku": "GVN-PSU-CORSAIR-CX650-80-PLUS-BRONZE-650W-CP-9020278-NA",
+  "name": "Nguồn máy tính Corsair CX650 - 80 Plus Bronze (650W) CP-9020278-NA",
+  "brand": "Corsair",
+  "category": "psu",
+  "price": 1390000,
+  "stock": 0,
+  "img": "/images/gearvn/gvn-psu-corsair-cx650-80-plus-bronze-650w-cp-9020278-na.png",
+  "description": "Nguồn: https://gearvn.com/products/nguon-may-tinh-corsair-cx650-80-plus-bronze-650w-cp-9020278-na",
+  "specs": {
+   "watt": 650,
+   "efficiency": "80 Plus Bronze",
+   "modular": false,
+   "form_factor": "ATX"
+  },
+  "old": 1690000
+ }
+]

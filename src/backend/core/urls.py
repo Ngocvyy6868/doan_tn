@@ -1,6 +1,7 @@
 from django.urls import path
 from .advisor_views import sessions, validate_build
 from .customer_views import customer_orders, admin_session
+from .crm_views import customer_events, customer_notes, customer_profile, customer_tasks
 from .management_views import employees, documents
 from .compatibility_views import compatibility_rules
 from .report_views import overview
@@ -49,6 +50,12 @@ urlpatterns = [
     path('admin/customers/<int:customer_id>/addresses/', addresses, name='admin-customer-addresses'),
     path('admin/customers/<int:customer_id>/addresses/<int:address_id>/', address_detail, name='admin-customer-address-detail'),
     path('admin/customers/<int:customer_id>/orders/', customer_orders, name='admin-customer-orders'),
+    path('admin/customers/<int:customer_id>/profile/', customer_profile, name='admin-customer-profile'),
+    path('admin/customers/<int:customer_id>/events/', customer_events, name='admin-customer-events'),
+    path('admin/customers/<int:customer_id>/notes/', customer_notes, name='admin-customer-notes'),
+    path('admin/customers/<int:customer_id>/notes/<int:note_id>/', customer_notes, name='admin-customer-note-detail'),
+    path('admin/customers/<int:customer_id>/tasks/', customer_tasks, name='admin-customer-tasks'),
+    path('admin/customers/<int:customer_id>/tasks/<int:task_id>/', customer_tasks, name='admin-customer-task-detail'),
     path('admin/categories/', categories, name='admin-categories'),
     path('admin/product-attributes/', product_attributes, name='admin-product-attributes'),
     path('admin/products/', products, name='admin-products'),

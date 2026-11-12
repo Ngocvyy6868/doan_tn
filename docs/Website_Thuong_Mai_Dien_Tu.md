@@ -39,6 +39,7 @@ Software Requirements Specification (SRS) – định hướng IEEE/ISO/IEC 2914
 | **Phiên bản** | **Ngày**   | **Người lập** | **Thay đổi**                                                                                | **Trạng thái** |
 |---------------|------------|---------------|---------------------------------------------------------------------------------------------|----------------|
 | 1.0           | 08/08/2026 | Nhóm đồ án    | Khởi tạo SRS từ brainstorm, đề cương, danh sách chức năng website consumer và bài báo HyDE. | Chờ duyệt      |
+| 1.1           | 10/11/2026 | Nhóm đồ án    | Bổ sung quản lý nhiều kho, trừ/hoàn tồn theo kho, cửa hàng còn hàng trên PDP, cảnh báo đơn lẻ, lưu địa chỉ khi checkout, cấu hình chính trên thẻ sản phẩm. | Chờ duyệt      |
 
 # Mục lục nội dung
 
@@ -81,13 +82,13 @@ Tài liệu mô tả đầy đủ yêu cầu nghiệp vụ và kỹ thuật cho 
 
 - Chatbot RAG/RAG–HyDE để hỏi đáp và tư vấn; rule engine quyết định tương thích.
 
-- Khu vực nhân viên/admin quản lý sản phẩm, thuộc tính, tồn kho, giá, đơn hàng, người dùng, nội dung, tài liệu và luật.
+- Khu vực nhân viên/admin quản lý sản phẩm, thuộc tính, kho/cửa hàng và tồn kho theo từng kho, giá, đơn hàng, người dùng, nội dung, tài liệu và luật.
 
 ## 1.3 Ngoài phạm vi MVP
 
 - Marketplace đa nhà bán và quy trình đối soát/hoa hồng phức tạp.
 
-- Quản lý mua hàng, nhà cung cấp, kho đa tầng hoặc ERP đầy đủ.
+- Quản lý mua hàng, nhà cung cấp, kho đa tầng, điều chuyển giữa các kho, luồng fulfilment (chọn kho xuất theo địa chỉ giao, lấy hàng, đóng gói theo kho) hoặc ERP đầy đủ. MVP chỉ hỗ trợ nhiều kho một cấp (FR-ADMIN-07).
 
 - Ứng dụng iOS/Android native.
 
@@ -130,7 +131,7 @@ Tài liệu mô tả đầy đủ yêu cầu nghiệp vụ và kỹ thuật cho 
 
 ## 2.3 Giả định vận hành
 
-- Một doanh nghiệp bán hàng trực tiếp; mỗi SKU có một số lượng tồn khả dụng tại baseline.
+- Một doanh nghiệp bán hàng trực tiếp; hàng được giữ tại nhiều kho/cửa hàng một cấp. Tồn khả dụng của một sản phẩm là tổng tồn tại các kho đang hoạt động (BR-STOCK-03).
 
 - Tiền tệ VND, múi giờ Asia/Ho_Chi_Minh, giao hàng trong Việt Nam.
 
@@ -196,13 +197,17 @@ Tài liệu mô tả đầy đủ yêu cầu nghiệp vụ và kỹ thuật cho 
 | FR-SEARCH-01  | Tìm kiếm                          | P0          | Tìm theo tên, SKU, thương hiệu và từ khóa mô tả.                                          | Không có kết quả hiển thị gợi ý; truy vấn được chuẩn hóa và an toàn.               |
 | FR-FILTER-01  | Lọc/sắp xếp                       | P0          | Lọc giá, thương hiệu, tình trạng, thuộc tính; sắp xếp giá, bán chạy, giảm giá, mới nhất.  | Nhiều bộ lọc kết hợp đúng; URL lưu được trạng thái lọc.                            |
 | FR-PDP-01     | Chi tiết sản phẩm                 | P0          | - Hiển thị ảnh, tên, giá, biến thể, tồn, mô tả, thuộc tính, chính sách, sản phẩm liên quan. <br> - Cho phép thêm các thuộc tính để rằng buộc tương thích linh kiện| SKU/biến thể đổi đúng giá-tồn; hết hàng không cho mua.                             |
+| FR-PDP-02     | Cửa hàng còn hàng                 | P1          | Trang chi tiết sản phẩm liệt kê các cửa hàng/kho còn hàng kèm mã kho và địa chỉ.          | Chỉ hiện kho đang hoạt động có số lượng > 0; quy tắc hiển thị theo BR-PDP-02.      |
+| FR-PDP-03     | Cấu hình chính trên thẻ sản phẩm  | P1          | Thẻ sản phẩm ở trang chủ/danh mục hiển thị tối đa 4 thông số chủ chốt theo loại linh kiện, kèm icon. | Chỉ lấy từ thông số có cấu trúc; không tự thêm thông số (BR-PDP-01).              |
 | FR-FAV-01     | Yêu thích                         | P1          | Thêm/xóa sản phẩm và xem danh sách yêu thích.                                             | Không tạo bản ghi trùng; trạng thái đồng bộ sau đăng nhập.                         |
 | FR-COMPARE-01 | So sánh sản phẩm                  | P1          | So sánh tối đa 4 sản phẩm cùng/nhóm tương đương theo thuộc tính.                          | Bảng làm nổi khác biệt; xử lý thuộc tính thiếu bằng “Chưa có dữ liệu”.             |
 | FR-CART-01    | Thêm giỏ/Mua ngay                 | P0          | Thêm SKU với số lượng; Mua ngay mở checkout cho SKU đã chọn.                              | Số lượng không vượt tồn/giới hạn; giỏ khách đăng nhập được lưu.                    |
 | FR-CART-02    | Cập nhật giỏ                      | P0          | Đổi số lượng, xóa, chọn sản phẩm và tính tổng.                                            | Tổng cập nhật chính xác; cảnh báo giá/tồn thay đổi.                                |
+| FR-CART-03    | Cảnh báo đơn hàng lẻ              | P1          | Giỏ/checkout chưa đủ nhóm linh kiện bắt buộc của một bộ PC được coi là đơn lẻ và hiển thị cảnh báo kèm lối vào tư vấn AI. | Không hiển thị lỗi R13 dạng chặn; vẫn báo xung đột thật và lỗi tồn kho (BR-CART-01). |
 | FR-VOUCHER-01 | Áp dụng voucher                   | P1          | Nhập/chọn voucher phù hợp với điều kiện đơn, khách và thời hạn.                           | Không cộng dồn trái quy tắc; lưu số tiền giảm và lý do từ chối.                    |
 | FR-SHIP-01    | Phí và phương thức giao           | P0          | Tính phí theo địa chỉ, phương thức, trọng lượng/giá trị theo cấu hình.                    | Checkout hiển thị phí trước xác nhận; lỗi dịch vụ có fallback/thông báo.           |
 | FR-CHK-01     | Checkout                          | P0          | Xác nhận địa chỉ, sản phẩm, số lượng, giá, giảm, phí, phương thức và tổng đơn.            | Kiểm tra lại giá/tồn/voucher; không cho xác nhận khi dữ liệu không hợp lệ.         |
+| FR-CHK-02     | Lưu địa chỉ nhận hàng vào sổ      | P1          | Khách đã đăng nhập nhập địa chỉ mới khi checkout có thể lưu địa chỉ đó vào Sổ địa chỉ.    | Lựa chọn bật sẵn; chỉ lưu sau khi đặt hàng thành công; không tạo trùng (BR-ADDR-01). |
 | FR-PAY-01     | Thanh toán                        | P0          | Hỗ trợ COD và cổng điện tử/sandbox; tiếp nhận callback.                                   | Callback được xác thực, idempotent; trạng thái thanh toán không cập nhật lặp.      |
 | FR-ORDER-01   | Tạo đơn                           | P0          | Tạo mã đơn và snapshot dòng hàng sau checkout thành công.                                 | Tạo một lần cho mỗi idempotency key; tổng tiền khớp chi tiết.                      |
 | FR-ORDER-02   | Lịch sử/chi tiết đơn              | P0          | Khách xem đơn, timeline, địa chỉ, thanh toán và vận chuyển.                               | Chỉ chủ đơn hoặc nhân sự có quyền được xem.                                        |
@@ -224,6 +229,7 @@ Tài liệu mô tả đầy đủ yêu cầu nghiệp vụ và kỹ thuật cho 
 | FR-ADMIN-04   | Quản lý khách hàng/quyền          | P0          | Xem khách; tạo nhân viên, khóa/mở và cấp vai trò.                                         | Không xem mật khẩu; không tự nâng quyền trái chính sách.                           |
 | FR-ADMIN-05   | Quản lý banner/voucher/chính sách | P1          | CRUD nội dung hiển thị và chương trình giảm giá.                                          | Có thời gian hiệu lực; preview/validation trước kích hoạt.                         |
 | FR-ADMIN-06   | Quản lý tri thức và luật          | P0          | CRUD tài liệu, phiên bản, nguồn, luật tương thích; chạy index thủ công/hằng ngày.         | Chỉ kích hoạt index/rule version hợp lệ; rollback được bản trước.                  |
+| FR-ADMIN-07   | Quản lý kho/cửa hàng              | P0          | Thêm/sửa/ngừng hoạt động/xóa kho (mã kho, địa chỉ); nhập thêm, xuất hoặc đặt số lượng của từng sản phẩm tại từng kho. | Theo BR-WH-01..03 và BR-STOCK-03..05; chỉ tài khoản quản trị thao tác được.         |
 | FR-EVAL-01    | Đánh giá RAG/HyDE                 | P0          | Chạy hai phương pháp trên cùng 200 câu, corpus, chunking, embedding và top-k.             | Lưu version cấu hình; xuất metric retrieval, generation, compatibility và latency. |
 | FR-AUDIT-01   | Nhật ký kiểm toán                 | P0          | Ghi thao tác nhạy cảm và trước/sau ở mức phù hợp.                                         | Log bất biến với người, thời gian, đối tượng, hành động và trace_id.               |
 
@@ -241,7 +247,7 @@ Tài liệu mô tả đầy đủ yêu cầu nghiệp vụ và kỹ thuật cho 
 
 5.  Backend kiểm tra lại giá, tồn, voucher trong transaction.
 
-6.  Hệ thống tạo đơn, giữ/trừ tồn, ghi snapshot và gửi xác nhận.
+6.  Hệ thống tạo đơn, trừ tồn theo kho (BR-STOCK-06), ghi snapshot và gửi xác nhận; địa chỉ mới của khách đã đăng nhập được lưu vào Sổ địa chỉ (BR-ADDR-01).
 
 ## UC-02 – Build PC rồi đặt hàng
 
@@ -275,7 +281,7 @@ Tài liệu mô tả đầy đủ yêu cầu nghiệp vụ và kỹ thuật cho 
 
 19. Hệ thống kiểm tra trạng thái, thời hạn và chính sách.
 
-20. Hủy hợp lệ hoàn tồn; thanh toán trước tạo yêu cầu hoàn tiền.
+20. Hủy hợp lệ hoàn tồn về đúng các kho đã trừ (BR-STOCK-07); thanh toán trước tạo yêu cầu hoàn tiền.
 
 21. Trả hàng được CSKH duyệt/từ chối, kho tiếp nhận và cập nhật kết quả.
 
@@ -301,6 +307,8 @@ Tài liệu mô tả đầy đủ yêu cầu nghiệp vụ và kỹ thuật cho 
 |-------------------------------|---------------------------------------------------------------------------------|
 | Giá/tồn thay đổi khi checkout | Hiển thị chênh lệch, yêu cầu khách xác nhận lại; không tạo đơn bằng dữ liệu cũ. |
 | Hai khách mua SKU cuối        | Transaction/lock ưu tiên xác nhận hợp lệ trước; người sau nhận hết hàng.        |
+| Tồn các kho không đủ          | Từ chối toàn bộ đơn với mã OUT_OF_STOCK và số lượng còn lại; không trừ kho nào.  |
+| Giỏ không đủ một bộ PC        | Coi là đơn lẻ: hiển thị cảnh báo tư vấn, không chặn đặt hàng (BR-CART-01).      |
 | Callback thanh toán lặp       | Idempotency bỏ qua cập nhật trùng nhưng lưu dấu vết.                            |
 | Dịch vụ vận chuyển lỗi        | Giữ giỏ, cho thử lại hoặc dùng phí/phương thức fallback đã cấu hình.            |
 | HyDE/LLM lỗi                  | Retry tối đa 3 lần, fallback RAG thường; sau đó chuyển nhân viên.               |
@@ -314,6 +322,18 @@ Tài liệu mô tả đầy đủ yêu cầu nghiệp vụ và kỹ thuật cho 
 | BR-PRICE-01   | Giá đơn là giá SKU tại thời điểm xác nhận, sau khuyến mãi hợp lệ; OrderItem lưu snapshot.                                                                         |
 | BR-STOCK-01   | available = on_hand - reserved; không cho available âm.                                                                                                           |
 | BR-STOCK-02   | Giữ/trừ tồn và tạo đơn là transaction; hủy hợp lệ hoàn giữ tồn.                                                                                                   |
+| BR-STOCK-03   | Tồn khả dụng của sản phẩm đã phân kho = tổng số lượng tại các kho đang hoạt động; hệ thống tự tính, form sản phẩm không được sửa (khóa trường tồn và backend bỏ qua giá trị gửi lên). Sản phẩm chưa có dòng tồn ở kho nào dùng tồn nhập tay. |
+| BR-STOCK-04   | Điều chỉnh tồn tại một kho: "Nhập thêm" là số nguyên khác 0 (số âm = xuất kho), "Đặt số lượng" là số nguyên ≥ 0; tồn sau điều chỉnh không âm và không vượt 1.000.000. |
+| BR-STOCK-05   | Kho ngừng hoạt động không được tính vào tồn khả dụng, không hiển thị cho khách và không bị trừ khi đặt hàng; bật lại thì tồn được tính lại. |
+| BR-STOCK-06   | Khi tạo đơn (chưa có luồng fulfilment): sản phẩm đã phân kho được trừ ngẫu nhiên từ các kho đang hoạt động còn hàng, một kho không đủ thì tách sang kho khác; sản phẩm chưa phân kho trừ tồn nhập tay. Tổng tồn không đủ thì từ chối toàn bộ đơn (OUT_OF_STOCK) và không trừ kho nào. Phân bổ kho được lưu trên từng dòng đơn và hiển thị "Xuất từ" trong chi tiết đơn ở admin. |
+| BR-STOCK-07   | Khi đơn chuyển sang CANCELLED, tồn được hoàn về đúng các kho đã trừ, mỗi đơn chỉ hoàn một lần; kho đã bị xóa thì bỏ qua phần hoàn của kho đó. |
+| BR-WH-01      | Mã kho duy nhất, 2–20 ký tự gồm chữ in hoa, số, "-" hoặc "_" (tự chuyển chữ in hoa); địa chỉ kho 5–255 ký tự. |
+| BR-WH-02      | Chỉ xóa được kho khi mọi sản phẩm tại kho có số lượng 0; kho còn hàng thì chuyển sang ngừng hoạt động. |
+| BR-WH-03      | API quản lý kho và tồn theo kho chỉ dành cho tài khoản quản trị (is_staff); API cửa hàng còn hàng là public. |
+| BR-CART-01    | Giỏ/checkout thiếu nhóm linh kiện bắt buộc (cpu, mainboard, ram, ssd, psu, case – luật R13) là đơn lẻ: hiển thị cảnh báo "Đơn hàng lẻ, nếu xây dựng cấu hình hãy để chúng tôi tư vấn" kèm nút mở chat AI, không chặn đặt hàng; ẩn kết quả UNKNOWN và lỗi chỉ có nghĩa với bộ PC (nhiều sản phẩm cùng nhóm), vẫn hiển thị xung đột FAIL giữa các linh kiện và lỗi tồn kho. |
+| BR-ADDR-01    | Khách đã đăng nhập chọn "Nhập địa chỉ khác" khi checkout thấy lựa chọn "Lưu địa chỉ này vào sổ địa chỉ" (bật sẵn). Địa chỉ chỉ được lưu sau khi tạo đơn thành công, bỏ qua nếu trùng địa chỉ đã có (cùng số điện thoại, phường/xã và địa chỉ chi tiết, không phân biệt hoa thường); địa chỉ đầu tiên tự thành mặc định. Khách vãng lai không có lựa chọn này. |
+| BR-PDP-01     | Thẻ sản phẩm hiển thị tối đa 4 thông số chủ chốt theo loại linh kiện, lấy từ thông số có cấu trúc; trường trống bị bỏ qua, không tự suy đoán hay thêm thông số. Ví dụ CPU: socket, nhân/luồng, xung boost, TDP; VGA: chip, VRAM, công suất, chiều dài; RAM: dung lượng (số thanh), DDR, MHz, CL. |
+| BR-PDP-02     | Khối "Cửa hàng còn hàng" chỉ hiện khi sản phẩm đã phân kho; liệt kê kho đang hoạt động có số lượng > 0 với nhãn "Còn hàng" hoặc "Sắp hết" (≤ 2 sản phẩm), không hiện số lượng chính xác; không còn kho nào thì hiện "Tạm hết hàng tại các cửa hàng". |
 | BR-VOUCHER-01 | Voucher kiểm tra hiệu lực, đối tượng, giá trị tối thiểu, quota, giới hạn người dùng và quy tắc cộng dồn.                                                          |
 | BR-ORDER-01   | Transition: PENDING_PAYMENT → CONFIRMED → PACKING → READY_FOR_PICKUP → DELIVERING → DELIVERED; nhánh CANCELLED/RETURN_REQUESTED/RETURNED/REFUNDED theo điều kiện. |
 | BR-CANCEL-01  | Khách chỉ tự hủy trước PACKING; sau đó cần CSKH xử lý.                                                                                                            |
@@ -350,10 +370,12 @@ Tài liệu mô tả đầy đủ yêu cầu nghiệp vụ và kỹ thuật cho 
 | SKU/Variant              | id, product_id, sku, option_values, price, compare_at_price, weight, status |
 | ProductAttribute         | product/sku, attribute definition, typed value, unit, source                |
 | Inventory                | sku_id, on_hand, reserved, reorder_level, version                           |
+| Warehouse                | id, code (duy nhất), address, active, created_at                            |
+| WarehouseStock           | warehouse_id, product_id, quantity ≥ 0, updated_at; duy nhất theo (warehouse, product) |
 | Cart/CartItem            | user/session, sku_id, quantity, selected, timestamps                        |
 | Voucher                  | code, type/value, conditions, quota, per_user_limit, valid range, status    |
 | Order                    | code, user, address snapshot, totals, payment/shipping status, timestamps   |
-| OrderItem                | order_id, sku_id, name/variant/price snapshots, qty, discounts, total       |
+| OrderItem                | order_id, sku_id, name/variant/price snapshots, qty, discounts, total, allocations (kho đã trừ và số lượng) |
 | Payment                  | order_id, provider, method, amount, status, transaction_ref, callback hash  |
 | Shipment                 | order_id, carrier, tracking, fee, status, events                            |
 | ReturnRequest            | order/item, qty, reason, evidence, status, resolution/refund                |
@@ -402,6 +424,9 @@ Tài liệu mô tả đầy đủ yêu cầu nghiệp vụ và kỹ thuật cho 
 | POST                  | /api/v1/consultations                    | Customer        | Chuyển nhân viên                |
 | CRUD                  | /api/v1/admin/products\|skus\|categories | Admin           | Quản lý catalog                 |
 | PATCH                 | /api/v1/admin/inventory/{skuId}          | Warehouse/Admin | Điều chỉnh tồn                  |
+| GET/POST/PATCH/DELETE | /api/v1/admin/warehouses                 | Admin           | Quản lý kho/cửa hàng            |
+| GET/POST              | /api/v1/admin/inventory                  | Admin           | Xem/nhập/đặt tồn theo kho       |
+| GET                   | /api/v1/products/{id}/availability       | Public          | Cửa hàng còn hàng               |
 | GET/PATCH             | /api/v1/admin/orders                     | Staff/Admin     | Quản lý đơn                     |
 | POST                  | /api/v1/admin/index-jobs                 | Admin           | Lập chỉ mục                     |
 | POST                  | /api/v1/admin/evaluations                | Admin           | Chạy đánh giá                   |
@@ -517,16 +542,19 @@ Tài liệu mô tả đầy đủ yêu cầu nghiệp vụ và kỹ thuật cho 
 | AC-12  | RBAC, audit log và kiểm tra OWASP quan trọng đạt.                           |
 | AC-13  | Responsive 360 px và desktop; không clipping/overflow ở luồng chính.        |
 | AC-14  | Đạt các ngưỡng NFR trong môi trường nghiệm thu được ghi nhận.               |
+| AC-15  | Tạo/sửa/xóa kho và nhập/đặt tồn theo kho đúng BR-WH, BR-STOCK-03..05; tồn tổng đồng bộ với giỏ hàng và tư vấn AI. |
+| AC-16  | Đặt hàng trừ đúng tổng số lượng từ các kho hoạt động, thiếu tồn thì không trừ kho nào; hủy đơn hoàn đúng kho một lần. |
+| AC-17  | PDP hiển thị cửa hàng còn hàng; thẻ sản phẩm chỉ hiện thông số có thật; đơn lẻ hiện cảnh báo; địa chỉ checkout được lưu vào sổ không trùng. |
 
 # 13. Ma trận truy vết
 
 | **Mục tiêu**          | **Yêu cầu liên quan**                                            | **Nghiệm thu**      |
 |-----------------------|------------------------------------------------------------------|---------------------|
-| OBJ-01 – Mua hàng     | FR-HOME/CAT/SEARCH/FILTER/PDP, FR-CART, FR-CHK, FR-PAY, FR-ORDER | AC-02..07           |
+| OBJ-01 – Mua hàng     | FR-HOME/CAT/SEARCH/FILTER/PDP, FR-CART, FR-CHK, FR-PAY, FR-ORDER | AC-02..07, AC-17    |
 | OBJ-02 – Tương thích  | FR-BUILD-01..05, BR-COMP, COMP-\*                                | AC-08, AC-09        |
 | OBJ-03 – AI có căn cứ | FR-CHAT, FR-HYDE, BR-AI                                          | AC-10               |
 | OBJ-04 – So sánh HyDE | FR-EVAL, NFR-REPRO                                               | AC-11               |
-| OBJ-05 – Vận hành     | FR-ADMIN-01..06, FR-AUDIT                                        | AC-04, AC-06, AC-12 |
+| OBJ-05 – Vận hành     | FR-ADMIN-01..07, FR-AUDIT, BR-STOCK, BR-WH                       | AC-04, AC-06, AC-12, AC-15, AC-16 |
 | Bảo mật/hiệu năng     | NFR-\*                                                           | AC-12..14           |
 
 # 14. Kế hoạch triển khai MVP
@@ -552,7 +580,7 @@ Tài liệu mô tả đầy đủ yêu cầu nghiệp vụ và kỹ thuật cho 
 
 - Thuế đã nằm trong giá hiển thị theo baseline; nếu cần tách VAT phải chốt trước thiết kế totals.
 
-- Tồn kho một địa điểm; mở rộng đa kho sẽ cần InventoryLocation và allocation.
+- Tồn kho nhiều kho một cấp (Warehouse/WarehouseStock); phân bổ kho khi đặt hàng là ngẫu nhiên cho tới khi có luồng fulfilment.
 
 - Chatbot yêu cầu khách đăng nhập theo quyết định brainstorm; catalog và build thủ công vẫn có thể xem trước khi đăng nhập.
 
@@ -567,6 +595,7 @@ Tài liệu mô tả đầy đủ yêu cầu nghiệp vụ và kỹ thuật cho 
 | OQ-05  | Giữ tồn ở lúc tạo đơn hay khi thanh toán?          | Giữ khi xác nhận đơn; timeout đơn chưa thanh toán theo cấu hình. |
 | OQ-06  | Top-k và chỉ số retrieval chính?                   | top-k=5; nDCG@10 hoặc MRR chốt trước thí nghiệm.                 |
 | OQ-07  | Ai gán nhãn bộ 200 câu?                            | Nhóm đồ án, đối soát bởi người có kiến thức phần cứng.           |
+| OQ-08  | Chọn kho xuất hàng theo tiêu chí nào khi có fulfilment? | Ngẫu nhiên trong các kho còn hàng (BR-STOCK-06).            |
 
 # Phụ lục A – Backlog theo Epic
 

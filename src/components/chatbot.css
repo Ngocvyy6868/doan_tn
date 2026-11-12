@@ -119,3 +119,19 @@
 #root .ai-chat :is(b,strong),#root .chat-fab{font-weight:600}
 #root .ai-chat :is(.ai-head small,.ai-history button,.ai-checks li small,.ai-total small,.ai-assumptions li){font-size:13px}
 #root .ai-chat textarea::placeholder{font-family:Arial,Helvetica,sans-serif;font-size:14px;color:#94a3b8}
+.ai-alt{margin-top:12px;padding:10px 12px;border:1px solid #fcd34d;background:#fffbeb;border-radius:10px;color:#78350f}
+.ai-alt p{margin:6px 0 0}.ai-alt ul{margin:6px 0 0;padding-left:18px}.ai-alt li{margin-top:4px}
+#root .ai-alt a{color:#1768f2;font-weight:600}
+/* Đổi linh kiện trong cấu hình đề xuất */
+.ai-product-wrap{display:flex;flex-direction:column;gap:6px;min-width:0}
+.ai-swap-btn{align-self:flex-start;display:flex;align-items:center;gap:4px;padding:3px 10px;border:1px solid #bcd0f5;border-radius:999px;background:#fff;color:#1768f2;font-weight:600}
+.ai-swap-btn svg{width:13px;height:13px}
+.ai-swap-btn:hover:not(:disabled),.ai-swap-btn[aria-expanded="true"]{background:#1768f2;color:#fff;border-color:#1768f2}
+.ai-swap-list{display:flex;flex-direction:column;gap:4px;max-height:220px;overflow-y:auto;padding:6px;border:1px solid #e3e8ef;border-radius:10px;background:#f8fafc}
+.ai-swap-list button{display:flex;align-items:center;gap:8px;padding:6px;border-radius:8px;text-align:left;background:#fff;border:1px solid transparent}
+.ai-swap-list button:hover:not(:disabled){border-color:#1768f2}
+.ai-swap-list img,.ai-swap-list .ai-product-noimg{width:36px;height:36px;flex-shrink:0;object-fit:contain;border-radius:6px}
+.ai-swap-list span{display:flex;flex-direction:column;min-width:0}
+.ai-swap-list b{overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+#root .ai-swap-list small{color:#64748b;font-size:12px}
+#root .ai-swap-empty{margin:0;color:#64748b;font-size:12px}

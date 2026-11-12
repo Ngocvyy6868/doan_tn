@@ -1,0 +1,10 @@
+﻿id,sku,name,brand,category,price,old,stock,active,img,description,socket,cores,threads,base_ghz,boost_ghz,tdp_w,has_igpu,stock_cooler,chipset,form_factor,ram_type,ram_slots,max_ram_gb,m2_slots,capacity_gb,modules,speed_mhz,cas_latency,chip,vram_gb,length_mm,cooler_type,sockets,height_mm,radiator_mm,airflow_cfm,interface,pcie_gen,rpm,watt,efficiency,modular,supported_mb,max_gpu_length_mm,max_cooler_height_mm
+vd-cpu-1,,[VÍ DỤ] CPU Intel Core i5-12400F,Intel,cpu,2.990.000,,0,không,,,LGA 1700,6,12,2.5,4.4,65,không,có,,,,,,,,,,,,,,,,,,,,,,,,,,,
+vd-mb-1,,[VÍ DỤ] Mainboard B760M DDR4,MSI,mainboard,2.590.000,,0,không,,,LGA1700,,,,,,,,B760,mATX,DDR4,4,128,2,,,,,,,,,,,,,,,,,,,,,
+vd-ram-1,,[VÍ DỤ] RAM 16GB (2x8GB) DDR4-3200,Kingston,ram,990.000,,0,không,,,,,,,,,,,,,DDR4,,,,16,2,3200,16,,,,,,,,,,,,,,,,,
+vd-gpu-1,,[VÍ DỤ] VGA GeForce RTX 4060 8GB,Gigabyte,vga,7.990.000,,0,không,,,,,,,,115,,,,,,,,,,,,,GeForce RTX 4060,8,250,,,,,,,,,,,,,,
+vd-cooler-1,,[VÍ DỤ] Tản khí CPU 4 ống đồng,DeepCool,tản nhiệt,650.000,,0,không,,,,,,,,220,,,,,,,,,,,,,,,,khí,LGA1700;AM5;AM4,155,,66.5,,,,,,,,,
+vd-ssd-1,,[VÍ DỤ] SSD NVMe 1TB PCIe 4.0,Samsung,ssd,1.990.000,,0,không,,,,,,,,,,,,,,,,,1000,,,,,,,,,,,,NVMe,4,,,,,,,
+vd-psu-1,,[VÍ DỤ] Nguồn 650W 80 Plus Bronze,Cooler Master,nguồn,1.290.000,,0,không,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,650,80 Plus Bronze,không,,,
+vd-case-1,,[VÍ DỤ] Vỏ máy ATX Mid Tower,Xigmatek,case,890.000,,0,không,,,,,,,,,,,,ATX Mid Tower,,,,,,,,,,,,,,,,,,,,,,,ATX;Micro ATX;Mini ITX,360,165
+vd-win-1,,[VÍ DỤ] Windows 11 Home bản quyền,Microsoft,bản quyền,3.290.000,,0,không,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,,
